@@ -28,7 +28,7 @@ export default function QuickQuote() {
       <div className="container qq__grid">
         <div ref={headRef} className="reveal reveal-left qq__text">
           <span className="eyebrow"><FaBolt /> 60-Second Quote</span>
-          <h2>Tell us about your move — get a free quote in minutes.</h2>
+          <h2>Tell us about your move -- get a free quote in minutes.</h2>
           <p>No phone tag, no spam. A real human reads every request and replies within 1 hour.</p>
           <div className="qq__perks">
             <div className="qq__perk"><strong>10k+</strong><span>Moves done</span></div>
@@ -81,7 +81,7 @@ export default function QuickQuote() {
             <button type="submit" className="btn btn-primary btn-lg qq__submit">
               Get My Free Quote <FaArrowRight />
             </button>
-            <p className="qq__foot">By submitting you agree to receive a quote. No spam — we promise.</p>
+            <p className="qq__foot">By submitting you agree to receive a quote. No spam -- we promise.</p>
           </form>
         </div>
 

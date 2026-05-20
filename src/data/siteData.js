@@ -38,21 +38,21 @@ export const SERVICES = [
   {
     icon: 'home',
     title: 'Residential Moving',
-    desc: 'Stress-free home moves across Metro Detroit — from cozy apartments to large family homes. We protect your belongings like they're our own.',
+    desc: 'Stress-free home moves across Metro Detroit -- from cozy apartments to large family homes. We protect your belongings like they\'re our own.',
     features: ['Free in-home estimate', 'Furniture disassembly & reassembly', 'Floor & wall protection'],
     photo: { id: '1600585154340-be6161a56a0c', seed: 'residential' }
   },
   {
     icon: 'building',
     title: 'Commercial & Office',
-    desc: 'Minimize downtime with our efficient Detroit office relocations — IT equipment, files, workstations and everything in between.',
+    desc: 'Minimize downtime with our efficient Detroit office relocations -- IT equipment, files, workstations and everything in between.',
     features: ['After-hours & weekend moves', 'IT-safe handling', 'Office layout setup'],
     photo: { id: '1497366216548-37526070297c', seed: 'office' }
   },
   {
     icon: 'box',
     title: 'Packing & Unpacking',
-    desc: 'Professional packing using premium materials. We label, wrap and secure every item — fragile or not — so nothing arrives damaged.',
+    desc: 'Professional packing using premium materials. We label, wrap and secure every item -- fragile or not -- so nothing arrives damaged.',
     features: ['Custom crating', 'Fragile-item specialists', 'Eco-friendly supplies'],
     photo: { id: '1558997519-83ea9252edf8', seed: 'packing' }
   },
@@ -73,7 +73,7 @@ export const SERVICES = [
   {
     icon: 'sofa',
     title: 'Specialty Moves',
-    desc: 'Pianos, pool tables, hot tubs, antiques, artwork, and gun safes — we move what others won\'t touch with the care these items deserve.',
+    desc: 'Pianos, pool tables, hot tubs, antiques, artwork, and gun safes -- we move what others won\'t touch with the care these items deserve.',
     features: ['Padded blanket wrapping', 'Specialized equipment', 'Fully insured handling'],
     photo: { id: '1520523839897-bd0b52f945a0', seed: 'specialty' }
   },
@@ -96,11 +96,11 @@ export const WHY_US = [
 export const FEATURES = [
   {
     title: 'Licensed & Fully Insured',
-    desc: 'USDOT certified with full cargo and liability insurance on every move — your belongings are completely protected.'
+    desc: 'USDOT certified with full cargo and liability insurance on every move -- your belongings are completely protected.'
   },
   {
     title: 'Upfront, Honest Pricing',
-    desc: 'No hidden fees, ever. You get a transparent quote — hourly or flat-rate — and you pay exactly what we promised.'
+    desc: 'No hidden fees, ever. You get a transparent quote -- hourly or flat-rate -- and you pay exactly what we promised.'
   },
   {
     title: 'On-Time, Every Time',
@@ -112,7 +112,7 @@ export const FEATURES = [
   },
   {
     title: '24/7 Customer Support',
-    desc: 'A real human always picks up the phone — before, during and after your Detroit move. No voicemail runarounds.'
+    desc: 'A real human always picks up the phone -- before, during and after your Detroit move. No voicemail runarounds.'
   },
   {
     title: 'Modern Fleet & Equipment',
@@ -121,10 +121,10 @@ export const FEATURES = [
 ];
 
 export const STEPS = [
-  { n: '01', title: 'Request a Free Quote', desc: 'Tell us about your Detroit move — fill the form or call us. We respond within 1 hour, guaranteed.' },
+  { n: '01', title: 'Request a Free Quote', desc: 'Tell us about your Detroit move -- fill the form or call us. We respond within 1 hour, guaranteed.' },
   { n: '02', title: 'Get a Custom Plan', desc: 'Your dedicated coordinator builds a moving plan with the right crew size, truck, and timing for your situation.' },
   { n: '03', title: 'Pack, Load & Move', desc: 'Our professional team arrives on time, handles everything with care, and keeps you updated throughout.' },
-  { n: '04', title: 'Unload & Settle In', desc: 'We unload, reassemble furniture, and place items exactly where you want them — so you\'re home from day one.' }
+  { n: '04', title: 'Unload & Settle In', desc: 'We unload, reassemble furniture, and place items exactly where you want them -- so you\'re home from day one.' }
 ];
 
 export const TESTIMONIALS = [
@@ -138,13 +138,13 @@ export const TESTIMONIALS = [
     name: 'Marcus T.',
     city: 'Dearborn, MI',
     rating: 5,
-    text: 'Best moving company in Metro Detroit, hands down. They quoted a fair price and stuck to it. No surprises on moving day — just a hard-working team that got the job done right.'
+    text: 'Best moving company in Metro Detroit, hands down. They quoted a fair price and stuck to it. No surprises on moving day -- just a hard-working team that got the job done right.'
   },
   {
     name: 'Aisha K.',
     city: 'Troy, MI',
     rating: 5,
-    text: 'Hired Ancient Movers for our office relocation in Troy. Zero downtime — everything was set up and running the next morning. These guys are the real deal.'
+    text: 'Hired Ancient Movers for our office relocation in Troy. Zero downtime -- everything was set up and running the next morning. These guys are the real deal.'
   },
   {
     name: 'Daniel R.',
@@ -161,11 +161,11 @@ export const FAQS = [
   },
   {
     q: 'Are you licensed and insured in Michigan?',
-    a: 'Yes — Ancient Movers is fully licensed, bonded, and insured. We carry cargo insurance, general liability, and workers\' compensation on every job so you\'re completely protected.'
+    a: 'Yes -- Ancient Movers is fully licensed, bonded, and insured. We carry cargo insurance, general liability, and workers\' compensation on every job so you\'re completely protected.'
   },
   {
     q: 'How far in advance should I book my Detroit move?',
-    a: 'We recommend booking 2–4 weeks in advance, especially during peak season (May–September). That said, we accept last-minute bookings when crews are available — call us and we\'ll do our best.'
+    a: 'We recommend booking 2–4 weeks in advance, especially during peak season (May–September). That said, we accept last-minute bookings when crews are available -- call us and we\'ll do our best.'
   },
   {
     q: 'Do you provide packing supplies and packing services?',

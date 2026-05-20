@@ -6,11 +6,11 @@ import useReveal from '../hooks/useReveal.js';
 import './Gallery.css';
 
 const ITEMS = [
-  { key: 'loadingTruck', tag: 'Loading',   title: 'Big or small, we’ve got the truck',  cls: 'g--lg' },
+  { key: 'loadingTruck', tag: 'Loading',   title: 'Big or small, we\'ve got the truck',  cls: 'g--lg' },
   { key: 'packingBox',   tag: 'Packing',   title: 'Pro packing, every fragile item safe', cls: 'g--md' },
   { key: 'movingFamily', tag: 'Moving Day',title: 'Settling families into new homes',    cls: 'g--md' },
-  { key: 'truckRoad',    tag: 'In Transit',title: 'Tracked deliveries across Michigan',  cls: 'g--md' },
-  { key: 'officeMove',   tag: 'Commercial',title: 'Smooth office relocations',           cls: 'g--md' },
+  { key: 'truckRoad',    tag: 'In Transit',title: 'Tracked deliveries across Metro Detroit', cls: 'g--md' },
+  { key: 'officeMove',   tag: 'Commercial',title: 'Smooth office relocations in Detroit', cls: 'g--md' },
 ];
 
 export default function Gallery() {
@@ -35,7 +35,7 @@ export default function Gallery() {
         <div ref={headRef} className="reveal section-head">
           <span className="eyebrow">Moving Moments</span>
           <h2>Real moves. Real Michigan families.</h2>
-          <p>A glimpse at what your move looks like with Ancient Movers — from the first box to the final piece of furniture.</p>
+          <p>A glimpse at what your move looks like with Ancient Movers -- from the first box to the final piece of furniture.</p>
         </div>
 
         <div ref={gridRef} className="g-grid">

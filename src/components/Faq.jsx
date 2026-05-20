@@ -27,7 +27,7 @@ export default function Faq() {
         <div ref={headRef} className="reveal reveal-left faq__head">
           <span className="eyebrow">Got Questions?</span>
           <h2>Frequently Asked Questions</h2>
-          <p>Everything you need to know before booking your move. Still curious? <a href="/contact">Reach out</a> — we’ll happily answer anything.</p>
+          <p>Everything you need to know before booking your move. Still curious? <a href="/contact">Reach out</a> -- we'll happily answer anything.</p>
         </div>
 
         <ul ref={listRef} className="faq__list">

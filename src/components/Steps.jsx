@@ -47,7 +47,7 @@ export default function Steps() {
         <div ref={headRef} className="reveal section-head">
           <span className="eyebrow">How It Works</span>
           <h2>Your Move in Four Easy Steps</h2>
-          <p>We’ve simplified the moving process so you can focus on what matters — settling into your new home.</p>
+          <p>We've simplified the moving process so you can focus on what matters -- settling into your new home.</p>
         </div>
 
         <div ref={wrapRef} className="steps__wrap">

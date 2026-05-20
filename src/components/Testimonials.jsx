@@ -13,7 +13,7 @@ function TestimonialCard({ t }) {
       <div className="testimonial__stars" aria-label={`${t.rating} out of 5 stars`}>
         {Array.from({ length: t.rating }).map((_, k) => <FaStar key={k} />)}
       </div>
-      <p>“{t.text}”</p>
+      <p>"{t.text}"</p>
       <footer>
         <div className="testimonial__avatar">{t.name.charAt(0)}</div>
         <div>
@@ -50,7 +50,7 @@ export default function Testimonials() {
         <div ref={headRef} className="reveal section-head">
           <span className="eyebrow">Customer Stories</span>
           <h2>Loved by Families Across Michigan</h2>
-          <p>We’ve completed over 10,000 moves. Here’s what our customers say.</p>
+          <p>We've completed over 10,000 moves. Here's what our customers say.</p>
         </div>
 
         <div ref={gridRef} className="testimonials__grid">

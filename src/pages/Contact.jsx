@@ -8,21 +8,21 @@ export default function Contact() {
   return (
     <>
       <SEO
-        title="Contact Ancient Movers Detroit — Free Moving Quote | Metro Detroit, MI"
-        description="Request a free, no-obligation moving quote in Metro Detroit. Call Ancient Movers or fill out our form — we respond within 1 hour. Serving all Detroit-area neighborhoods."
+        title="Contact Ancient Movers Detroit -- Free Moving Quote | Metro Detroit, MI"
+        description="Request a free, no-obligation moving quote in Metro Detroit. Call Ancient Movers or fill out our form -- we respond within 1 hour. Serving all Detroit-area neighborhoods."
         canonical="https://ancientmovers.com/contact"
       />
       <PageHero
         title="Get Your Free Quote"
-        subtitle="Moving in Metro Detroit? Request a free quote or ask us anything — we respond within 1 hour."
-        crumbs={[{ label: ‘Contact’ }]}
+        subtitle="Moving in Metro Detroit? Request a free quote or ask us anything -- we respond within 1 hour."
+        crumbs={[{ label: 'Contact' }]}
       />
 
       <section className="contact">
         <div className="container contact__grid">
           <div className="contact__info">
             <h2>Contact Information</h2>
-            <p>Whether you need a quote, have a question, or want to book a Detroit move — we’re ready to help.</p>
+            <p>Whether you need a quote, have a question, or want to book a Detroit move -- we're ready to help.</p>
 
             <ul className="contact__list">
               <li>
