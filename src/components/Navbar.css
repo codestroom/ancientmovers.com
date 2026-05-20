@@ -61,6 +61,14 @@
   gap: 14px;
   color: var(--ink-900);
 }
+.nb__logo-img {
+  height: 52px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  transition: transform .35s cubic-bezier(.2,.8,.2,1);
+}
+.nb__brand:hover .nb__logo-img { transform: scale(1.05); }
 .nb__logo {
   position: relative;
   width: 48px; height: 48px;

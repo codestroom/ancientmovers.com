@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FaFacebookF, FaInstagram, FaTwitter, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaClock, FaTruck } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaTwitter, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 import { SITE, SERVICE_AREAS, SERVICES } from '../data/siteData.js';
 import './Footer.css';
 
@@ -9,8 +9,7 @@ export default function Footer() {
       <div className="container footer__grid">
         <div className="footer__col footer__brand">
           <Link to="/" className="footer__logo">
-            <span className="footer__logo-mark"><FaTruck /></span>
-            <span><strong>Ancient</strong>Movers</span>
+            <img src="/logo.png" alt="Ancient Movers" className="footer__logo-img" />
           </Link>
           <p>Detroit's most trusted local moving company. Honest pricing, careful crews and on-time service across Metro Detroit since 2015.</p>
           <div className="footer__social">

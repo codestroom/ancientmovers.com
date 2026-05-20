@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
-import { FaPhoneAlt, FaBars, FaTimes, FaTruck, FaArrowRight, FaShieldAlt, FaStar, FaCheckCircle } from 'react-icons/fa';
+import { FaPhoneAlt, FaBars, FaTimes, FaArrowRight, FaShieldAlt, FaStar, FaCheckCircle } from 'react-icons/fa';
 import { SITE } from '../data/siteData.js';
 import './Navbar.css';
 
@@ -40,7 +40,7 @@ export default function Navbar() {
         <div className="container nb__strip-inner">
           <span className="nb__strip-item"><FaCheckCircle /> Free Estimates</span>
           <span className="nb__strip-item nb__strip-item--mid"><FaShieldAlt /> Licensed & Insured</span>
-          <span className="nb__strip-item"><FaStar /> Rated 4.9/5 by 320+ families</span>
+          <span className="nb__strip-item"><FaStar /> Rated 4.9/5 by 2,100+ Detroit families</span>
         </div>
       </div>
 
@@ -48,14 +48,7 @@ export default function Navbar() {
       <div className="nb__main">
         <div className="container nb__inner">
           <Link to="/" className="nb__brand" aria-label="Ancient Movers home">
-            <span className="nb__logo">
-              <FaTruck />
-              <span className="nb__logo-pulse" aria-hidden="true" />
-            </span>
-            <span className="nb__brand-text">
-              <span className="nb__brand-main">Ancient<span>Movers</span></span>
-              <span className="nb__brand-sub">Michigan's Trusted Movers</span>
-            </span>
+            <img src="/logo.png" alt="Ancient Movers" className="nb__logo-img" />
           </Link>
 
           <nav className="nb__nav" aria-label="Primary">

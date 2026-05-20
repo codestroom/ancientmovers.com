@@ -44,12 +44,11 @@
   color: var(--white);
 }
 .footer__logo strong { color: var(--orange-500); font-weight: 800; }
-.footer__logo-mark {
-  width: 40px; height: 40px;
-  display: inline-flex; align-items: center; justify-content: center;
-  background: linear-gradient(135deg, var(--orange-400), var(--orange-600));
-  border-radius: 10px;
-  color: var(--white);
+.footer__logo-img {
+  height: 60px;
+  width: auto;
+  display: block;
+  object-fit: contain;
 }
 
 .footer__social { display: flex; gap: 10px; margin-top: 6px; }
