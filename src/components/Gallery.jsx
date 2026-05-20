@@ -34,7 +34,7 @@ export default function Gallery() {
       <div className="container">
         <div ref={headRef} className="reveal section-head">
           <span className="eyebrow">Moving Moments</span>
-          <h2>Real moves. Real Michigan families.</h2>
+          <h2>Real Moves. Real Detroit Families.</h2>
           <p>A glimpse at what your move looks like with Ancient Movers -- from the first box to the final piece of furniture.</p>
         </div>
 
@@ -44,6 +44,7 @@ export default function Gallery() {
             return (
               <article key={it.key} className={`g-card reveal reveal-d${(i % 6) + 1} ${it.cls}`}>
                 <Photo
+                  src={photo.src}
                   id={photo.id}
                   seed={photo.seed}
                   alt={it.title}

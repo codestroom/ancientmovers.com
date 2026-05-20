@@ -36,7 +36,7 @@
   transition: box-shadow .25s ease;
   overflow: hidden;
 }
-.testimonial:hover { box-shadow: 0 30px 60px rgba(255,106,0,.18); }
+.testimonial:hover { box-shadow: 0 30px 60px rgba(247,146,30,.18); }
 .testimonial > * { position: relative; z-index: 1; transform: translateZ(15px); }
 .testimonial .tilt-glare { z-index: 0; border-radius: inherit; }
 

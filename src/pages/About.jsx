@@ -56,9 +56,10 @@ export default function About() {
           <div className="about-media">
             <div className="about-media__photo">
               <Photo
+                src={PHOTOS.teamSmile.src}
                 id={PHOTOS.teamSmile.id}
                 seed={PHOTOS.teamSmile.seed}
-                alt="The Ancient Movers team"
+                alt="The Ancient Movers team in front of their branded truck"
                 w={900}
                 h={1100}
               />

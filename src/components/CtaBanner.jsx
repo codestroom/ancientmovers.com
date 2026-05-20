@@ -11,8 +11,9 @@ export default function CtaBanner() {
     <section className="cta">
       <div className="cta__bg" aria-hidden="true">
         <Photo
-          id={PHOTOS.loadingTruck.id}
-          seed={PHOTOS.loadingTruck.seed}
+          src={PHOTOS.ctaBg.src}
+          id={PHOTOS.ctaBg.id}
+          seed={PHOTOS.ctaBg.seed}
           alt=""
           w={1600}
           h={700}

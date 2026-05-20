@@ -20,9 +20,10 @@ export default function HeroVisual() {
 
         <div className="hv__photo">
           <Photo
+            src={PHOTOS.heroTruck.src}
             id={PHOTOS.heroTruck.id}
             seed={PHOTOS.heroTruck.seed}
-            alt="Professional Ancient Movers crew loading a moving truck"
+            alt="Ancient Movers branded truck ready for a Detroit move"
             w={1200}
             h={780}
             className="hv__photo-img"
@@ -49,7 +50,7 @@ export default function HeroVisual() {
         <div className="hv__badge-icon hv__badge-icon--orange"><FaStar /></div>
         <div>
           <strong>4.9 / 5</strong>
-          <span>320+ reviews</span>
+          <span>2,100+ reviews</span>
         </div>
       </div>
 

@@ -40,49 +40,49 @@ export const SERVICES = [
     title: 'Residential Moving',
     desc: 'Stress-free home moves across Metro Detroit -- from cozy apartments to large family homes. We protect your belongings like they\'re our own.',
     features: ['Free in-home estimate', 'Furniture disassembly & reassembly', 'Floor & wall protection'],
-    photo: { id: '1600585154340-be6161a56a0c', seed: 'residential' }
+    photo: { src: '/images/staff.jpg',        id: '1600585154340-be6161a56a0c', seed: 'residential' }
   },
   {
     icon: 'building',
     title: 'Commercial & Office',
     desc: 'Minimize downtime with our efficient Detroit office relocations -- IT equipment, files, workstations and everything in between.',
     features: ['After-hours & weekend moves', 'IT-safe handling', 'Office layout setup'],
-    photo: { id: '1497366216548-37526070297c', seed: 'office' }
+    photo: { src: '/images/furniture.jpg',    id: '1497366216548-37526070297c', seed: 'office' }
   },
   {
     icon: 'box',
     title: 'Packing & Unpacking',
     desc: 'Professional packing using premium materials. We label, wrap and secure every item -- fragile or not -- so nothing arrives damaged.',
     features: ['Custom crating', 'Fragile-item specialists', 'Eco-friendly supplies'],
-    photo: { id: '1558997519-83ea9252edf8', seed: 'packing' }
+    photo: { src: '/images/packing.webp',     id: '1558997519-83ea9252edf8',    seed: 'packing' }
   },
   {
     icon: 'truck',
     title: 'Long Distance Moving',
     desc: 'Moving out of Metro Detroit? We handle out-of-state and cross-country moves with transparent flat-rate pricing and guaranteed delivery windows.',
     features: ['Real-time shipment tracking', 'Dedicated move coordinator', 'No hidden fees'],
-    photo: { id: '1601584115197-04ecc0da31d7', seed: 'long-distance' }
+    photo: { src: '/images/longdistance.jpg', id: '1601584115197-04ecc0da31d7', seed: 'long-distance' }
   },
   {
     icon: 'warehouse',
     title: 'Secure Storage',
     desc: 'Climate-controlled, 24/7 monitored short and long-term storage solutions conveniently located in Metro Detroit.',
     features: ['Climate control', '24/7 surveillance & alarm', 'Flexible month-to-month terms'],
-    photo: { id: '1601979031925-424e53b6caaa', seed: 'storage' }
+    photo: { src: '/images/fleet-truck.png',  id: '1601979031925-424e53b6caaa', seed: 'storage' }
   },
   {
     icon: 'sofa',
     title: 'Specialty Moves',
     desc: 'Pianos, pool tables, hot tubs, antiques, artwork, and gun safes -- we move what others won\'t touch with the care these items deserve.',
     features: ['Padded blanket wrapping', 'Specialized equipment', 'Fully insured handling'],
-    photo: { id: '1520523839897-bd0b52f945a0', seed: 'specialty' }
+    photo: { src: '/images/piano.webp',       id: '1520523839897-bd0b52f945a0', seed: 'specialty' }
   },
   {
     icon: 'heart',
     title: 'Senior Moving',
     desc: 'Patient, compassionate moves designed around seniors. We handle every detail so your loved ones can focus on settling into their new home.',
     features: ['Patient, caring crew', 'Full packing assistance', 'Coordination with families'],
-    photo: { id: '1581579438828-4b1b7d638b3e', seed: 'senior' }
+    photo: { src: '/images/senior.webp',      id: '1581579438828-4b1b7d638b3e', seed: 'senior' }
   }
 ];
 

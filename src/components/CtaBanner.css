@@ -21,7 +21,7 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(135deg, rgba(255,106,0,.92), rgba(193,75,0,.96)),
+    linear-gradient(135deg, rgba(247,146,30,.92), rgba(193,75,0,.96)),
     radial-gradient(circle at 70% 30%, rgba(255,210,138,.3), transparent 50%);
 }
 .cta__orb {
@@ -91,7 +91,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(120deg, transparent, rgba(255,106,0,.15), transparent);
+  background: linear-gradient(120deg, transparent, rgba(247,146,30,.15), transparent);
   background-size: 200% 100%;
   animation: shimmer 2.4s infinite;
 }

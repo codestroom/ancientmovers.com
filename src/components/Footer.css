@@ -1,5 +1,5 @@
 .footer {
-  background: var(--ink-900);
+  background: var(--brand-dark);
   color: var(--ink-200);
   padding-top: 72px;
   margin-top: 80px;
@@ -89,6 +89,12 @@
 }
 .footer__bottom ul { display: flex; gap: 22px; }
 .footer__bottom a:hover { color: var(--orange-400); }
+.footer__devby { font-size: .82rem; color: var(--ink-500); }
+.footer__devby-brand {
+  color: var(--orange-400);
+  font-weight: 600;
+  letter-spacing: .02em;
+}
 
 @media (max-width: 1024px) {
   .footer__grid { grid-template-columns: 1fr 1fr 1fr; }

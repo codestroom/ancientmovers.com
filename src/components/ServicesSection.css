@@ -37,7 +37,7 @@
   inset: 0;
   background:
     linear-gradient(180deg, transparent 50%, rgba(0,0,0,.45) 100%),
-    linear-gradient(135deg, rgba(255,106,0,.18), transparent 60%);
+    linear-gradient(135deg, rgba(247,146,30,.18), transparent 60%);
 }
 .service-card__body { padding: 28px 28px 32px; transform: translateZ(20px); }
 .service-card .tilt-glare { z-index: 2; border-radius: inherit; pointer-events: none; }
@@ -52,7 +52,7 @@
   transition: transform .3s ease;
 }
 .service-card:hover {
-  box-shadow: 0 30px 60px rgba(255,106,0,.18), 0 10px 20px rgba(0,0,0,.06);
+  box-shadow: 0 30px 60px rgba(247,146,30,.18), 0 10px 20px rgba(0,0,0,.06);
   border-color: var(--orange-200);
 }
 .service-card:hover::before { transform: scaleX(1); }
@@ -68,7 +68,7 @@
   color: var(--white);
   border-radius: 14px;
   font-size: 1.3rem;
-  box-shadow: 0 14px 30px rgba(255,106,0,.4);
+  box-shadow: 0 14px 30px rgba(247,146,30,.4);
   transition: transform .35s ease;
   z-index: 3;
 }

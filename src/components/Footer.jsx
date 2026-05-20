@@ -60,6 +60,9 @@ export default function Footer() {
       <div className="footer__bottom">
         <div className="container footer__bottom-inner">
           <p>© {new Date().getFullYear()} {SITE.name}. All rights reserved.</p>
+          <p className="footer__devby">
+            Developed by <span className="footer__devby-brand">CodeStroom</span>
+          </p>
           <ul>
             <li><Link to="/">Privacy Policy</Link></li>
             <li><Link to="/">Terms of Service</Link></li>

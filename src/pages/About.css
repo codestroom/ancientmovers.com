@@ -38,7 +38,7 @@
   border-radius: var(--radius-xl);
   overflow: hidden;
   aspect-ratio: 4 / 5;
-  box-shadow: 0 30px 60px rgba(255,106,0,.22);
+  box-shadow: 0 30px 60px rgba(247,146,30,.22);
   transform: rotate(-1.5deg);
   transition: transform .5s cubic-bezier(.2,.8,.2,1);
 }
@@ -90,7 +90,7 @@
   border-radius: 16px;
   padding: 16px 22px;
   text-align: center;
-  box-shadow: 0 20px 40px rgba(255,106,0,.4);
+  box-shadow: 0 20px 40px rgba(247,146,30,.4);
   animation: drift 6s ease-in-out infinite reverse;
 }
 .about-media__sticker strong {

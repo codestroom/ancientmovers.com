@@ -1,14 +1,19 @@
 /* ---------- Design tokens ---------- */
 :root {
-  --orange-50:  #fff5ec;
-  --orange-100: #ffe4cc;
-  --orange-200: #ffc999;
-  --orange-300: #ffa961;
-  --orange-400: #ff8a2b;
-  --orange-500: #ff6a00;   /* primary */
-  --orange-600: #e85a00;
-  --orange-700: #c14b00;
-  --orange-800: #8f3700;
+  /* Logo warm golden-orange palette */
+  --orange-50:  #FFF8EE;
+  --orange-100: #FFECD0;
+  --orange-200: #FFD4A0;
+  --orange-300: #FFB966;
+  --orange-400: #FFA033;
+  --orange-500: #F7921E;   /* primary — logo orange */
+  --orange-600: #E07808;
+  --orange-700: #B86000;
+  --orange-800: #8A4400;
+
+  /* Logo dark navy (from bottom banner) */
+  --brand-dark: #1C1520;
+  --brand-dark-2: #2A2035;
 
   --ink-900: #1a1a1a;
   --ink-800: #262626;
@@ -31,8 +36,8 @@
 
   --shadow-sm: 0 2px 8px rgba(0,0,0,.06);
   --shadow-md: 0 8px 24px rgba(0,0,0,.08);
-  --shadow-lg: 0 20px 50px rgba(255,106,0,.18);
-  --shadow-orange: 0 12px 30px rgba(255,106,0,.35);
+  --shadow-lg: 0 20px 50px rgba(247,146,30,.18);
+  --shadow-orange: 0 12px 30px rgba(247,146,30,.35);
 
   --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   --font-body:    'Inter', system-ui, -apple-system, sans-serif;
@@ -129,7 +134,7 @@ section { padding: 88px 0; }
   transition: background-position .8s ease;
   z-index: -1;
 }
-.btn-primary:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 18px 42px rgba(255,106,0,.48); }
+.btn-primary:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 18px 42px rgba(247,146,30,.48); }
 .btn-primary:hover::after { background-position: 200% 0; }
 .btn-primary:active { transform: translateY(-1px) scale(.99); }
 .btn-secondary {
@@ -137,7 +142,7 @@ section { padding: 88px 0; }
   color: var(--ink-900);
   border: 2px solid var(--ink-200);
 }
-.btn-secondary:hover { border-color: var(--orange-500); color: var(--orange-600); transform: translateY(-2px); box-shadow: 0 12px 26px rgba(255,106,0,.12); }
+.btn-secondary:hover { border-color: var(--orange-500); color: var(--orange-600); transform: translateY(-2px); box-shadow: 0 12px 26px rgba(247,146,30,.12); }
 .btn-ghost { color: var(--ink-900); }
 .btn-ghost:hover { color: var(--orange-600); }
 .btn-lg { padding: 18px 34px; font-size: 1.05rem; }
@@ -232,9 +237,9 @@ a, button { transition: color .2s ease, background .2s ease, transform .2s ease,
   50%      { transform: translate3d(0,-18px,0) rotate(4deg); }
 }
 @keyframes pulseRing {
-  0%   { box-shadow: 0 0 0 0 rgba(255,106,0,.55); }
-  70%  { box-shadow: 0 0 0 18px rgba(255,106,0,0); }
-  100% { box-shadow: 0 0 0 0 rgba(255,106,0,0); }
+  0%   { box-shadow: 0 0 0 0 rgba(247,146,30,.55); }
+  70%  { box-shadow: 0 0 0 18px rgba(247,146,30,0); }
+  100% { box-shadow: 0 0 0 0 rgba(247,146,30,0); }
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 @keyframes roadDash {

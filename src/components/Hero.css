@@ -14,15 +14,15 @@
     radial-gradient(40% 60% at 20% 20%, rgba(255,138,43,.45), transparent 60%),
     radial-gradient(50% 60% at 80% 30%, rgba(255,201,153,.5), transparent 60%),
     radial-gradient(60% 60% at 60% 90%, rgba(255,228,204,.7), transparent 60%),
-    linear-gradient(180deg, #fff5ec 0%, #ffffff 100%);
+    linear-gradient(180deg, #FFF8EE 0%, #ffffff 100%);
   background-size: 200% 200%;
   animation: gradientShift 18s ease-in-out infinite;
 }
 .hero__grid {
   position: absolute; inset: 0;
   background-image:
-    linear-gradient(rgba(255,106,0,.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,106,0,.06) 1px, transparent 1px);
+    linear-gradient(rgba(247,146,30,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(247,146,30,.06) 1px, transparent 1px);
   background-size: 44px 44px;
   mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
 }
@@ -47,7 +47,7 @@
 }
 .hero__blob--3 {
   width: 280px; height: 280px;
-  background: radial-gradient(circle, #ffd9b3, transparent 70%);
+  background: radial-gradient(circle, #FFD4A0, transparent 70%);
   top: 40%; left: 45%;
   animation: drift 13s ease-in-out infinite;
   opacity: .35;
@@ -88,7 +88,7 @@
   color: var(--orange-700);
   font-weight: 600;
   font-size: .9rem;
-  box-shadow: 0 6px 22px rgba(255,106,0,.15);
+  box-shadow: 0 6px 22px rgba(247,146,30,.15);
   margin-bottom: 22px;
 }
 .hero__badge svg { color: var(--orange-500); }

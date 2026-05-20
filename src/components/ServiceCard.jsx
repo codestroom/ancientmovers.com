@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FaHome, FaBuilding, FaBoxOpen, FaTruck, FaWarehouse, FaCouch, FaArrowRight, FaCheck } from 'react-icons/fa';
+import { FaHome, FaBuilding, FaBoxOpen, FaTruck, FaWarehouse, FaCouch, FaHeart, FaArrowRight, FaCheck } from 'react-icons/fa';
 import useTilt from '../hooks/useTilt.js';
 import Photo from './Photo.jsx';
 
@@ -9,7 +9,8 @@ const ICONS = {
   box: FaBoxOpen,
   truck: FaTruck,
   warehouse: FaWarehouse,
-  sofa: FaCouch
+  sofa: FaCouch,
+  heart: FaHeart
 };
 
 export default function ServiceCard({ service, index = 0 }) {
@@ -20,6 +21,7 @@ export default function ServiceCard({ service, index = 0 }) {
     <article ref={ref} className={`service-card tilt reveal reveal-d${(index % 6) + 1}`}>
       <div className="service-card__photo">
         <Photo
+          src={service.photo.src}
           id={service.photo.id}
           seed={service.photo.seed}
           alt={service.title}
