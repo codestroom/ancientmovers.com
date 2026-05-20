@@ -78,7 +78,7 @@ export default function Hero() {
 
       {/* Wave divider */}
       <svg className="hero__wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
-        <path fill="#ffffff" d="M0,64 C240,128 480,0 720,32 C960,64 1200,128 1440,80 L1440,120 L0,120 Z" />
+        <path fill="#1a1a1a" d="M0,64 C240,128 480,0 720,32 C960,64 1200,128 1440,80 L1440,120 L0,120 Z" />
       </svg>
     </section>
   );

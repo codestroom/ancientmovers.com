@@ -1,87 +1,110 @@
+/* ========================  AREAS GRID — dark glassmorphism  ======================== */
 .areas {
   position: relative;
-  background: linear-gradient(180deg, #fafafa 0%, #fff5ec 100%);
+  background: #0F0C17;
   overflow: hidden;
 }
+
+/* Subtle dot pattern */
 .areas__pattern {
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(circle, rgba(247,146,30,.12) 1px, transparent 1.5px);
-  background-size: 28px 28px;
-  mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(247,146,30,.14) 1px, transparent 1.5px);
+  background-size: 30px 30px;
+  mask-image: radial-gradient(ellipse at center, #000 25%, transparent 72%);
   pointer-events: none;
 }
 
-.areas__grid {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+/* Ambient glow */
+.areas::before {
+  content: '';
+  position: absolute;
+  width: 700px; height: 400px;
+  background: radial-gradient(ellipse, rgba(247,146,30,.12), transparent 65%);
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  pointer-events: none;
 }
 
+/* Text overrides */
+.areas .section-head h2,
+.areas h2 { color: #fff; }
+.areas .section-head p { color: rgba(255,255,255,.6); }
+.areas .eyebrow {
+  background: rgba(247,146,30,.14);
+  color: var(--orange-300);
+  border: 1px solid rgba(247,146,30,.25);
+}
+
+/* Grid */
+.areas__grid {
+  position: relative; z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+/* Area card — glass */
 .area-card {
   position: relative;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: var(--white);
-  border: 1px solid var(--ink-200);
+  display: flex; align-items: center; gap: 12px;
+  background: rgba(255,255,255,.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,.09);
   border-radius: var(--radius-md);
-  padding: 18px 20px;
-  color: var(--ink-800);
-  font-family: var(--font-display);
-  font-weight: 500;
-  box-shadow: 0 6px 14px rgba(0,0,0,.04);
-  transition: transform .35s cubic-bezier(.2,.8,.2,1),
-              border-color .25s ease,
-              background .25s ease,
-              color .25s ease,
-              box-shadow .35s ease;
+  padding: 16px 18px;
+  color: rgba(255,255,255,.8);
+  font-family: var(--font-display); font-weight: 500;
+  box-shadow: 0 6px 20px rgba(0,0,0,.2);
+  transition:
+    transform .35s cubic-bezier(.2,.8,.2,1),
+    border-color .25s ease,
+    background .25s ease,
+    color .25s ease,
+    box-shadow .35s ease;
   overflow: hidden;
 }
 .area-card:hover {
-  transform: translateY(-6px) rotate(-1deg) scale(1.02);
-  border-color: var(--orange-500);
-  color: var(--orange-700);
-  box-shadow: 0 26px 50px rgba(247,146,30,.22);
+  transform: translateY(-7px) rotate(-1deg) scale(1.03);
+  border-color: rgba(247,146,30,.45);
+  color: var(--orange-300);
+  box-shadow: 0 28px 60px rgba(247,146,30,.25), 0 8px 24px rgba(0,0,0,.3);
+  background: rgba(247,146,30,.08);
 }
 
+/* Icon */
 .area-card__icon {
   width: 36px; height: 36px;
   display: inline-flex; align-items: center; justify-content: center;
   border-radius: 10px;
-  background: var(--orange-50);
-  color: var(--orange-600);
-  flex-shrink: 0;
-  transition: background .25s ease, color .25s ease, transform .35s ease;
+  background: rgba(247,146,30,.12);
+  color: var(--orange-400); flex-shrink: 0;
+  border: 1px solid rgba(247,146,30,.18);
+  transition: background .25s ease, color .25s ease, transform .35s ease, box-shadow .25s ease;
 }
 .area-card:hover .area-card__icon {
-  background: var(--orange-500);
-  color: var(--white);
-  transform: rotate(-12deg) scale(1.1);
+  background: linear-gradient(135deg, var(--orange-400), var(--orange-600));
+  color: #fff;
+  transform: rotate(-14deg) scale(1.12);
+  box-shadow: 0 8px 20px rgba(247,146,30,.45);
 }
 
 .area-card__name { flex: 1; position: relative; z-index: 1; }
+
 .area-card__arrow {
-  color: var(--orange-500);
-  opacity: 0;
-  transform: translateX(-6px);
+  color: var(--orange-400); opacity: 0;
+  transform: translateX(-8px);
   transition: opacity .25s ease, transform .25s ease;
 }
 .area-card:hover .area-card__arrow { opacity: 1; transform: translateX(0); }
 
+/* Glow behind card */
 .area-card__glow {
-  position: absolute;
-  inset: -2px;
-  border-radius: inherit;
+  position: absolute; inset: -2px; border-radius: inherit;
   background: linear-gradient(135deg, var(--orange-400), var(--orange-700));
-  z-index: -1;
-  opacity: 0;
-  filter: blur(20px);
+  z-index: -1; opacity: 0; filter: blur(22px);
   transition: opacity .35s ease;
 }
-.area-card:hover .area-card__glow { opacity: .35; }
+.area-card:hover .area-card__glow { opacity: .3; }
 
 @media (max-width: 900px) { .areas__grid { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 640px) { .areas__grid { grid-template-columns: repeat(2, 1fr); } }
