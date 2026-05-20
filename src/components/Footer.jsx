@@ -12,7 +12,7 @@ export default function Footer() {
             <span className="footer__logo-mark"><FaTruck /></span>
             <span><strong>Ancient</strong>Movers</span>
           </Link>
-          <p>Michigan’s most trusted local moving company. Honest pricing, careful crews and on-time service since 2009.</p>
+          <p>Detroit’s most trusted local moving company. Honest pricing, careful crews and on-time service across Metro Detroit since 2015.</p>
           <div className="footer__social">
             <a href={SITE.socials.facebook} aria-label="Facebook" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
             <a href={SITE.socials.instagram} aria-label="Instagram" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>

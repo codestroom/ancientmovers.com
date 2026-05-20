@@ -9,24 +9,24 @@ import './About.css';
 
 export default function About() {
   const values = [
-    'Honest, transparent quotes — never any surprise fees',
-    'Background-checked, uniformed and friendly crews',
-    'Modern equipment and well-maintained trucks',
-    'Care taken with every box, every move, every time',
-    'Locally owned and operated since 2009',
-    'A real human answering your call, day or night'
+    'Honest, transparent quotes — no hidden fees, ever',
+    'Background-checked, uniformed and courteous crews',
+    'Modern fleet with well-maintained 26\' trucks and equipment',
+    'Every item handled with care — boxes, furniture, and specialty pieces',
+    'Locally trusted and community-focused since 2015',
+    'A real human answers your call, day or night'
   ];
 
   return (
     <>
       <SEO
-        title="About Ancient Movers — Family-Owned Michigan Moving Company"
-        description="Ancient Movers is a family-owned, fully licensed moving company serving Michigan since 2009. Learn about our team, values and commitment to honest service."
+        title="About Ancient Movers — Trusted Detroit Moving Company Since 2015"
+        description="Ancient Movers is a fully licensed, 4.9★-rated moving company serving Metro Detroit since 2015. Learn about our team, values, and commitment to honest, stress-free moves."
         canonical="https://ancientmovers.com/about"
       />
       <PageHero
         title="About Ancient Movers"
-        subtitle="A family-owned Michigan moving company built on honesty, hard work and care."
+        subtitle="Detroit's trusted moving team — built on honesty, hard work, and genuine care for every customer."
         crumbs={[{ label: 'About' }]}
       />
 
@@ -36,14 +36,14 @@ export default function About() {
             <span className="eyebrow">Our Story</span>
             <h2>Built on Trust. Grown by Referrals.</h2>
             <p>
-              Ancient Movers started in 2009 in a single garage in Troy, MI with one truck and a simple promise:
-              treat every customer’s belongings like our own. Fifteen years later, that promise is still the
-              foundation of everything we do.
+              Ancient Movers was founded in 2015 with one truck and one promise: treat every customer’s
+              belongings like our own. What started as a local operation has grown into one of Metro Detroit’s
+              most trusted and reviewed moving companies — with over 2,100 five-star Google reviews to prove it.
             </p>
             <p>
-              Today we’re proud to be one of Michigan’s most-recommended moving companies — with thousands of
-              completed moves across Metro Detroit, Ann Arbor and beyond. We’re still family-owned, still local,
-              and still answering every call ourselves.
+              Today we proudly serve homeowners, families, seniors, and businesses across Detroit, Dearborn,
+              Troy, Grosse Pointe, Ann Arbor, and beyond. We’re still community-focused, still personally
+              invested in every move, and still answering every call ourselves.
             </p>
 
             <ul className="about-values">
@@ -66,13 +66,13 @@ export default function About() {
             <div className="about-media__badge">
               <FaStar />
               <div>
-                <strong>15+ Years</strong>
-                <span>Moving Michigan</span>
+                <strong>10+ Years</strong>
+                <span>Moving Detroit</span>
               </div>
             </div>
             <div className="about-media__sticker">
-              <strong>10,000+</strong>
-              <span>Happy moves</span>
+              <strong>2,100+</strong>
+              <span>5-Star reviews</span>
             </div>
           </div>
         </div>

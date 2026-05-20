@@ -15,8 +15,8 @@ export default function Home() {
   return (
     <>
       <SEO
-        title="Ancient Movers — Trusted Local Movers in Michigan | Grosse Pointe, Troy, Novi"
-        description="Affordable, reliable moving services across Michigan. Residential, commercial, packing and long-distance moves. Licensed & insured. Get your free quote today."
+        title="Ancient Movers Detroit — #1 Local Moving Company in Metro Detroit, Michigan"
+        description="Detroit's most trusted moving company since 2015. Residential, commercial, packing, and long-distance moves across Metro Detroit. 4.9★ rated, licensed & insured. Free quote in 1 hour."
         canonical="https://ancientmovers.com/"
       />
       <Hero />

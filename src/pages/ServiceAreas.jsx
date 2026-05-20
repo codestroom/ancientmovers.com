@@ -8,13 +8,13 @@ export default function ServiceAreas() {
   return (
     <>
       <SEO
-        title="Michigan Moving Service Areas — Troy, Novi, Grosse Pointe & More | Ancient Movers"
-        description={`We provide local moving services across ${SERVICE_AREAS.slice(0,6).join(', ')} and 10+ more Michigan neighborhoods.`}
+        title="Detroit Moving Service Areas — Dearborn, Troy, Grosse Pointe, Sterling Heights & More | Ancient Movers"
+        description={`Professional moving services across ${SERVICE_AREAS.slice(0,6).join(', ')} and 12+ more Metro Detroit neighborhoods. Get your free quote today.`}
         canonical="https://ancientmovers.com/service-areas"
       />
       <PageHero
-        title="Michigan Areas We Serve"
-        subtitle="16+ neighborhoods covered across Metro Detroit, Ann Arbor and surrounding cities."
+        title="Metro Detroit Areas We Serve"
+        subtitle="18+ neighborhoods covered across Detroit, the suburbs, and surrounding cities — all backed by our on-time guarantee."
         crumbs={[{ label: 'Service Areas' }]}
       />
       <AreasGrid withHeading={false} />

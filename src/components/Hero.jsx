@@ -5,7 +5,7 @@ import { SITE } from '../data/siteData.js';
 import HeroVisual from './HeroVisual.jsx';
 import './Hero.css';
 
-const ROTATING = ['Reliable', 'Affordable', 'On-Time', 'Stress-Free', 'Insured'];
+const ROTATING = ['Reliable', 'Affordable', 'On-Time', 'Stress-Free', 'Professional'];
 
 export default function Hero() {
   const [idx, setIdx] = useState(0);
@@ -39,19 +39,19 @@ export default function Hero() {
       <div className="container hero__inner">
         <div className="hero__content">
           <span className="hero__badge fade-up">
-            <FaStar /> Rated 4.9/5 by 320+ Michigan families
+            <FaStar /> Rated 4.9/5 by 2,100+ Detroit Families
           </span>
           <h1 className="hero__title fade-up-2">
-            Michigan’s Most{' '}
+            Detroit’s Most{‘ ‘}
             <span className="hero__rotator">
               {ROTATING.map((w, i) => (
-                <span key={w} className={`hero__rotword ${i === idx ? 'is-active' : ''}`}>{w}</span>
+                <span key={w} className={`hero__rotword ${i === idx ? ‘is-active’ : ‘’}`}>{w}</span>
               ))}
-            </span>{' '}
+            </span>{‘ ‘}
             <br />Local <span className="text-orange">Movers</span>
           </h1>
           <p className="hero__lead fade-up-3">
-            From Grosse Pointe to Ann Arbor — stress-free, on-time moves
+            From Downtown Detroit to the suburbs — stress-free, on-time moves
             with honest pricing and a crew that treats your home like our own.
           </p>
 
@@ -67,7 +67,7 @@ export default function Hero() {
           <ul className="hero__trust fade-up-3">
             <li><FaShieldAlt /> Licensed & Insured</li>
             <li><FaClock /> On-Time Guarantee</li>
-            <li><FaStar /> 4.9★ Google Reviews</li>
+            <li><FaStar /> 4.9★ · 2,100+ Google Reviews</li>
           </ul>
         </div>
 

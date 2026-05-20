@@ -8,21 +8,21 @@ export default function Contact() {
   return (
     <>
       <SEO
-        title="Contact Ancient Movers — Free Moving Quote in Michigan"
-        description="Request a free, no-obligation moving quote in Michigan. Call us at (800) 555-0199 or fill out our contact form. We respond within 1 hour."
+        title="Contact Ancient Movers Detroit — Free Moving Quote | Metro Detroit, MI"
+        description="Request a free, no-obligation moving quote in Metro Detroit. Call Ancient Movers or fill out our form — we respond within 1 hour. Serving all Detroit-area neighborhoods."
         canonical="https://ancientmovers.com/contact"
       />
       <PageHero
-        title="Get In Touch"
-        subtitle="Request a free quote or ask us anything — we’ll get back to you within 1 hour."
-        crumbs={[{ label: 'Contact' }]}
+        title="Get Your Free Quote"
+        subtitle="Moving in Metro Detroit? Request a free quote or ask us anything — we respond within 1 hour."
+        crumbs={[{ label: ‘Contact’ }]}
       />
 
       <section className="contact">
         <div className="container contact__grid">
           <div className="contact__info">
             <h2>Contact Information</h2>
-            <p>Whether you need a quote, have a question or want to book a move — we’re ready to help.</p>
+            <p>Whether you need a quote, have a question, or want to book a Detroit move — we’re ready to help.</p>
 
             <ul className="contact__list">
               <li>
@@ -87,11 +87,11 @@ export default function Contact() {
             <div className="form-row">
               <div className="form-field">
                 <label htmlFor="c-from">Moving From</label>
-                <input id="c-from" type="text" required placeholder="Troy, MI" />
+                <input id="c-from" type="text" required placeholder="Detroit, MI" />
               </div>
               <div className="form-field">
                 <label htmlFor="c-to">Moving To</label>
-                <input id="c-to" type="text" required placeholder="Ann Arbor, MI" />
+                <input id="c-to" type="text" required placeholder="Dearborn, MI" />
               </div>
             </div>
 
@@ -116,7 +116,8 @@ export default function Contact() {
                   <option>Packing & Unpacking</option>
                   <option>Long Distance</option>
                   <option>Storage</option>
-                  <option>Specialty (Piano, Antiques)</option>
+                  <option>Specialty (Piano, Pool Table, Hot Tub)</option>
+                <option>Senior Moving</option>
                 </select>
               </div>
             </div>

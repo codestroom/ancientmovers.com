@@ -8,13 +8,13 @@ export default function Services() {
   return (
     <>
       <SEO
-        title="Moving Services in Michigan — Residential, Commercial, Packing | Ancient Movers"
-        description="Explore Ancient Movers' full range of services: residential moving, commercial relocation, packing, long-distance, storage and specialty moves across Michigan."
+        title="Moving Services in Detroit, MI — Residential, Commercial, Packing & More | Ancient Movers"
+        description="Explore Ancient Movers' full range of Detroit moving services: residential moves, office relocations, packing, long-distance, senior moving, specialty items and secure storage."
         canonical="https://ancientmovers.com/services"
       />
       <PageHero
-        title="Our Moving Services"
-        subtitle="From the first box to the final piece of furniture — we handle it all with care."
+        title="Our Moving Services in Detroit"
+        subtitle="From the first box to the final piece of furniture — we handle every Detroit move with precision and care."
         crumbs={[{ label: 'Services' }]}
       />
       <ServicesSection />

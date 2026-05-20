@@ -2,13 +2,13 @@ import { FaShieldAlt, FaStar, FaCheckCircle, FaTruck, FaAward, FaUserShield, FaT
 import './TrustMarquee.css';
 
 const ITEMS = [
-  { icon: FaShieldAlt, text: 'Licensed & Bonded' },
+  { icon: FaShieldAlt, text: 'Licensed & Bonded in Michigan' },
   { icon: FaUserShield, text: 'Fully Insured' },
-  { icon: FaStar, text: '4.9★ on Google' },
+  { icon: FaStar, text: '4.9★ · 2,100+ Google Reviews' },
   { icon: FaAward, text: 'Best of Detroit 2024' },
   { icon: FaCheckCircle, text: 'Background-Checked Crews' },
   { icon: FaTruck, text: 'USDOT Certified' },
-  { icon: FaThumbsUp, text: '10,000+ Happy Movers' },
+  { icon: FaThumbsUp, text: 'Serving Detroit Since 2015' },
   { icon: FaClock, text: 'On-Time Guarantee' }
 ];
 
