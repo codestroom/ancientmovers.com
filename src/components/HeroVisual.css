@@ -91,32 +91,38 @@
   pointer-events: none;
 }
 
-/* Play button */
+/* Play / pause button */
 .hv__play {
   position: absolute; top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  width: 64px; height: 64px; border-radius: 50%;
-  background: rgba(255,255,255,.92);
-  color: var(--orange-600); font-size: 1.1rem;
+  width: 56px; height: 56px; border-radius: 50%;
+  background: rgba(255,255,255,.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #fff; font-size: 1rem;
   display: inline-flex; align-items: center; justify-content: center;
-  box-shadow: 0 14px 32px rgba(0,0,0,.3);
+  box-shadow: 0 8px 24px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.25);
+  border: 1px solid rgba(255,255,255,.3);
   cursor: pointer;
-  transition: transform .25s ease, background .25s ease, color .25s ease;
+  opacity: 0;
+  transition: opacity .3s ease, transform .25s ease, background .25s ease;
 }
+.hv__photo:hover .hv__play { opacity: 1; }
+.hv__play--paused { opacity: 1; }
 .hv__play::before {
   content: '';
   position: absolute; inset: -6px; border-radius: 50%;
-  border: 2px solid rgba(255,255,255,.5);
+  border: 2px solid rgba(255,255,255,.35);
   animation: hvPlayPulse 2s ease-out infinite;
 }
 @keyframes hvPlayPulse {
-  0%   { transform: scale(.9); opacity: .8; }
-  100% { transform: scale(1.45); opacity: 0; }
+  0%   { transform: scale(.88); opacity: .9; }
+  100% { transform: scale(1.5); opacity: 0; }
 }
 .hv__play:hover {
-  transform: translate(-50%, -50%) scale(1.1);
+  transform: translate(-50%, -50%) scale(1.12);
   background: linear-gradient(135deg, var(--orange-400), var(--orange-600));
-  color: var(--white);
+  border-color: transparent;
 }
 
 /* Caption pill */

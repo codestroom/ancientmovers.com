@@ -1,13 +1,25 @@
-import { FaStar, FaShieldAlt, FaBolt, FaCheckCircle, FaPlay } from 'react-icons/fa';
-import Photo, { PHOTOS } from './Photo.jsx';
+import { useRef, useState } from 'react';
+import { FaStar, FaShieldAlt, FaBolt, FaCheckCircle, FaPlay, FaPause } from 'react-icons/fa';
 import './HeroVisual.css';
 
+const VIDEO_URL = 'https://ancientmovers.ca/wp-content/uploads/2025/05/820417383686310665ancient_movrs_.mp4';
+
 export default function HeroVisual() {
+  const videoRef = useRef(null);
+  const [playing, setPlaying] = useState(true);
+
+  function togglePlay() {
+    const v = videoRef.current;
+    if (!v) return;
+    if (v.paused) { v.play(); setPlaying(true); }
+    else          { v.pause(); setPlaying(false); }
+  }
+
   return (
     <div className="hv" aria-hidden="true">
       <div className="hv__mesh" />
 
-      {/* Main showcase card with REAL photo */}
+      {/* Main showcase card with VIDEO */}
       <div className="hv__card">
         <div className="hv__card-glow" />
 
@@ -19,20 +31,21 @@ export default function HeroVisual() {
         </div>
 
         <div className="hv__photo">
-          <Photo
-            src={PHOTOS.heroTruck.src}
-            id={PHOTOS.heroTruck.id}
-            seed={PHOTOS.heroTruck.seed}
-            alt="Ancient Movers branded truck ready for a Detroit move"
-            w={1200}
-            h={780}
+          <video
+            ref={videoRef}
             className="hv__photo-img"
+            src={VIDEO_URL}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
           />
           {/* Soft brand wash */}
           <div className="hv__photo-overlay" />
-          {/* Play button (visual accent) */}
-          <button className="hv__play" type="button" aria-label="Watch moving day">
-            <FaPlay />
+          {/* Play / pause toggle */}
+          <button className={`hv__play ${!playing ? 'hv__play--paused' : ''}`} type="button" aria-label="Play / pause video" onClick={togglePlay}>
+            {playing ? <FaPause /> : <FaPlay />}
           </button>
           {/* Lower-left mini caption */}
           <div className="hv__caption">
