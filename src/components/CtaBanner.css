@@ -1,0 +1,110 @@
+.cta {
+  position: relative;
+  background: var(--ink-900);
+  color: var(--white);
+  padding: 100px 0 110px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.cta__bg { position: absolute; inset: 0; z-index: -1; overflow: hidden; }
+.cta__bg-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .25;
+  filter: saturate(.7);
+}
+.cta__bg-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(255,106,0,.92), rgba(193,75,0,.96)),
+    radial-gradient(circle at 70% 30%, rgba(255,210,138,.3), transparent 50%);
+}
+.cta__orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+}
+.cta__orb--1 {
+  width: 380px; height: 380px;
+  background: radial-gradient(circle, rgba(255,255,255,.35), transparent 70%);
+  top: -120px; left: -80px;
+  animation: drift 10s ease-in-out infinite;
+}
+.cta__orb--2 {
+  width: 340px; height: 340px;
+  background: radial-gradient(circle, rgba(0,0,0,.3), transparent 70%);
+  bottom: -100px; right: -60px;
+  animation: drift 12s ease-in-out infinite reverse;
+}
+.cta__orb--3 {
+  width: 240px; height: 240px;
+  background: radial-gradient(circle, rgba(255,210,138,.5), transparent 70%);
+  top: 30%; left: 60%;
+  animation: drift 9s ease-in-out infinite;
+}
+.cta__wave {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  width: 100%;
+  height: 80px;
+}
+
+.cta__inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.cta h2 {
+  color: var(--white);
+  margin-bottom: 12px;
+  text-shadow: 0 6px 20px rgba(0,0,0,.18);
+}
+.cta__highlight {
+  background: linear-gradient(180deg, #ffd28a, #fff5ec);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.cta p { color: rgba(255,255,255,.92); font-size: 1.08rem; }
+
+.cta__actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.cta__btn-light {
+  background: var(--white);
+  color: var(--orange-700);
+  position: relative;
+  overflow: hidden;
+}
+.cta__btn-light::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255,106,0,.15), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2.4s infinite;
+}
+.cta__btn-light:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(0,0,0,.25); }
+
+.cta__btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid rgba(255,255,255,.6);
+}
+.cta__btn-outline:hover { background: rgba(255,255,255,.14); border-color: var(--white); transform: translateY(-3px); }
+
+@media (max-width: 880px) {
+  .cta__inner { grid-template-columns: 1fr; text-align: center; }
+  .cta__actions { justify-content: center; }
+}

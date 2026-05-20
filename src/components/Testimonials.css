@@ -1,0 +1,82 @@
+.testimonials {
+  position: relative;
+  background: var(--white);
+  overflow: hidden;
+}
+.testimonials__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.testimonials__shape {
+  position: absolute;
+  top: 10%; right: -120px;
+  width: 380px; height: 380px;
+  background: radial-gradient(circle, var(--orange-100), transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: drift 14s ease-in-out infinite;
+}
+
+.testimonials__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.testimonial {
+  position: relative;
+  background: var(--orange-50);
+  border-radius: var(--radius-lg);
+  padding: 38px 34px 30px;
+  border-left: 4px solid var(--orange-500);
+  transform-style: preserve-3d;
+  box-shadow: 0 8px 22px rgba(0,0,0,.04);
+  transition: box-shadow .25s ease;
+  overflow: hidden;
+}
+.testimonial:hover { box-shadow: 0 30px 60px rgba(255,106,0,.18); }
+.testimonial > * { position: relative; z-index: 1; transform: translateZ(15px); }
+.testimonial .tilt-glare { z-index: 0; border-radius: inherit; }
+
+.testimonial__quote {
+  position: absolute;
+  top: 22px; right: 28px;
+  font-size: 2.4rem;
+  color: var(--orange-200);
+  transform: translateZ(0);
+}
+.testimonial__stars {
+  display: inline-flex;
+  gap: 4px;
+  color: var(--orange-500);
+  margin-bottom: 14px;
+}
+.testimonial p {
+  color: var(--ink-800);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 22px;
+}
+.testimonial footer { display: flex; gap: 14px; align-items: center; }
+.testimonial__avatar {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--orange-400), var(--orange-700));
+  color: var(--white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-orange);
+}
+.testimonial footer strong { display: block; color: var(--ink-900); font-family: var(--font-display); font-size: 1.05rem; }
+.testimonial footer span { color: var(--ink-600); font-size: .9rem; }
+
+@media (max-width: 760px) {
+  .testimonials__grid { grid-template-columns: 1fr; }
+}

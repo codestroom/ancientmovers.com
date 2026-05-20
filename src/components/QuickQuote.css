@@ -1,0 +1,135 @@
+.qq {
+  position: relative;
+  background: var(--white);
+  overflow: hidden;
+  padding-top: 30px;
+}
+.qq__bg { position: absolute; inset: 0; pointer-events: none; }
+.qq__shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+}
+.qq__shape--a {
+  width: 360px; height: 360px;
+  background: radial-gradient(circle, var(--orange-100), transparent 70%);
+  top: -100px; right: -80px;
+  opacity: .8;
+  animation: drift 12s ease-in-out infinite;
+}
+.qq__shape--b {
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, #ffe2c5, transparent 70%);
+  bottom: -100px; left: -80px;
+  opacity: .7;
+  animation: drift 14s ease-in-out infinite reverse;
+}
+
+.qq__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.qq__text .eyebrow {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: .8rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--orange-600);
+  background: linear-gradient(135deg, var(--orange-50), #fff);
+  border: 1px solid var(--orange-100);
+  padding: 8px 16px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+.qq__text h2 { margin-bottom: 14px; }
+.qq__text > p { font-size: 1.06rem; margin-bottom: 26px; }
+
+.qq__perks { display: flex; gap: 22px; margin-bottom: 24px; }
+.qq__perk {
+  background: var(--orange-50);
+  border-radius: var(--radius-md);
+  padding: 14px 20px;
+  text-align: center;
+  flex: 1;
+  transition: transform .25s ease;
+}
+.qq__perk:hover { transform: translateY(-4px); }
+.qq__perk strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--orange-500), var(--orange-700));
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+}
+.qq__perk span { color: var(--ink-600); font-size: .88rem; }
+
+.qq__phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink-800);
+  font-size: 1rem;
+}
+.qq__phone svg { color: var(--orange-500); }
+.qq__phone strong { color: var(--orange-600); margin-left: 4px; }
+
+/* The glass card */
+.qq__card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255,255,255,.85), rgba(255,255,255,.65));
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,.7);
+  box-shadow:
+    0 30px 60px rgba(255,106,0,.18),
+    0 8px 24px rgba(0,0,0,.08),
+    inset 0 1px 0 rgba(255,255,255,.8);
+  border-radius: var(--radius-xl);
+  padding: 38px 34px;
+  transform-style: preserve-3d;
+}
+.qq__card::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--orange-400), transparent 50%, var(--orange-600));
+  z-index: -1;
+  opacity: .35;
+}
+.qq__card form { display: grid; gap: 14px; }
+.qq__card h3 { font-size: 1.5rem; margin-bottom: 6px; }
+.qq__submit { width: 100%; justify-content: center; position: relative; overflow: hidden; }
+.qq__submit::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,.5), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2.4s infinite;
+}
+.qq__foot { text-align: center; font-size: .82rem; color: var(--ink-500); margin-top: 4px; }
+
+.qq__more-link {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--orange-600);
+  font-weight: 600;
+  font-family: var(--font-display);
+  margin-top: 12px;
+}
+.qq__more-link:hover { text-decoration: underline; }
+
+@media (max-width: 900px) {
+  .qq__grid { grid-template-columns: 1fr; gap: 36px; }
+  .qq__perks { flex-wrap: wrap; }
+  .qq__perk { min-width: 100px; }
+}
