@@ -34,6 +34,27 @@ export const SERVICE_AREAS = [
   'Auburn Hills'
 ];
 
+export const SERVICE_AREA_LOCATIONS = [
+  { name: 'Downtown Detroit',  lat: 42.3314, lng: -83.0458, dir: 'right'  },
+  { name: 'Dearborn',          lat: 42.3223, lng: -83.1763, dir: 'bottom' },
+  { name: 'Warren',            lat: 42.4933, lng: -83.0277, dir: 'right'  },
+  { name: 'Sterling Heights',  lat: 42.5803, lng: -83.0302, dir: 'right'  },
+  { name: 'Livonia',           lat: 42.3684, lng: -83.3527, dir: 'bottom' },
+  { name: 'Southfield',        lat: 42.4734, lng: -83.2219, dir: 'left'   },
+  { name: 'Troy',              lat: 42.6064, lng: -83.1498, dir: 'top'    },
+  { name: 'Farmington Hills',  lat: 42.4989, lng: -83.3677, dir: 'left'   },
+  { name: 'Novi',              lat: 42.4806, lng: -83.4755, dir: 'left'   },
+  { name: 'Royal Oak',         lat: 42.4895, lng: -83.1446, dir: 'top'    },
+  { name: 'Grosse Pointe',     lat: 42.3864, lng: -82.9118, dir: 'right'  },
+  { name: 'St. Clair Shores',  lat: 42.4970, lng: -82.8888, dir: 'right'  },
+  { name: 'Ferndale',          lat: 42.4606, lng: -83.1349, dir: 'bottom' },
+  { name: 'Pontiac',           lat: 42.6389, lng: -83.2910, dir: 'top'    },
+  { name: 'Ann Arbor',         lat: 42.2808, lng: -83.7430, dir: 'left'   },
+  { name: 'Ypsilanti',         lat: 42.2411, lng: -83.6130, dir: 'bottom' },
+  { name: 'Dearborn Heights',  lat: 42.3370, lng: -83.2730, dir: 'left'   },
+  { name: 'Auburn Hills',      lat: 42.6875, lng: -83.2341, dir: 'top'    }
+];
+
 export const SERVICES = [
   {
     icon: 'home',
@@ -70,20 +91,6 @@ export const SERVICES = [
     features: ['Climate control', '24/7 surveillance & alarm', 'Flexible month-to-month terms'],
     photo: { src: '/images/fleet-truck.png',  id: '1601979031925-424e53b6caaa', seed: 'storage' }
   },
-  {
-    icon: 'sofa',
-    title: 'Specialty Moves',
-    desc: 'Pianos, pool tables, hot tubs, antiques, artwork, and gun safes -- we move what others won\'t touch with the care these items deserve.',
-    features: ['Padded blanket wrapping', 'Specialized equipment', 'Fully insured handling'],
-    photo: { src: '/images/piano.webp',       id: '1520523839897-bd0b52f945a0', seed: 'specialty' }
-  },
-  {
-    icon: 'heart',
-    title: 'Senior Moving',
-    desc: 'Patient, compassionate moves designed around seniors. We handle every detail so your loved ones can focus on settling into their new home.',
-    features: ['Patient, caring crew', 'Full packing assistance', 'Coordination with families'],
-    photo: { src: '/images/senior.webp',      id: '1581579438828-4b1b7d638b3e', seed: 'senior' }
-  }
 ];
 
 export const WHY_US = [

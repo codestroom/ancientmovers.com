@@ -8,7 +8,6 @@ export default function ServicesSection({ compact = false }) {
   const headRef = useReveal();
   const gridRef = useRef(null);
 
-  // Reveal each card as it enters viewport
   useEffect(() => {
     const cards = gridRef.current?.querySelectorAll('.service-card') || [];
     const io = new IntersectionObserver(
@@ -20,11 +19,13 @@ export default function ServicesSection({ compact = false }) {
           }
         });
       },
-      { threshold: 0.15, rootMargin: '0px 0px -60px 0px' }
+      { threshold: 0.12, rootMargin: '0px 0px -50px 0px' }
     );
     cards.forEach((c) => io.observe(c));
     return () => io.disconnect();
   }, []);
+
+  const list = compact ? SERVICES.slice(0, 6) : SERVICES;
 
   return (
     <section className="services">
@@ -36,7 +37,7 @@ export default function ServicesSection({ compact = false }) {
         </div>
 
         <div ref={gridRef} className="services__grid">
-          {(compact ? SERVICES.slice(0, 6) : SERVICES).map((s, i) => (
+          {list.map((s, i) => (
             <ServiceCard key={s.title} service={s} index={i} />
           ))}
         </div>

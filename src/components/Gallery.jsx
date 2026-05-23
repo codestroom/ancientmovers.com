@@ -1,16 +1,56 @@
 import { useEffect, useRef } from 'react';
-import { FaArrowRight } from 'react-icons/fa';
+import { FaArrowRight, FaMapMarkerAlt, FaStar } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import Photo, { PHOTOS } from './Photo.jsx';
+import Photo from './Photo.jsx';
 import useReveal from '../hooks/useReveal.js';
 import './Gallery.css';
 
 const ITEMS = [
-  { key: 'loadingTruck', tag: 'Loading',   title: 'Big or small, we\'ve got the truck',  cls: 'g--lg' },
-  { key: 'packingBox',   tag: 'Packing',   title: 'Pro packing, every fragile item safe', cls: 'g--md' },
-  { key: 'movingFamily', tag: 'Moving Day',title: 'Settling families into new homes',    cls: 'g--md' },
-  { key: 'truckRoad',    tag: 'In Transit',title: 'Tracked deliveries across Metro Detroit', cls: 'g--md' },
-  { key: 'officeMove',   tag: 'Commercial',title: 'Smooth office relocations in Detroit', cls: 'g--md' },
+  {
+    id: '1600585154340-be6161a56a0c',
+    seed: 'movers-loading',
+    tag: 'Move Day',
+    title: 'A seamless 4-bedroom move, start to finish',
+    location: 'Royal Oak, MI',
+    rating: '5.0',
+    size: 'lg'
+  },
+  {
+    id: '1558997519-83ea9252edf8',
+    seed: 'packing-fragile',
+    tag: 'Packing',
+    title: 'Premium packing for every fragile piece',
+    location: 'Birmingham, MI',
+    rating: '5.0',
+    size: 'md'
+  },
+  {
+    id: '1521737604893-d14cc237f11d',
+    seed: 'family-home',
+    tag: 'New Home',
+    title: 'Settling Detroit families into new chapters',
+    location: 'Grosse Pointe, MI',
+    rating: '5.0',
+    size: 'md'
+  },
+  {
+    id: '1497366216548-37526070297c',
+    seed: 'office-move',
+    tag: 'Commercial',
+    title: 'Zero-downtime office relocations',
+    location: 'Downtown Detroit',
+    rating: '5.0',
+    size: 'md'
+  },
+  {
+    id: '1601584115197-04ecc0da31d7',
+    seed: 'in-transit',
+    tag: 'In Transit',
+    title: 'Tracked deliveries across Metro Detroit',
+    location: 'Metro Detroit',
+    rating: '5.0',
+    size: 'md'
+  },
 ];
 
 export default function Gallery() {
@@ -31,38 +71,45 @@ export default function Gallery() {
 
   return (
     <section className="gallery">
+      <div className="gallery__glow gallery__glow--1" />
+      <div className="gallery__glow gallery__glow--2" />
+
       <div className="container">
-        <div ref={headRef} className="reveal section-head">
+        <div ref={headRef} className="reveal section-head gallery__head">
           <span className="eyebrow">Moving Moments</span>
           <h2>Real Moves. Real Detroit Families.</h2>
-          <p>A glimpse at what your move looks like with Ancient Movers -- from the first box to the final piece of furniture.</p>
+          <p>A glimpse at the moves we deliver every week &mdash; from packed-to-perfection fragiles to families happily handed the keys to their new home.</p>
         </div>
 
         <div ref={gridRef} className="g-grid">
-          {ITEMS.map((it, i) => {
-            const photo = PHOTOS[it.key];
-            return (
-              <article key={it.key} className={`g-card reveal reveal-d${(i % 6) + 1} ${it.cls}`}>
-                <Photo
-                  src={photo.src}
-                  id={photo.id}
-                  seed={photo.seed}
-                  alt={it.title}
-                  w={i === 0 ? 1200 : 800}
-                  h={i === 0 ? 900 : 600}
-                  className="g-card__img"
-                />
-                <div className="g-card__overlay" />
-                <div className="g-card__content">
-                  <span className="g-card__tag">{it.tag}</span>
-                  <h3>{it.title}</h3>
+          {ITEMS.map((it, i) => (
+            <article key={it.id} className={`g-card g--${it.size} reveal-d${(i % 6) + 1}`}>
+              <Photo
+                src={it.src}
+                id={it.id}
+                seed={it.seed}
+                alt={it.title}
+                w={it.size === 'lg' ? 1100 : 760}
+                h={it.size === 'lg' ? 1100 : 580}
+                className="g-card__img"
+              />
+              <div className="g-card__overlay" />
+              <div className="g-card__corner">
+                <span className="g-card__tag">{it.tag}</span>
+                <span className="g-card__rating"><FaStar /> {it.rating}</span>
+              </div>
+              <div className="g-card__content">
+                <h3>{it.title}</h3>
+                <div className="g-card__meta">
+                  <FaMapMarkerAlt /> {it.location}
                 </div>
-              </article>
-            );
-          })}
+              </div>
+            </article>
+          ))}
         </div>
 
         <div className="g-cta">
+          <p className="g-cta__text">Ready to be our next happy Detroit family?</p>
           <Link to="/contact" className="btn btn-primary btn-lg">
             Book Your Move <FaArrowRight />
           </Link>
