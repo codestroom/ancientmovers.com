@@ -8,6 +8,7 @@ import Steps from '../components/Steps.jsx';
 import Gallery from '../components/Gallery.jsx';
 import AreasGrid from '../components/AreasGrid.jsx';
 import Testimonials from '../components/Testimonials.jsx';
+import BlogPreview from '../components/BlogPreview.jsx';
 import Faq from '../components/Faq.jsx';
 import CtaBanner from '../components/CtaBanner.jsx';
 
@@ -28,6 +29,7 @@ export default function Home() {
       <Gallery />
       <AreasGrid />
       <Testimonials />
+      <BlogPreview />
       <Faq />
       <CtaBanner />
     </>
