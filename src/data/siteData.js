@@ -26,16 +26,16 @@ export const SERVICE_AREAS = [
   'Southfield',
   'Troy',
   'Farmington Hills',
-  'Novi',
-  'Royal Oak',
-  'Grosse Pointe',
-  'St. Clair Shores',
-  'Ferndale',
-  'Pontiac',
-  'Ann Arbor',
-  'Ypsilanti',
-  'Dearborn Heights',
-  'Auburn Hills'
+  //'Novi',
+  //'Royal Oak',
+  //'Grosse Pointe',
+  //'St. Clair Shores',
+  //'Ferndale',
+  //'Pontiac',
+  //'Ann Arbor',
+  //'Ypsilanti',
+  //'Dearborn Heights',
+  //'Auburn Hills'
 ];
 
 export const SERVICE_AREA_LOCATIONS = [
