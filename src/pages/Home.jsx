@@ -1,5 +1,5 @@
 import SEO from '../components/SEO.jsx';
-import Hero from '../components/Hero.jsx';
+import CinematicHero from '../components/CinematicHero.jsx';
 import TrustMarquee from '../components/TrustMarquee.jsx';
 import QuickQuote from '../components/QuickQuote.jsx';
 import ServicesSection from '../components/ServicesSection.jsx';
@@ -19,7 +19,7 @@ export default function Home() {
         description="Detroit's most trusted moving company since 2015. Residential, commercial, packing, and long-distance moves across Metro Detroit. 4.9★ rated, licensed & insured. Free quote in 1 hour."
         canonical="https://ancientmovers.com/"
       />
-      <Hero />
+      <CinematicHero />
       <TrustMarquee />
       <ServicesSection compact />
       <WhyUs />

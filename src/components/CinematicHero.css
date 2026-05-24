@@ -1,0 +1,541 @@
+/* ========================  CINEMATIC HERO — Logo-matched palette  ========================
+   Brand colors from logo:
+   Primary orange : #F7921E
+   Light orange   : #FFB347
+   Deep orange    : #C4650A
+   Warm dark bg   : #0C0500
+   Cream text     : #FFF3DC
+================================================================== */
+
+/* ── Container ── */
+.ch {
+  position: relative;
+  height: 400vh;
+  background: #0C0500;
+}
+
+.ch__sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(ellipse 140% 100% at 60% 40%, #1E0C00 0%, #0C0500 55%, #070200 100%);
+}
+
+/* Canvas fills the sticky frame */
+.ch__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Warm vignette overlay */
+.ch__vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 110%, rgba(247,146,30,.18), transparent 65%),
+    radial-gradient(ellipse 60% 80% at -10% 50%, rgba(247,146,30,.10), transparent 55%),
+    radial-gradient(ellipse 50% 70% at 110% 50%, rgba(196,101,10,.08), transparent 55%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Text overlay ── */
+.ch__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* ─── PHASE 1 — Split layout ─── */
+.ch__split {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 0 6vw;
+  gap: 40px;
+  max-width: 1380px;
+  margin: 0 auto;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.ch__split-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Eyebrow pill */
+.ch__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 22px;
+  background: rgba(247,146,30,.13);
+  border: 1px solid rgba(247,146,30,.35);
+  border-radius: 999px;
+  color: #FFB347;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: .76rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  width: fit-content;
+}
+.ch__eyebrow-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 10px rgba(34,197,94,.9);
+  animation: chDotPulse 1.8s ease-out infinite;
+}
+@keyframes chDotPulse {
+  0%,100% { box-shadow: 0 0 4px rgba(34,197,94,.7); }
+  50%      { box-shadow: 0 0 16px rgba(34,197,94,1); }
+}
+
+/* Headline */
+.ch__h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4.2vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: #FFF3DC;
+  margin-bottom: 20px;
+}
+.ch__h1 em {
+  font-style: normal;
+  background: linear-gradient(135deg, #FFB347 0%, #F7921E 50%, #C4650A 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 32px rgba(247,146,30,.55));
+}
+
+/* Subtext */
+.ch__sub {
+  font-size: clamp(.95rem, 1.6vw, 1.1rem);
+  color: rgba(255,243,220,.65);
+  max-width: 480px;
+  margin-bottom: 32px;
+  line-height: 1.7;
+}
+
+/* CTA buttons */
+.ch__ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  pointer-events: all;
+  margin-bottom: 28px;
+}
+
+/* Ghost button override for hero */
+.btn-ghost {
+  background: rgba(255,243,220,.06);
+  border: 1px solid rgba(255,243,220,.25);
+  color: #FFF3DC;
+  backdrop-filter: blur(8px);
+}
+.btn-ghost:hover {
+  background: rgba(247,146,30,.15);
+  border-color: rgba(247,146,30,.5);
+  color: #FFB347;
+}
+
+/* Trust pills row */
+.ch__trust-pills {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.ch__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(255,243,220,.07);
+  border: 1px solid rgba(255,243,220,.14);
+  border-radius: 999px;
+  color: rgba(255,243,220,.7);
+  font-size: .78rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: .05em;
+}
+.ch__pill svg { color: #F7921E; font-size: .8rem; }
+
+/* ─── TRUCK SIDE ─── */
+.ch__truck-side {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 380px;
+}
+
+/* Radial glow halo behind truck */
+.ch__truck-glow {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+    rgba(247,146,30,.55) 0%,
+    rgba(247,146,30,.22) 35%,
+    transparent 70%);
+  filter: blur(42px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: truckGlowPulse 4s ease-in-out infinite;
+}
+@keyframes truckGlowPulse {
+  0%,100% { opacity: .8; transform: translate(-50%, -50%) scale(1); }
+  50%     { opacity: 1; transform: translate(-50%, -50%) scale(1.08); }
+}
+
+/* Real truck image */
+.ch__truck-img {
+  position: relative;
+  width: min(560px, 50vw);
+  max-width: 560px;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 40px 60px rgba(247,146,30,.55))
+    drop-shadow(0 0 80px rgba(247,146,30,.30))
+    drop-shadow(0 0 20px rgba(247,146,30,.45));
+  z-index: 2;
+  user-select: none;
+}
+
+/* Ground reflection / shadow */
+.ch__truck-shadow {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 24px;
+  background: radial-gradient(ellipse, rgba(247,146,30,.45) 0%, transparent 70%);
+  filter: blur(10px);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Floating badges on truck */
+.ch__truck-badge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(12,5,0,.82);
+  border: 1px solid rgba(247,146,30,.35);
+  border-radius: 14px;
+  padding: 10px 14px;
+  backdrop-filter: blur(18px);
+  box-shadow:
+    0 20px 50px rgba(0,0,0,.5),
+    0 0 0 1px rgba(247,146,30,.12),
+    inset 0 1px 0 rgba(255,243,220,.08);
+  z-index: 5;
+  pointer-events: none;
+}
+.ch__truck-badge strong {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: .9rem;
+  color: #FFF3DC;
+  line-height: 1.2;
+}
+.ch__truck-badge span {
+  display: block;
+  font-size: .72rem;
+  color: rgba(255,243,220,.55);
+}
+.ch__truck-badge--top { top: 10%;  right: 0; }
+.ch__truck-badge--btm { bottom: 22%; left: 0; }
+
+.ch__badge-icon {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .95rem;
+  flex-shrink: 0;
+}
+.ch__badge-icon--orange {
+  background: linear-gradient(135deg, #F7921E, #C4650A);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(247,146,30,.5);
+}
+.ch__badge-icon--green {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(22,163,74,.4);
+}
+
+/* ─── CENTERED phases (2, 3, 4) ─── */
+.ch__center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 24px;
+}
+
+/* Phase label */
+.ch__phase-label {
+  font-family: var(--font-display);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: #F7921E;
+  margin-bottom: 20px;
+}
+
+/* Phase 2 title */
+.ch__phase-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 4.2vw, 3.4rem);
+  font-weight: 800;
+  color: #FFF3DC;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+/* Phase 2 sub */
+.ch__phase-sub {
+  color: rgba(255,243,220,.55);
+  font-size: 1.05rem;
+  max-width: 500px;
+  margin-bottom: 36px;
+  line-height: 1.65;
+}
+
+/* Stats */
+.ch__stats {
+  display: flex;
+  gap: 52px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.ch__stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.9rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, #FFB347, #F7921E, #C4650A);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 22px rgba(247,146,30,.6));
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.ch__stat-label {
+  color: rgba(255,243,220,.52);
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+/* ─── Phase 3 — OS Headline ─── */
+.ch__os-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 6.5vw, 6rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-transform: uppercase;
+  position: relative;
+}
+.ch__os-title .line1 {
+  display: block;
+  font-size: 0.38em;
+  letter-spacing: .3em;
+  color: #F7921E;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.ch__os-title .line2 {
+  display: block;
+  background: linear-gradient(135deg, #FFF3DC 40%, rgba(255,243,220,.6) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.ch__os-title .line3 {
+  display: block;
+  background: linear-gradient(135deg, #FFB347, #F7921E, #C4650A);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 32px rgba(247,146,30,.45));
+}
+.ch__os-sub {
+  color: rgba(255,243,220,.45);
+  font-size: .88rem;
+  margin-top: 24px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+/* Glitch effect */
+.ch__glitch { position: relative; }
+.ch__glitch::before,
+.ch__glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  display: block;
+  text-align: center;
+}
+.ch__glitch::before {
+  color: rgba(0,255,255,.3);
+  clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
+  animation: chGlitch1 3.5s infinite;
+}
+.ch__glitch::after {
+  color: rgba(247,146,30,.25);
+  clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+  animation: chGlitch2 2.8s infinite;
+}
+@keyframes chGlitch1 {
+  0%,92%,100% { transform: translate(0); opacity: 0; }
+  93%         { transform: translate(-4px, 1px); opacity: 1; }
+  94%         { transform: translate(3px, -1px); opacity: 1; }
+  95%         { transform: translate(0); opacity: 0; }
+}
+@keyframes chGlitch2 {
+  0%,88%,100% { transform: translate(0); opacity: 0; }
+  89%         { transform: translate(4px, -1px); opacity: 1; }
+  90%         { transform: translate(-3px, 1px); opacity: 1; }
+  91%         { transform: translate(0); opacity: 0; }
+}
+
+/* ─── Phase 4 ─── */
+.ch__final-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: #FFF3DC;
+  margin-bottom: 18px;
+}
+.ch__final-title em {
+  font-style: normal;
+  background: linear-gradient(135deg, #FFB347, #F7921E, #C4650A);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 28px rgba(247,146,30,.5));
+}
+.ch__final-sub {
+  color: rgba(255,243,220,.6);
+  font-size: 1.05rem;
+  max-width: 520px;
+  margin: 0 auto 36px;
+  line-height: 1.65;
+}
+
+/* ─── Progress dots ─── */
+.ch__dots {
+  position: absolute;
+  right: 36px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+.ch__dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: rgba(255,243,220,.2);
+  transition: all .4s ease;
+}
+.ch__dot.active {
+  background: #F7921E;
+  box-shadow: 0 0 10px rgba(247,146,30,.8);
+  transform: scale(1.5);
+}
+
+/* ─── Scroll hint ─── */
+.ch__scroll-hint {
+  position: absolute;
+  bottom: 36px;
+  right: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,243,220,.35);
+  font-size: .7rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+.ch__scroll-line {
+  width: 1px; height: 48px;
+  background: linear-gradient(to bottom, rgba(247,146,30,.7), transparent);
+  animation: chScrollLine 1.8s ease-in-out infinite;
+}
+@keyframes chScrollLine {
+  0%   { transform: scaleY(0); transform-origin: top; opacity: 1; }
+  50%  { transform: scaleY(1); transform-origin: top; opacity: 1; }
+  51%  { transform: scaleY(1); transform-origin: bottom; opacity: 1; }
+  100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 900px) {
+  .ch__split {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    padding: 80px 24px 40px;
+    gap: 32px;
+    text-align: center;
+    align-content: center;
+  }
+  .ch__split-left { align-items: center; }
+  .ch__sub { max-width: 480px; margin-left: auto; margin-right: auto; }
+  .ch__truck-side { min-height: 240px; }
+  .ch__truck-img { width: min(340px, 78vw); }
+  .ch__truck-glow { width: 280px; height: 280px; }
+  .ch__truck-badge--top { top: 5%; right: 4px; }
+  .ch__truck-badge--btm { bottom: 12%; left: 4px; }
+  .ch__dots { display: none; }
+  .ch__scroll-hint { display: none; }
+  .ch__stats { gap: 28px; }
+}
+
+@media (max-width: 560px) {
+  .ch__h1 { font-size: 2rem; }
+  .ch__truck-img { width: min(280px, 88vw); }
+  .ch__trust-pills { justify-content: center; }
+  .ch__ctas { justify-content: center; }
+  .ch__truck-badge { padding: 8px 10px; gap: 8px; }
+  .ch__truck-badge strong { font-size: .82rem; }
+  .ch__truck-badge span { font-size: .68rem; }
+  .ch__badge-icon { width: 30px; height: 30px; font-size: .82rem; }
+}

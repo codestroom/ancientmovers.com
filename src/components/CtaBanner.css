@@ -1,110 +1,136 @@
+/* ========================  CTA BANNER — deep warm orange finale  ======================== */
 .cta {
   position: relative;
-  background: var(--ink-900);
-  color: var(--white);
-  padding: 100px 0 110px;
+  background: #060200;
+  color: var(--cream);
+  padding: 110px 0 120px;
   overflow: hidden;
   isolation: isolate;
 }
 
+/* Background photo */
 .cta__bg { position: absolute; inset: 0; z-index: -1; overflow: hidden; }
 .cta__bg-photo {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
   object-fit: cover;
-  opacity: .25;
-  filter: saturate(.7);
+  opacity: .18;
+  filter: saturate(.6) brightness(.7);
 }
+
+/* Warm dark overlay with strong orange gradient */
 .cta__bg-overlay {
-  position: absolute;
-  inset: 0;
+  position: absolute; inset: 0;
   background:
-    linear-gradient(135deg, rgba(247,146,30,.92), rgba(193,75,0,.96)),
-    radial-gradient(circle at 70% 30%, rgba(255,210,138,.3), transparent 50%);
+    linear-gradient(135deg,
+      rgba(196,101,10,.94) 0%,
+      rgba(247,146,30,.88) 45%,
+      rgba(255,179,71,.82) 100%);
 }
+
+/* Warm orbs */
 .cta__orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(60px);
+  position: absolute; border-radius: 50%; filter: blur(65px);
 }
 .cta__orb--1 {
-  width: 380px; height: 380px;
-  background: radial-gradient(circle, rgba(255,255,255,.35), transparent 70%);
-  top: -120px; left: -80px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(255,255,255,.28), transparent 70%);
+  top: -130px; left: -80px;
   animation: drift 10s ease-in-out infinite;
 }
 .cta__orb--2 {
-  width: 340px; height: 340px;
-  background: radial-gradient(circle, rgba(0,0,0,.3), transparent 70%);
+  width: 360px; height: 360px;
+  background: radial-gradient(circle, rgba(8,3,0,.45), transparent 70%);
   bottom: -100px; right: -60px;
-  animation: drift 12s ease-in-out infinite reverse;
-}
-.cta__orb--3 {
-  width: 240px; height: 240px;
-  background: radial-gradient(circle, rgba(255,210,138,.5), transparent 70%);
-  top: 30%; left: 60%;
-  animation: drift 9s ease-in-out infinite;
-}
-.cta__wave {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  width: 100%;
-  height: 80px;
+  animation: drift 13s ease-in-out infinite reverse;
 }
 
+/* Truck silhouette — right side */
+.cta__truck {
+  position: absolute;
+  right: -40px; bottom: 0;
+  height: 85%;
+  object-fit: contain;
+  opacity: .18;
+  filter: brightness(0) invert(1);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Decorative wave */
+.cta__wave {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  width: 100%; height: 80px;
+}
+
+/* Content */
 .cta__inner {
-  position: relative;
+  position: relative; z-index: 1;
   display: grid;
   grid-template-columns: 1.4fr 1fr;
-  gap: 40px;
+  gap: 44px;
   align-items: center;
 }
+
 .cta h2 {
-  color: var(--white);
-  margin-bottom: 12px;
-  text-shadow: 0 6px 20px rgba(0,0,0,.18);
+  color: #fff;
+  margin-bottom: 14px;
+  text-shadow: 0 6px 24px rgba(0,0,0,.25);
+  font-size: clamp(1.7rem, 3.5vw, 2.6rem);
 }
 .cta__highlight {
-  background: linear-gradient(180deg, #ffd28a, #fff5ec);
-  -webkit-background-clip: text;
-  background-clip: text;
+  background: linear-gradient(180deg, #fff5ec, #ffe4b8);
+  -webkit-background-clip: text; background-clip: text;
   color: transparent;
 }
-.cta p { color: rgba(255,255,255,.92); font-size: 1.08rem; }
+.cta p {
+  color: rgba(255,255,255,.9);
+  font-size: 1.08rem;
+}
 
+/* CTA actions */
 .cta__actions {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
+  display: flex; gap: 14px; flex-wrap: wrap;
   justify-content: flex-end;
 }
 
+/* Light (white) button */
 .cta__btn-light {
-  background: var(--white);
-  color: var(--orange-700);
-  position: relative;
-  overflow: hidden;
+  background: #fff;
+  color: #C4650A;
+  font-weight: 700;
+  position: relative; overflow: hidden;
+  box-shadow: 0 12px 32px rgba(0,0,0,.2);
 }
 .cta__btn-light::before {
   content: '';
-  position: absolute;
-  inset: 0;
+  position: absolute; inset: 0;
   background: linear-gradient(120deg, transparent, rgba(247,146,30,.15), transparent);
   background-size: 200% 100%;
   animation: shimmer 2.4s infinite;
 }
-.cta__btn-light:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(0,0,0,.25); }
+.cta__btn-light:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(0,0,0,.28);
+  background: #FFF3DC;
+}
 
+/* Outline button */
 .cta__btn-outline {
   background: transparent;
-  color: var(--white);
-  border: 2px solid rgba(255,255,255,.6);
+  color: #fff;
+  border: 2px solid rgba(255,255,255,.65);
+  backdrop-filter: blur(8px);
 }
-.cta__btn-outline:hover { background: rgba(255,255,255,.14); border-color: var(--white); transform: translateY(-3px); }
+.cta__btn-outline:hover {
+  background: rgba(255,255,255,.15);
+  border-color: #fff;
+  transform: translateY(-3px);
+}
 
+/* Responsive */
 @media (max-width: 880px) {
   .cta__inner { grid-template-columns: 1fr; text-align: center; }
   .cta__actions { justify-content: center; }
+  .cta__truck { display: none; }
 }

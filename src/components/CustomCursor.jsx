@@ -2,12 +2,10 @@ import { useEffect, useRef, useState } from 'react';
 import './CustomCursor.css';
 
 export default function CustomCursor() {
-  const dotWrap  = useRef(null);
-  const ringWrap = useRef(null);
-  const mouse    = useRef({ x: -200, y: -200 });
-  const lagged   = useRef({ x: -200, y: -200 });
-  const raf      = useRef(null);
-  const [state, setState] = useState('idle'); // idle | hover | click
+  const el    = useRef(null);
+  const mouse = useRef({ x: -200, y: -200 });
+  const raf   = useRef(null);
+  const [state, setState] = useState('idle');
 
   useEffect(() => {
     if (window.matchMedia('(hover:none),(pointer:coarse)').matches) return;
@@ -26,19 +24,9 @@ export default function CustomCursor() {
     document.addEventListener('mousedown',  onDown);
     document.addEventListener('mouseup',    onUp);
 
-    const lerp = (a, b, t) => a + (b - a) * t;
-
     const tick = () => {
       const { x, y } = mouse.current;
-      lagged.current.x = lerp(lagged.current.x, x, 0.06);
-      lagged.current.y = lerp(lagged.current.y, y, 0.06);
-
-      if (dotWrap.current)
-        dotWrap.current.style.transform = `translate(${x}px,${y}px)`;
-      if (ringWrap.current)
-        ringWrap.current.style.transform =
-          `translate(${lagged.current.x}px,${lagged.current.y}px)`;
-
+      if (el.current) el.current.style.transform = `translate(${x}px,${y}px)`;
       raf.current = requestAnimationFrame(tick);
     };
     raf.current = requestAnimationFrame(tick);
@@ -53,14 +41,5 @@ export default function CustomCursor() {
     };
   }, []);
 
-  return (
-    <>
-      <div ref={dotWrap} className={`cc-dot cc--${state}`}>
-        <div className="cc-dot__face" />
-      </div>
-      <div ref={ringWrap} className={`cc-ring cc--${state}`}>
-        <div className="cc-ring__face" />
-      </div>
-    </>
-  );
+  return <div ref={el} className={`cc cc--${state}`} />;
 }
