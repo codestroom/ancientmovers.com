@@ -27,7 +27,7 @@
 .blog-preview__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 32px;
   position: relative;
   z-index: 1;
 }
@@ -52,7 +52,7 @@
   position: relative;
   display: block;
   overflow: hidden;
-  height: 210px;
+  height: 240px;
 }
 .blog-preview__img {
   width: 100%; height: 100%;
@@ -79,7 +79,7 @@
 }
 
 /* Body */
-.blog-preview__body { padding: 22px 24px 26px; }
+.blog-preview__body { padding: 28px 30px 32px; }
 
 .blog-preview__meta {
   display: flex;

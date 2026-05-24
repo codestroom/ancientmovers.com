@@ -1,9 +1,11 @@
+import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
 import ScrollToTop from './components/ScrollToTop.jsx';
 import FloatingCall from './components/FloatingCall.jsx';
 import CustomCursor from './components/CustomCursor.jsx';
+import Preloader from './components/Preloader.jsx';
 import Home from './pages/Home.jsx';
 import Services from './pages/Services.jsx';
 import ServiceAreas from './pages/ServiceAreas.jsx';
@@ -14,8 +16,11 @@ import BlogPost from './pages/BlogPost.jsx';
 import NotFound from './pages/NotFound.jsx';
 
 export default function App() {
+  const [loading, setLoading] = useState(true);
+
   return (
     <>
+      {loading && <Preloader onDone={() => setLoading(false)} />}
       <CustomCursor />
       <ScrollToTop />
       <Navbar />

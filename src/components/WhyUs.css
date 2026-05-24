@@ -36,7 +36,7 @@
   background: #fff;
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  padding: 42px 28px;
+  padding: 52px 40px;
   border-radius: var(--radius-xl);
   border: 1px solid rgba(247,146,30,.2);
   box-shadow:
@@ -70,7 +70,7 @@
 .whyus__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 28px;
   position: relative; z-index: 1;
 }
 
@@ -80,7 +80,7 @@
   background: #fff;
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  padding: 34px 28px;
+  padding: 44px 36px;
   border-radius: var(--radius-lg);
   border: 1px solid rgba(247,146,30,.15);
   box-shadow: 0 4px 20px rgba(247,146,30,.08), 0 1px 4px rgba(0,0,0,.04);

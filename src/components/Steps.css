@@ -43,7 +43,7 @@
   position: relative; z-index: 1;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 32px;
   perspective: 1200px;
 }
 
@@ -51,7 +51,7 @@
 .step {
   position: relative;
   background: #fff;
-  padding: 38px 24px 32px;
+  padding: 48px 32px 40px;
   border-radius: var(--radius-lg);
   border: 1px solid rgba(247,146,30,.15);
   box-shadow:

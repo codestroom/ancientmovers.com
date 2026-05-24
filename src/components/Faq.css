@@ -27,7 +27,7 @@
 .faq__inner {
   display: grid;
   grid-template-columns: 1fr 1.4fr;
-  gap: 64px;
+  gap: 80px;
   align-items: start;
   position: relative; z-index: 1;
 }
@@ -41,7 +41,7 @@
 .faq__head a:hover { color: #C4650A; text-decoration: underline; }
 
 /* Accordion list */
-.faq__list { display: flex; flex-direction: column; gap: 10px; }
+.faq__list { display: flex; flex-direction: column; gap: 14px; }
 
 /* Accordion item */
 .faq__item {
@@ -73,7 +73,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 18px;
-  padding: 22px 24px;
+  padding: 26px 28px;
   text-align: left;
   font-family: var(--font-display);
   font-weight: 600;
@@ -106,7 +106,7 @@
 
 /* Answer */
 .faq__a {
-  padding: 0 24px 24px;
+  padding: 0 28px 28px;
 }
 .faq__a p {
   color: rgba(26,8,0,.60);

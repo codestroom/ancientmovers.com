@@ -25,7 +25,7 @@
 .gallery .container { position: relative; z-index: 1; }
 
 /* Section head */
-.gallery__head { margin-bottom: 60px; }
+.gallery__head { margin-bottom: 72px; }
 .gallery .section-head h2,
 .gallery h2 { color: #1A0800; }
 .gallery .section-head p  { color: rgba(26,8,0,.58); font-size: 1.05rem; }
@@ -41,7 +41,7 @@
   display: grid;
   grid-template-columns: 1.35fr 1fr 1fr;
   grid-template-rows: 300px 300px;
-  gap: 18px;
+  gap: 24px;
 }
 
 /* Card base */
