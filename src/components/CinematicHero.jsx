@@ -18,7 +18,7 @@ const stagger = {
 
 const SPARKLES = Array.from({ length: 11 }, (_, i) => ({
   left:     `${(i * 9.1 + 4) % 94}%`,
-  top:      `${(i * 11.7 + 7) % 86}%`,
+  top:      `${(i * 11.7 + 7) % 20}%`,
   delay:    `${(i * 0.52).toFixed(2)}s`,
   duration: `${3.4 + (i % 4)}s`,
 }));
