@@ -1,15 +1,17 @@
-import { FaShieldAlt, FaStar, FaCheckCircle, FaTruck, FaAward, FaUserShield, FaThumbsUp, FaClock } from 'react-icons/fa';
+import { FaShieldAlt, FaStar, FaCheckCircle, FaTruck, FaAward, FaUserShield, FaThumbsUp, FaClock, FaTag, FaPhone } from 'react-icons/fa';
 import './TrustMarquee.css';
 
 const ITEMS = [
-  { icon: FaShieldAlt, text: 'Licensed & Bonded in Michigan' },
-  { icon: FaUserShield, text: 'Fully Insured' },
-  { icon: FaStar, text: '4.9★ · 2,100+ Google Reviews' },
-  { icon: FaAward, text: 'Best of Detroit 2024' },
-  { icon: FaCheckCircle, text: 'Background-Checked Crews' },
-  { icon: FaTruck, text: 'USDOT Certified' },
-  { icon: FaThumbsUp, text: 'Serving Detroit Since 2015' },
-  { icon: FaClock, text: 'On-Time Guarantee' }
+  { icon: FaShieldAlt,  text: 'Licensed & Bonded in Michigan' },
+  { icon: FaUserShield, text: 'Fully Insured — Cargo & Liability' },
+  { icon: FaStar,       text: '4.9★ · 2,100+ Google Reviews' },
+  { icon: FaAward,      text: 'Best of Detroit 2024' },
+  { icon: FaCheckCircle,text: 'Background-Checked Crews' },
+  { icon: FaTruck,      text: 'USDOT Certified Fleet' },
+  { icon: FaThumbsUp,   text: 'Serving Detroit Since 2015' },
+  { icon: FaClock,      text: 'On-Time Guarantee' },
+  { icon: FaTag,        text: '10% Off Packing Supplies When You Book' },
+  { icon: FaPhone,      text: 'Free Quote Within 1 Hour' },
 ];
 
 export default function TrustMarquee() {
@@ -20,7 +22,7 @@ export default function TrustMarquee() {
           const Icon = item.icon;
           return (
             <div key={i} className="marquee__item">
-              <Icon /> <span>{item.text}</span>
+              <Icon aria-hidden="true" /> <span>{item.text}</span>
             </div>
           );
         })}
