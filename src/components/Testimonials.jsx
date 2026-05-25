@@ -1,61 +1,126 @@
-import { useEffect, useRef } from 'react';
-import { FaStar, FaQuoteLeft } from 'react-icons/fa';
+import { useState, useEffect } from 'react';
+import { FaStar, FaQuoteLeft, FaArrowLeft, FaArrowRight, FaCheckCircle } from 'react-icons/fa';
 import { TESTIMONIALS } from '../data/siteData.js';
 import useReveal from '../hooks/useReveal.js';
-import useTilt from '../hooks/useTilt.js';
+import Photo from './Photo.jsx';
 import './Testimonials.css';
 
-function TestimonialCard({ t }) {
-  const ref = useTilt({ max: 8, scale: 1.02, glare: true });
-  return (
-    <article ref={ref} className="testimonial tilt reveal">
-      <FaQuoteLeft className="testimonial__quote" aria-hidden="true" />
-      <div className="testimonial__stars" aria-label={`${t.rating} out of 5 stars`}>
-        {Array.from({ length: t.rating }).map((_, k) => <FaStar key={k} />)}
-      </div>
-      <p>"{t.text}"</p>
-      <footer>
-        <div className="testimonial__avatar">{t.name.charAt(0)}</div>
-        <div>
-          <strong>{t.name}</strong>
-          <span>{t.city}</span>
-        </div>
-      </footer>
-    </article>
-  );
-}
-
-export default function Testimonials() {
-  const headRef = useReveal();
-  const gridRef = useRef(null);
+export default function Testimonials({ 
+  eyebrow = "Customer Stories",
+  title = <>Loved by Families <span>Across Michigan</span></>,
+  subtitle = "We've completed over 10,000 moves. Here's what our neighbors say."
+}) {
+  const sectionReveal = useReveal();
+  const [slideIndex, setSlideIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const cards = gridRef.current?.querySelectorAll('.testimonial') || [];
-    const io = new IntersectionObserver(
-      (entries) => entries.forEach((e) => {
-        if (e.isIntersecting) { e.target.classList.add('is-revealed'); io.unobserve(e.target); }
-      }),
-      { threshold: 0.15 }
-    );
-    cards.forEach((c) => io.observe(c));
-    return () => io.disconnect();
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const maxSlides = isMobile ? TESTIMONIALS.length - 1 : TESTIMONIALS.length - 3;
+  const slideWidth = isMobile ? 100 : 33.3333;
+
+  const nextSlide = () => {
+    setSlideIndex((prev) => (prev >= maxSlides ? 0 : prev + 1));
+  };
+  const prevSlide = () => {
+    setSlideIndex((prev) => (prev <= 0 ? maxSlides : prev - 1));
+  };
+
   return (
-    <section className="testimonials">
-      <div className="testimonials__bg" aria-hidden="true">
-        <div className="testimonials__shape" />
-      </div>
+    <section ref={sectionReveal} className="reveal sa-testimonials">
       <div className="container">
-        <div ref={headRef} className="reveal section-head">
-          <span className="eyebrow">Customer Stories</span>
-          <h2>Loved by Families Across Michigan</h2>
-          <p>We've completed over 10,000 moves. Here's what our customers say.</p>
+        <div className="sa-test-header-row">
+          <div className="section-head text-left">
+            <span className="eyebrow">{eyebrow}</span>
+            <h2>{title}</h2>
+            <p>{subtitle}</p>
+          </div>
+
+          {/* Slider Navigation Buttons */}
+          <div className="sa-test-nav">
+            <button 
+              className="sa-test-nav-btn sa-test-nav-btn--prev"
+              onClick={prevSlide}
+              aria-label="Previous testimonial"
+            >
+              <FaArrowLeft />
+            </button>
+            <button 
+              className="sa-test-nav-btn sa-test-nav-btn--next"
+              onClick={nextSlide}
+              aria-label="Next testimonial"
+            >
+              <FaArrowRight />
+            </button>
+          </div>
         </div>
 
-        <div ref={gridRef} className="testimonials__grid">
-          {TESTIMONIALS.map((t, i) => (
-            <TestimonialCard key={i} t={t} />
+        {/* Testimonials Viewport & sliding track */}
+        <div className="sa-test-viewport">
+          <div 
+            className="sa-test-track"
+            style={{ transform: `translateX(-${slideIndex * slideWidth}%)` }}
+          >
+            {TESTIMONIALS.map((rev) => (
+              <div key={rev.author} className="sa-test-card">
+                {/* Top Row: quote mark on left, star ratings on right */}
+                <div className="sa-test-meta-row">
+                  <FaQuoteLeft className="sa-test-card-quote-icon" />
+                  <div className="sa-test-rating">
+                    {[...Array(rev.stars)].map((_, i) => (
+                      <FaStar key={i} />
+                    ))}
+                  </div>
+                </div>
+
+                {/* Testimonial Quote Text */}
+                <p className="sa-test-quote">"{rev.text}"</p>
+
+                {/* Card Footer: User Avatar, Name, Designation & Badges */}
+                <div className="sa-test-footer">
+                  <div className="sa-test-profile">
+                    <Photo
+                      src={`/images/${rev.author.split(' ')[0].toLowerCase()}.jpg`}
+                      id={rev.avatarId}
+                      seed={rev.author.split(' ')[0].toLowerCase()}
+                      alt={rev.author}
+                      className="sa-test-avatar"
+                      w={100}
+                      h={100}
+                    />
+                    <div className="sa-test-author-info">
+                      <h4>{rev.author}</h4>
+                      <span>{rev.role}</span>
+                    </div>
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '6px' }}>
+                    <span className="sa-test-verified">
+                      <FaCheckCircle /> Verified Move
+                    </span>
+                    <span className="sa-test-badge">{rev.tag}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Pagination dots at the bottom */}
+        <div className="sa-test-dots">
+          {[...Array(maxSlides + 1)].map((_, i) => (
+            <button
+              key={i}
+              className={`sa-test-dot ${slideIndex === i ? 'active' : ''}`}
+              onClick={() => setSlideIndex(i)}
+              aria-label={`Go to slide page ${i + 1}`}
+            />
           ))}
         </div>
       </div>

@@ -65,14 +65,14 @@ export const SERVICES = [
     title: 'Residential Moving',
     desc: 'Stress-free home moves across Metro Detroit — from cozy apartments to large family homes. We protect your belongings like they\'re our own.',
     features: ['Free in-home estimate', 'Furniture disassembly & reassembly', 'Floor & wall protection'],
-    photo: { src: '/images/staff.jpg', seed: 'residential' }
+    photo: { src: '/images/residential.jpg', seed: 'residential' }
   },
   {
     icon: 'building',
     title: 'Commercial & Office',
     desc: 'Minimize downtime with our efficient Detroit office relocations — IT equipment, files, workstations and everything in between.',
     features: ['After-hours & weekend moves', 'IT-safe handling', 'Office layout setup'],
-    photo: { src: '/images/furniture.jpg', seed: 'office' }
+    photo: { src: '/images/office.jpg', seed: 'office' }
   },
   {
     icon: 'user-friends',
@@ -85,7 +85,7 @@ export const SERVICES = [
     icon: 'music',
     title: 'Piano Moving',
     desc: 'Pianos require specialized equipment and trained hands. Our piano movers have moved hundreds of uprights, baby grands, and concert grands across Metro Detroit without a scratch.',
-    features: ['Upright, baby grand & grand pianos', 'Skid boards & padded straps', 'Climate-safe transport'],
+    features: ['Upright, baby grand & grand pianos', 'Staircase heavy-lift specialists', 'Climate-safe transport'],
     photo: { src: '/images/piano.jpg', seed: 'piano' }
   },
   {
@@ -99,7 +99,7 @@ export const SERVICES = [
     icon: 'truck',
     title: 'Long Distance Moving',
     desc: 'Moving out of Metro Detroit? We handle out-of-state and cross-country moves with transparent flat-rate pricing and guaranteed delivery windows.',
-    features: ['Real-time shipment tracking', 'Dedicated move coordinator', 'No hidden fees'],
+    features: ['Cross-border customs assistance', 'Real-time shipment tracking', 'Dedicated move coordinator'],
     photo: { src: '/images/long-distance.png', seed: 'long-distance' }
   },
   {
@@ -114,28 +114,28 @@ export const SERVICES = [
     title: 'Pool Table Moving',
     desc: 'Pool tables must be properly disassembled, leveled, and re-felted after every move. Our specialists do it right the first time.',
     features: ['Full disassembly & reassembly', 'Re-leveling on arrival', 'Felt inspection included'],
-    photo: { src: '/images/furniture.jpg', seed: 'pool-table' }
+    photo: { src: '/images/pooltable.jpg', seed: 'pool-table' }
   },
   {
     icon: 'tools',
     title: 'Assembly & Disassembly',
     desc: 'From IKEA furniture to complex bed frames and wall units — we assemble and disassemble anything, saving you hours of frustration.',
     features: ['All furniture brands & styles', 'Tool kit on every truck', 'Included with most moves'],
-    photo: { src: '/images/staff.jpg', seed: 'assembly' }
+    photo: { src: '/images/assembly.jpg', seed: 'assembly' }
   },
   {
     icon: 'warehouse',
     title: 'Secure Storage',
     desc: 'Climate-controlled, 24/7 monitored short and long-term storage conveniently located in Metro Detroit.',
     features: ['Climate control', '24/7 surveillance & alarm', 'Flexible month-to-month terms'],
-    photo: { src: '/images/truck.jpg', seed: 'storage' }
+    photo: { src: '/images/storage.jpg', seed: 'storage' }
   },
   {
     icon: 'archive',
     title: 'Packing Supplies',
     desc: 'Pick up professional-grade boxes, tape, bubble wrap, wardrobe boxes, and mattress covers. Everything you need to pack like a pro.',
     features: ['Moving boxes (all sizes)', 'Wardrobe & dish boxes', '10% off when you book a move'],
-    photo: { src: '/images/packing.webp', seed: 'supplies' }
+    photo: { src: '/images/supplies.jpg', seed: 'supplies' }
   },
 ];
 
@@ -217,27 +217,51 @@ export const STEPS = [
 export const TESTIMONIALS = [
   {
     name: 'Jennifer M.',
+    author: 'Jennifer M.',
     city: 'Grosse Pointe, MI',
+    location: 'Grosse Pointe, MI',
     rating: 5,
-    text: 'Ancient Movers made our move from Grosse Pointe to Farmington Hills completely stress-free. The crew was on time, professional, and handled every piece of furniture with incredible care. Best moving experience we\'ve ever had — and we\'ve moved a lot!'
+    stars: 5,
+    role: 'Historic Estate Owner',
+    text: 'Ancient Movers made our move from Grosse Pointe to Farmington Hills completely stress-free. The crew was on time, professional, and handled every piece of furniture with incredible care. They even helped navigate our narrow, historic winding staircase without a single scuff.',
+    tag: 'Historic Estate',
+    avatarId: '1494790108377-be9c29b29330'
   },
   {
     name: 'Scott T.',
+    author: 'Scott T.',
     city: 'Troy, MI',
+    location: 'Troy, MI',
     rating: 5,
-    text: 'They moved my hot tub from my old house in Troy to the new place in Auburn Hills. Handled it perfectly — no damage to the deck, no scratches, got it reconnected the same day. These guys know what they\'re doing!'
+    stars: 5,
+    role: 'Specialty Spa Transport',
+    text: 'They moved my hot tub from my old house in Troy to the new place in Auburn Hills. Handled it perfectly — no damage to the deck, no scratches, got it reconnected the same day. These guys know what they\'re doing!',
+    tag: 'Specialty Move',
+    avatarId: '1507003211169-0a1dd7228f2d'
   },
   {
     name: 'Charlotte D.',
+    author: 'Charlotte D.',
     city: 'Dearborn, MI',
+    location: 'Dearborn, MI',
     rating: 5,
-    text: 'They moved my baby grand piano from Michigan to our new home without a single scratch. I was nervous about trusting anyone with it, but the team was calm, skilled, and clearly had done this hundreds of times. Highly recommend!'
+    stars: 5,
+    role: 'Baby Grand Piano Move',
+    text: 'They moved my baby grand piano from Michigan to our new home without a single scratch. I was nervous about trusting anyone with it, but the team was calm, skilled, and clearly had done this hundreds of times. Highly recommend!',
+    tag: 'Specialty Move',
+    avatarId: '1438761681033-6461ffad8d80'
   },
   {
     name: 'Nicole R.',
+    author: 'Nicole R.',
     city: 'Southfield, MI',
+    location: 'Southfield, MI',
     rating: 5,
-    text: 'Best moving company in Metro Detroit, hands down. I called late Tuesday evening and they were there by 3pm the next day. No hidden fees — the quote they gave me was exactly what I paid. The crew even helped reassemble my furniture. Amazing!'
+    stars: 5,
+    role: 'Apartment Relocation',
+    text: 'Best moving company in Metro Detroit, hands down. I called late Tuesday evening and they were there by 3pm the next day. No hidden fees — the quote they gave me was exactly what I paid. The crew even helped reassemble my furniture. Amazing!',
+    tag: 'Local Apartment',
+    avatarId: '1534528741775-53994a69daeb'
   }
 ];
 

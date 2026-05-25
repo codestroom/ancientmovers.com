@@ -1,42 +1,188 @@
-/* Hide system cursor on pointer devices */
+/* ==========================================================================
+   DYNAMIC COMPASS NAVIGATION MOUSE CURSOR (CUSTOMCURSOR.CSS)
+   ========================================================================== */
+
+/* Hide system cursor on pointer-enabled desktop systems */
 @media (hover: hover) and (pointer: fine) {
-  *, *::before, *::after { cursor: none !important; }
+  *, *::before, *::after {
+    cursor: none !important;
+  }
 }
 
-.cc {
+/* Compass Host Container */
+.cc-compass {
   position: fixed;
-  top: 0; left: 0;
-  width: 10px;
-  height: 10px;
-  margin: -5px 0 0 -5px;
-  background: #F7921E;
-  border-radius: 50%;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  margin: -18px 0 0 -18px;
   pointer-events: none;
   z-index: 99999;
   will-change: transform;
-  transition:
-    width     .2s cubic-bezier(.2,.8,.2,1),
-    height    .2s cubic-bezier(.2,.8,.2,1),
-    margin    .2s cubic-bezier(.2,.8,.2,1),
-    background .2s ease,
-    opacity   .15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Hover — expand into a hollow ring */
-.cc.cc--hover {
-  width: 32px;
-  height: 32px;
-  margin: -16px 0 0 -16px;
-  background: transparent;
-  border: 2px solid #F7921E;
-  opacity: .75;
+/* Dial & Gauge Wrapper */
+.cc-ring-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.3s ease;
 }
 
-/* Click — quick shrink */
-.cc.cc--click {
-  width: 6px;
-  height: 6px;
-  margin: -3px 0 0 -3px;
-  background: #FFB347;
-  opacity: .9;
+/* Vector Gauge Style */
+.cc-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.cc-svg-dial {
+  fill: none;
+  stroke: rgba(247, 146, 30, 0.25);
+  stroke-width: 1.2px;
+  stroke-dasharray: 2 3.5;
+  transform-origin: 20px 20px;
+  transition: stroke 0.3s ease, stroke-width 0.3s ease;
+}
+
+.cc-svg-tick {
+  stroke: var(--orange-500);
+  stroke-width: 1.5px;
+  transition: stroke 0.3s ease;
+}
+
+/* Directional Arrow Pointer */
+.cc-arrow {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform;
+  /* CSS transition only applies to scale/stretch modifications to keep rotation lag-free */
+  transition: opacity 0.3s ease;
+}
+
+.cc-arrow-svg {
+  width: 100%;
+  height: 100%;
+  /* Glow projection behind direction vector */
+  filter: drop-shadow(0 2px 4px rgba(247, 146, 30, 0.45));
+}
+.cc-arrow-svg path {
+  transition: fill 0.3s ease;
+}
+
+/* Floating Center Point */
+.cc-center-dot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: var(--orange-500);
+  border-radius: 50%;
+  box-shadow: 0 0 6px var(--orange-500);
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.3s ease;
+}
+
+/* ==========================================================================
+   INTERACTIVE HOVER STATES (Over Buttons/Links)
+   ========================================================================== */
+
+.cc-compass--hover .cc-ring-wrapper {
+  background-color: rgba(247, 146, 30, 0.08);
+  box-shadow: 0 0 15px rgba(247, 146, 30, 0.15);
+  transform: scale(1.3);
+}
+
+.cc-compass--hover .cc-svg-dial {
+  stroke: var(--orange-500);
+  stroke-width: 2px;
+  stroke-dasharray: 1 1;
+  /* Dials rotate continuously when in active focus */
+  animation: spin 10s linear infinite;
+}
+
+.cc-compass--hover .cc-svg-tick {
+  stroke: var(--orange-400);
+}
+
+/* Chevron arrow spins smoothly on hover (searching for routes) */
+.cc-compass--hover .cc-arrow {
+  animation: spin 3s linear infinite;
+}
+.cc-compass--hover .cc-arrow-svg path {
+  fill: var(--orange-600);
+}
+
+.cc-compass--hover .cc-center-dot {
+  background-color: var(--orange-600);
+  transform: scale(1.3);
+}
+
+/* ==========================================================================
+   INTERACTIVE CLICK STATES (Active Down clicks)
+   ========================================================================== */
+
+/* Compass bounds snap and shrink instantly */
+.cc-compass--click .cc-ring-wrapper {
+  transform: scale(0.65);
+}
+
+.cc-compass--click .cc-svg-dial {
+  stroke: var(--orange-600);
+  stroke-width: 3px;
+}
+
+.cc-compass--click .cc-arrow {
+  opacity: 0.2;
+}
+
+.cc-compass--click .cc-center-dot {
+  background-color: var(--white);
+  box-shadow: 0 0 10px var(--white);
+  transform: scale(1.5);
+}
+
+/* Shockwave click pulse ripple */
+.cc-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: 1.5px solid var(--orange-500);
+  pointer-events: none;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Trigger ripple ring animations inside click state */
+.cc-compass--click .cc-pulse {
+  animation: ccPulseRing 0.6s cubic-bezier(0.15, 0.8, 0.35, 1) both;
+}
+
+@keyframes ccPulseRing {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 0.9;
+    margin: 0;
+  }
+  100% {
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+    margin: -36px 0 0 -36px;
+    border-color: var(--orange-600);
+  }
 }

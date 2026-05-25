@@ -29,6 +29,16 @@ export default function CinematicHero() {
 
       {/* ── Decorative background ── */}
       <div className="ch__bg" aria-hidden="true">
+        <video
+          className="ch__bg-video"
+          src="/videos/ancient-movers-showcase.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        />
+        <div className="ch__bg-overlay" />
         <div className="ch__blob ch__blob--1" />
         <div className="ch__blob ch__blob--2" />
         <div className="ch__blob ch__blob--3" />
