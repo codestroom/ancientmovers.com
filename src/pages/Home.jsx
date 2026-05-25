@@ -1,7 +1,6 @@
 import SEO from '../components/SEO.jsx';
 import CinematicHero from '../components/CinematicHero.jsx';
 import TrustMarquee from '../components/TrustMarquee.jsx';
-import VideoShowcase from '../components/VideoShowcase.jsx';
 import QuickQuote from '../components/QuickQuote.jsx';
 import ServicesSection from '../components/ServicesSection.jsx';
 import WhyUs from '../components/WhyUs.jsx';
@@ -22,11 +21,10 @@ export default function Home() {
         canonical="https://ancientmovers.com/"
       />
       <CinematicHero />
+      <QuickQuote />
       <TrustMarquee />
-      <VideoShowcase />
       <ServicesSection compact />
       <WhyUs />
-      <QuickQuote />
       <Steps />
       <Gallery />
       <AreasGrid />

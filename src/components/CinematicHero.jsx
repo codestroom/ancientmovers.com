@@ -93,14 +93,18 @@ export default function CinematicHero() {
 
             {/* CSS float wrapper — keeps transforms off the Framer element */}
             <div className="ch__truck-float-wrap">
-              <motion.img
-                src="/images/fleet-truck.png"
-                alt="Ancient Movers Fleet Truck"
+              <motion.video
+                src="/videos/ancient-movers-showcase.mp4"
+                aria-label="Ancient Movers crew in action"
                 className="ch__truck-img"
                 initial={{ opacity: 0, x: 64, scale: 0.88 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 transition={{ duration: 0.9, ease: [0.2, 0.8, 0.2, 1], delay: 0.32 }}
-                draggable={false}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
               />
             </div>
 

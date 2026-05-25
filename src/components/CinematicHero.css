@@ -212,15 +212,19 @@
   50%     { transform: translateY(-20px); }
 }
 
-/* Truck image */
+/* Hero video (replaces the truck image) */
 .ch__truck-img {
   width: min(520px, 46vw);
-  object-fit: contain;
-  filter:
-    drop-shadow(0 32px 52px rgba(247,146,30,.42))
-    drop-shadow(0 0 60px rgba(247,146,30,.20));
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 22px;
+  box-shadow:
+    0 32px 52px rgba(247,146,30,.42),
+    0 0 60px rgba(247,146,30,.20),
+    0 0 0 1px rgba(247,146,30,.18) inset;
   user-select: none;
   display: block;
+  background: #1A0800;
 }
 
 /* Ground shadow pulses in sync with float */

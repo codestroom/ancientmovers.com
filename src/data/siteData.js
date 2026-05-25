@@ -3,8 +3,8 @@ export const SITE = {
   tagline: '#1 Moving Experts in Detroit, Michigan',
   phone: '(313) 555-0190',
   phoneHref: 'tel:+13135550190',
-  email: 'detroit@ancientmovers.com',
-  address: 'Metro Detroit, Michigan',
+  email: 'ancientmoversUsa@gmail.com',
+  address: '21700 Greenfield Rd Ste 121, Oak Park, MI 48237',
   hours: 'Mon – Sun: 7:00 AM – 9:00 PM',
   promo: '10% Off Packing Supplies & Wardrobe Boxes When You Book a Move',
   socials: {
@@ -86,7 +86,7 @@ export const SERVICES = [
     title: 'Piano Moving',
     desc: 'Pianos require specialized equipment and trained hands. Our piano movers have moved hundreds of uprights, baby grands, and concert grands across Metro Detroit without a scratch.',
     features: ['Upright, baby grand & grand pianos', 'Skid boards & padded straps', 'Climate-safe transport'],
-    photo: { src: '/images/piano.webp', seed: 'piano' }
+    photo: { src: '/images/piano.jpg', seed: 'piano' }
   },
   {
     icon: 'box',
@@ -100,7 +100,7 @@ export const SERVICES = [
     title: 'Long Distance Moving',
     desc: 'Moving out of Metro Detroit? We handle out-of-state and cross-country moves with transparent flat-rate pricing and guaranteed delivery windows.',
     features: ['Real-time shipment tracking', 'Dedicated move coordinator', 'No hidden fees'],
-    photo: { src: '/images/longdistance.jpg', seed: 'long-distance' }
+    photo: { src: '/images/long-distance.png', seed: 'long-distance' }
   },
   {
     icon: 'hot-tub',

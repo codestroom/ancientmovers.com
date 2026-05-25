@@ -1,6 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
-import { FaMapMarkerAlt, FaArrowRight } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import { MapContainer, TileLayer, Marker, Tooltip, ZoomControl } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -40,20 +38,7 @@ const TOOLTIP_OFFSET = {
 
 export default function AreasGrid({ withHeading = true }) {
   const headRef = useReveal();
-  const gridRef = useRef(null);
   const [active, setActive] = useState(null);
-
-  useEffect(() => {
-    const cards = gridRef.current?.querySelectorAll('.area-card') || [];
-    const io = new IntersectionObserver(
-      (entries) => entries.forEach((e) => {
-        if (e.isIntersecting) { e.target.classList.add('is-revealed'); io.unobserve(e.target); }
-      }),
-      { threshold: 0.1 }
-    );
-    cards.forEach((c) => io.observe(c));
-    return () => io.disconnect();
-  }, []);
 
   return (
     <section className="areas">
@@ -139,25 +124,6 @@ export default function AreasGrid({ withHeading = true }) {
               <span>Drag &amp; zoom to explore</span>
             </div>
           </div>
-        </div>
-
-        {/* ============ City cards ============ */}
-        <div ref={gridRef} className="areas__grid">
-          {SERVICE_AREA_LOCATIONS.map((a, i) => (
-            <Link
-              key={a.name}
-              to="/contact"
-              className={`area-card reveal reveal-d${(i % 6) + 1}${active === a.name ? ' is-linked' : ''}`}
-              style={{ '--i': i }}
-              onMouseEnter={() => setActive(a.name)}
-              onMouseLeave={() => setActive(null)}
-            >
-              <span className="area-card__icon"><FaMapMarkerAlt /></span>
-              <span className="area-card__name">{a.name}, MI</span>
-              <FaArrowRight className="area-card__arrow" />
-              <span className="area-card__glow" aria-hidden="true" />
-            </Link>
-          ))}
         </div>
       </div>
     </section>
