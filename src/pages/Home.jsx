@@ -6,6 +6,7 @@ import ServicesSection from '../components/ServicesSection.jsx';
 import WhyUs from '../components/WhyUs.jsx';
 import Steps from '../components/Steps.jsx';
 import Gallery from '../components/Gallery.jsx';
+import ReelsShowcase from '../components/ReelsShowcase.jsx';
 import AreasGrid from '../components/AreasGrid.jsx';
 import Testimonials from '../components/Testimonials.jsx';
 import BlogPreview from '../components/BlogPreview.jsx';
@@ -27,6 +28,7 @@ export default function Home() {
       <WhyUs />
       <Steps />
       <Gallery />
+      <ReelsShowcase />
       <AreasGrid />
       <Testimonials />
       <BlogPreview />

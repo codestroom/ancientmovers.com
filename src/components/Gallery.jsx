@@ -7,47 +7,53 @@ import './Gallery.css';
 
 const ITEMS = [
   {
+    // Tall hero cell — use a PORTRAIT photo so it fills without cropping
+    src: '/images/real-happy-customer.jpg',
     id: '1600585154340-be6161a56a0c',
     seed: 'movers-loading',
-    tag: 'Move Day',
-    title: 'A seamless 4-bedroom move, start to finish',
-    location: 'Royal Oak, MI',
+    tag: '5-Star Move',
+    title: 'Another happy Detroit family, moved',
+    location: 'Grosse Pointe, MI',
     rating: '5.0',
     size: 'lg'
   },
   {
+    src: '/images/real-carrying-table.jpg',
     id: '1558997519-83ea9252edf8',
     seed: 'packing-fragile',
-    tag: 'Packing',
-    title: 'Premium packing for every fragile piece',
-    location: 'Birmingham, MI',
+    tag: 'Move Day',
+    title: 'A full home move, handled with care',
+    location: 'Royal Oak, MI',
     rating: '5.0',
     size: 'md'
   },
   {
+    src: '/images/real-crew-truck.jpg',
     id: '1521737604893-d14cc237f11d',
     seed: 'family-home',
-    tag: 'New Home',
-    title: 'Settling Detroit families into new chapters',
-    location: 'Grosse Pointe, MI',
-    rating: '5.0',
-    size: 'md'
-  },
-  {
-    id: '1497366216548-37526070297c',
-    seed: 'office-move',
-    tag: 'Commercial',
-    title: 'Zero-downtime office relocations',
+    tag: 'Our Crew',
+    title: 'A professional team, ready to roll',
     location: 'Downtown Detroit',
     rating: '5.0',
     size: 'md'
   },
   {
-    id: '1601584115197-04ecc0da31d7',
+    src: '/images/real-winter-move.jpg',
+    id: '1497366216548-37526070297c',
     seed: 'in-transit',
     tag: 'In Transit',
-    title: 'Tracked deliveries across Metro Detroit',
+    title: 'On the job — rain, shine, or snow',
     location: 'Metro Detroit',
+    rating: '5.0',
+    size: 'md'
+  },
+  {
+    src: '/images/real-customer-spring.jpg',
+    id: '1601584115197-04ecc0da31d7',
+    seed: 'new-home',
+    tag: 'New Home',
+    title: 'Welcomed into their new Detroit home',
+    location: 'Birmingham, MI',
     rating: '5.0',
     size: 'md'
   },

@@ -155,8 +155,8 @@ export default function About() {
           <div className="about-media">
             <div className="about-media__photo">
               <img
-                src="/images/about-team.png"
-                alt="The Ancient Movers crew smiling proudly in front of a modern moving truck on a Detroit street at golden hour"
+                src="/images/real-team-christmas.jpg"
+                alt="The Ancient Movers team together, proud to serve Detroit"
               />
             </div>
             <div className="about-media__badge">
@@ -228,8 +228,8 @@ export default function About() {
           <div className="about-leaders__media">
             <div className="about-leaders__photo-wrap">
               <img
-                src="/images/about-founders.png"
-                alt="Co-founders Marcus and Trevor Vance standing proudly inside their brick Detroit office"
+                src="/images/real-customer-dog.jpg"
+                alt="A happy Ancient Movers customer at home after their move"
               />
             </div>
             <div className="about-leaders__badge">
@@ -278,8 +278,8 @@ export default function About() {
           <div className="about-community__media">
             <div className="about-community__photo-wrap">
               <img
-                src="/images/about-community.png"
-                alt="Movers sorting clothing and book donation boxes inside a modern home for Detroit families"
+                src="/images/real-team-lineup.jpg"
+                alt="The Ancient Movers crew lined up in front of their branded moving truck"
               />
             </div>
           </div>

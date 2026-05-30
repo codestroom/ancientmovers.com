@@ -23,7 +23,7 @@ export default function CtaBanner() {
         <div className="cta__orb cta__orb--1" />
         <div className="cta__orb cta__orb--2" />
         {/* Faint truck silhouette — right side */}
-        <img src="/images/fleet-truck.png" alt="" className="cta__truck" aria-hidden="true" />
+        <img src="/images/real-branded-truck.jpg" alt="" className="cta__truck" aria-hidden="true" />
         <svg className="cta__wave" viewBox="0 0 1440 80" preserveAspectRatio="none">
           <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,30 1440,40 L1440,80 L0,80 Z" fill="rgba(0,0,0,.1)" />
         </svg>

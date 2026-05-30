@@ -65,14 +65,14 @@ export const SERVICES = [
     title: 'Residential Moving',
     desc: 'Stress-free home moves across Metro Detroit — from cozy apartments to large family homes. We protect your belongings like they\'re our own.',
     features: ['Free in-home estimate', 'Furniture disassembly & reassembly', 'Floor & wall protection'],
-    photo: { src: '/images/residential.jpg', seed: 'residential' }
+    photo: { src: '/images/real-carrying-table.jpg', seed: 'residential' }
   },
   {
     icon: 'building',
     title: 'Commercial & Office',
     desc: 'Minimize downtime with our efficient Detroit office relocations — IT equipment, files, workstations and everything in between.',
     features: ['After-hours & weekend moves', 'IT-safe handling', 'Office layout setup'],
-    photo: { src: '/images/office.jpg', seed: 'office' }
+    photo: { src: '/images/real-team-lineup.jpg', seed: 'office' }
   },
   {
     icon: 'user-friends',
@@ -93,14 +93,14 @@ export const SERVICES = [
     title: 'Packing & Unpacking',
     desc: 'Professional packing using premium materials. We label, wrap and secure every item — fragile or not — so nothing arrives damaged.',
     features: ['Custom crating available', 'Fragile-item specialists', 'Eco-friendly supplies'],
-    photo: { src: '/images/packing.webp', seed: 'packing' }
+    photo: { src: '/images/real-wrapping.jpg', seed: 'packing' }
   },
   {
     icon: 'truck',
     title: 'Long Distance Moving',
     desc: 'Moving out of Metro Detroit? We handle out-of-state and cross-country moves with transparent flat-rate pricing and guaranteed delivery windows.',
     features: ['Cross-border customs assistance', 'Real-time shipment tracking', 'Dedicated move coordinator'],
-    photo: { src: '/images/long-distance.png', seed: 'long-distance' }
+    photo: { src: '/images/real-winter-move.jpg', seed: 'long-distance' }
   },
   {
     icon: 'hot-tub',
@@ -121,7 +121,7 @@ export const SERVICES = [
     title: 'Assembly & Disassembly',
     desc: 'From IKEA furniture to complex bed frames and wall units — we assemble and disassemble anything, saving you hours of frustration.',
     features: ['All furniture brands & styles', 'Tool kit on every truck', 'Included with most moves'],
-    photo: { src: '/images/assembly.jpg', seed: 'assembly' }
+    photo: { src: '/images/real-wrapped-wardrobe.jpg', seed: 'assembly' }
   },
   {
     icon: 'warehouse',
@@ -135,7 +135,7 @@ export const SERVICES = [
     title: 'Packing Supplies',
     desc: 'Pick up professional-grade boxes, tape, bubble wrap, wardrobe boxes, and mattress covers. Everything you need to pack like a pro.',
     features: ['Moving boxes (all sizes)', 'Wardrobe & dish boxes', '10% off when you book a move'],
-    photo: { src: '/images/supplies.jpg', seed: 'supplies' }
+    photo: { src: '/images/real-expo-booth.jpg', seed: 'supplies' }
   },
 ];
 
@@ -312,7 +312,7 @@ export const BLOGS = [
     category: 'Moving Tips',
     date: 'May 15, 2025',
     readTime: '4 min read',
-    image: '/images/fleet-truck.png',
+    image: '/images/real-branded-truck.jpg',
     author: { name: 'Ancient Movers Team', initials: 'AM' },
     content: [
       { type: 'p', text: 'Whether you\'re moving across Dearborn or out of state from Detroit, timing your booking is one of the most critical steps in the entire process. Book too late and you may find yourself with no crew available on moving day. Book early and you get your choice of date, crew size, and time slot.' },
@@ -335,7 +335,7 @@ export const BLOGS = [
     category: 'Moving Tips',
     date: 'April 28, 2025',
     readTime: '5 min read',
-    image: '/images/packing.webp',
+    image: '/images/real-customer-spring.jpg',
     author: { name: 'Ancient Movers Team', initials: 'AM' },
     content: [
       { type: 'p', text: 'We\'ve completed thousands of moves across Metro Detroit — Grosse Pointe to Farmington Hills, Troy to Ann Arbor, Southfield to Novi — and after a while, patterns emerge. The same avoidable mistakes show up again and again. Here are the top five, and how to dodge every one of them.' },
@@ -405,7 +405,7 @@ export const BLOGS = [
     category: 'Detroit Living',
     date: 'March 5, 2025',
     readTime: '7 min read',
-    image: '/images/longdistance.jpg',
+    image: '/images/real-team-lineup.jpg',
     author: { name: 'Ancient Movers Team', initials: 'AM' },
     content: [
       { type: 'p', text: 'After thousands of moves across Metro Detroit, we know these neighborhoods better than almost anyone. Here\'s our team\'s honest guide to where families, young professionals, and seniors are choosing to land in 2025.' },

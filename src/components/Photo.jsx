@@ -40,7 +40,7 @@ export default function Photo({ src: localSrc, id, seed, alt, w = 1000, h = 700,
 
 /* Curated image set — real Ancient Movers company photos (local) with Unsplash fallback */
 export const PHOTOS = {
-  heroTruck:    { src: '/images/truck.jpg',        id: '1600518464441-9306b00c9ec1', seed: 'movers-hero'     },
+  heroTruck:    { src: '/images/real-branded-truck.jpg', id: '1600518464441-9306b00c9ec1', seed: 'movers-hero' },
   loadingTruck: { src: '/images/cta-bg.jpg',       id: '1611078489935-0cb964de46d6', seed: 'loading-truck'   },
   packingBox:   { src: '/images/packing.webp',     id: '1558997519-83ea9252edf8',    seed: 'packing-box'     },
   movingFamily: { src: '/images/staff.jpg',        id: '1600585154340-be6161a56a0c', seed: 'moving-family'   },
@@ -55,5 +55,5 @@ export const PHOTOS = {
   senior:       { src: '/images/senior.webp',      id: '1581579438828-4b1b7d638b3e', seed: 'senior'          },
   hottub:       { src: '/images/hottub.jpg',       id: '1520523839897-bd0b52f945a0', seed: 'hottub'          },
   longdistance: { src: '/images/longdistance.jpg', id: '1601584115197-04ecc0da31d7', seed: 'long-distance'   },
-  ctaBg:        { src: '/images/cta-bg.jpg',       id: '1611078489935-0cb964de46d6', seed: 'cta-bg'          },
+  ctaBg:        { src: '/images/real-crew-truck.jpg', id: '1611078489935-0cb964de46d6', seed: 'cta-bg'       },
 };
