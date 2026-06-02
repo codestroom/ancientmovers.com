@@ -979,11 +979,17 @@
 }
 
 .faq-accordion-panel {
-  overflow: hidden;
-  transition: max-height 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-  will-change: max-height;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: grid-template-rows;
+}
+.faq-accordion-item.active .faq-accordion-panel {
+  grid-template-rows: 1fr;
 }
 .faq-accordion-content {
+  overflow: hidden;
+  min-height: 0;
   padding: 0 28px 24px;
   font-size: 0.94rem;
   line-height: 1.6;

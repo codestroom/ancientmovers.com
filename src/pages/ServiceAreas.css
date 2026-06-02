@@ -931,12 +931,17 @@
 }
 
 .sa-faq-panel {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.sa-faq-item.active .sa-faq-panel {
+  grid-template-rows: 1fr;
 }
 
 .sa-faq-content {
+  overflow: hidden;
+  min-height: 0;
   padding: 0 28px 24px;
 }
 .sa-faq-content p {

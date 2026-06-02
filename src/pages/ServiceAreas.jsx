@@ -660,10 +660,7 @@ export default function ServiceAreas() {
                       <span>{faq.q}</span>
                       <FaChevronDown style={{ transform: isOpen ? 'rotate(180deg)' : 'none' }} />
                     </button>
-                    <div
-                      className="sa-faq-panel"
-                      style={{ maxHeight: isOpen ? '300px' : '0' }}
-                    >
+                    <div className="sa-faq-panel">
                       <div className="sa-faq-content">
                         <p>{faq.a}</p>
                       </div>

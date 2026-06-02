@@ -732,7 +732,7 @@ export default function Contact() {
                     <span>{faq.q}</span>
                     <span className="accordion-chevron"></span>
                   </button>
-                  <div className="faq-accordion-panel" style={{ maxHeight: isOpen ? '250px' : '0' }}>
+                  <div className="faq-accordion-panel">
                     <p className="faq-accordion-content">{faq.a}</p>
                   </div>
                 </div>

@@ -289,18 +289,6 @@ export const FAQS = [
   {
     q: 'Do you provide packing supplies and packing services?',
     a: 'Yes. We sell professional-grade boxes, tape, bubble wrap, wardrobe boxes, and mattress covers. You also get 10% off all packing supplies when you book a move with us. Full and partial packing services are also available.'
-  },
-  {
-    q: 'Which Detroit-area neighborhoods do you serve?',
-    a: 'We serve all of Metro Detroit including Downtown Detroit, Dearborn, Warren, Sterling Heights, Livonia, Southfield, Troy, Farmington Hills, Novi, Royal Oak, Grosse Pointe, Ann Arbor, and all surrounding communities.'
-  },
-  {
-    q: 'Do you offer storage solutions in Detroit?',
-    a: 'Yes. We provide climate-controlled, 24/7 monitored short and long-term storage. Whether you need a week or several months between moves, we have flexible storage plans to fit your needs.'
-  },
-  {
-    q: 'What happens if something gets damaged during my move?',
-    a: 'In the rare event of damage, our insurance covers it. We document every move carefully and resolve any claims quickly and fairly. Your peace of mind is our priority.'
   }
 ];
 

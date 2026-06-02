@@ -6,6 +6,7 @@ import './Faq.css';
 
 export default function Faq() {
   const [open, setOpen] = useState(0);
+  const [revealed, setRevealed] = useState(() => new Set());
   const headRef = useReveal();
   const listRef = useRef(null);
 
@@ -13,7 +14,16 @@ export default function Faq() {
     const items = listRef.current?.querySelectorAll('.faq__item') || [];
     const io = new IntersectionObserver(
       (entries) => entries.forEach((e) => {
-        if (e.isIntersecting) { e.target.classList.add('is-revealed'); io.unobserve(e.target); }
+        if (e.isIntersecting) {
+          const idx = Number(e.target.dataset.idx);
+          setRevealed((prev) => {
+            if (prev.has(idx)) return prev;
+            const next = new Set(prev);
+            next.add(idx);
+            return next;
+          });
+          io.unobserve(e.target);
+        }
       }),
       { threshold: 0.1 }
     );
@@ -33,8 +43,9 @@ export default function Faq() {
         <ul ref={listRef} className="faq__list">
           {FAQS.map((f, i) => {
             const isOpen = open === i;
+            const isRevealed = revealed.has(i);
             return (
-              <li key={f.q} className={`faq__item reveal reveal-d${(i % 6) + 1} ${isOpen ? 'is-open' : ''}`}>
+              <li key={f.q} data-idx={i} className={`faq__item reveal reveal-d${(i % 6) + 1} ${isRevealed ? 'is-revealed' : ''} ${isOpen ? 'is-open' : ''}`}>
                 <button
                   className="faq__q"
                   aria-expanded={isOpen}

@@ -646,10 +646,7 @@ export default function Services() {
                       <span>{faq.q}</span>
                       <FaPlus />
                     </button>
-                    <div
-                      className="srv-faq-panel"
-                      style={{ maxHeight: isOpen ? '250px' : '0' }}
-                    >
+                    <div className="srv-faq-panel">
                       <div className="srv-faq-content">
                         <p>{faq.a}</p>
                       </div>
