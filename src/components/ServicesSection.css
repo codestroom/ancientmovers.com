@@ -41,13 +41,18 @@
 /* Bento spans */
 .service-card:nth-child(1) { grid-column: span 2; }
 .service-card:nth-child(7) { grid-column: span 2; }
-/* Compact homepage view (6 cards) — fill the trailing empty row */
+/* Compact homepage view — fill the trailing empty row */
 .service-card:nth-child(6):last-child { grid-column: 1 / -1; }
+/* Compact homepage view (8 cards) — keep all cards normal size for clean 3-row layout */
+.services--compact .service-card:nth-child(7) { grid-column: span 1; }
 
 
 /* Card base */
 .service-card {
   position: relative;
+  display: block;
+  text-decoration: none;
+  color: inherit;
   border-radius: 20px;
   overflow: hidden;
   cursor: pointer;

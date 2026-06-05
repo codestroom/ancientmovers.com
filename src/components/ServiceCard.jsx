@@ -16,7 +16,7 @@ export default function ServiceCard({ service, index = 0 }) {
   const Icon = ICONS[service.icon] || FaTruck;
 
   return (
-    <article className={`service-card reveal-d${(index % 6) + 1}`}>
+    <Link to="/contact" className={`service-card reveal-d${(index % 6) + 1}`} aria-label={`Get a quote for ${service.title}`}>
       <Photo
         src={service.photo.src}
         id={service.photo.id}
@@ -39,11 +39,11 @@ export default function ServiceCard({ service, index = 0 }) {
               <li key={f}><FaCheck /> {f}</li>
             ))}
           </ul>
-          <Link to="/contact" className="service-card__link">
+          <span className="service-card__link">
             Get a quote <FaArrowRight />
-          </Link>
+          </span>
         </div>
       </div>
-    </article>
+    </Link>
   );
 }

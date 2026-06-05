@@ -208,7 +208,7 @@ export default function Services() {
         <section ref={heroReveal} className="reveal srv-hero">
           <video
             className="srv-hero__bg-video"
-            src="/videos/ancient-movers-showcase.mp4"
+            src="/videos/reel-4.mp4"
             autoPlay
             muted
             loop
@@ -235,7 +235,7 @@ export default function Services() {
                 <span>Certified & Insured</span>
               </div>
               <div className="srv-hero__stat-card">
-                <strong>4.9 ★</strong>
+                <strong>5 ★</strong>
                 <span>Google Rating</span>
               </div>
               <div className="srv-hero__stat-card">
@@ -295,6 +295,7 @@ export default function Services() {
                 const category = getServiceCategory(s.title);
                 const isHidden = activeCategory !== 'all' && activeCategory !== category;
                 const IconComponent = ICONS[s.icon] || FaTruck;
+                const cardPhoto = s.photoAlt || s.photo;
 
                 return (
                   <div
@@ -304,8 +305,8 @@ export default function Services() {
                     <article className="srv-card">
                       <div className="srv-card__visual">
                         <Photo
-                          src={s.photo.src}
-                          seed={s.photo.seed}
+                          src={cardPhoto.src}
+                          seed={cardPhoto.seed}
                           alt={s.title}
                           className="srv-card__img"
                           w={900}

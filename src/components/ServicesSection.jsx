@@ -25,10 +25,10 @@ export default function ServicesSection({ compact = false }) {
     return () => io.disconnect();
   }, []);
 
-  const list = compact ? SERVICES.slice(0, 6) : SERVICES;
+  const list = compact ? SERVICES.slice(0, 8) : SERVICES;
 
   return (
-    <section className="services">
+    <section className={`services${compact ? ' services--compact' : ''}`}>
       <div className="container">
         <div ref={headRef} className="section-head reveal">
           <span className="eyebrow">What We Do</span>

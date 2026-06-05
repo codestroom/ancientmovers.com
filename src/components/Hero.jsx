@@ -39,7 +39,7 @@ export default function Hero() {
       <div className="container hero__inner">
         <div className="hero__content">
           <span className="hero__badge fade-up">
-            <FaStar /> Rated 4.9/5 by 2,100+ Detroit Families
+            <FaStar /> Rated 5/5 by 2,100+ Detroit Families
           </span>
           <h1 className="hero__title fade-up-2">
             Detroit's Most{' '}
@@ -67,7 +67,7 @@ export default function Hero() {
           <ul className="hero__trust fade-up-3">
             <li><FaShieldAlt /> Licensed & Insured</li>
             <li><FaClock /> On-Time Guarantee</li>
-            <li><FaStar /> 4.9★ · 2,100+ Google Reviews</li>
+            <li><FaStar /> 5★ · 2,100+ Google Reviews</li>
           </ul>
         </div>
 

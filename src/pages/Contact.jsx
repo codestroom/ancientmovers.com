@@ -53,7 +53,7 @@ const COORDINATORS = [
 ];
 
 const FAQS_LIST = [
-  { q: 'How is the dynamic quote estimate calculated?', a: 'Our online calculator provides an upfront bracket based on standard local Detroit hourly rates ($90/hour for 2 movers and a fully equipped truck) and average loading times. A dedicated coordinator will verify details like stairs, heavy items, and mileage to send an exact flat-rate or hourly binding quote within 1 hour!' },
+  { q: 'How is the dynamic quote estimate calculated?', a: 'Our online calculator provides an upfront bracket based on standard local Detroit hourly rates ($90/hour for 2 movers and a fully equipped truck) and average loading times. A dedicated coordinator will verify details like stairs, heavy items, and mileage to send an exact flat-rate or hourly binding quote within 15 minutes!' },
   { q: 'Are you licensed and insured in Michigan?', a: 'Absolutely. Ancient Movers is fully licensed, bonded, and insured with USDOT. We carry active cargo insurance, general liability, and worker\'s compensation to guarantee total safety for your belongings.' },
   { q: 'How far in advance should I book my move?', a: 'For peak seasons (May through September), we recommend locking in your date 4 to 6 weeks in advance. For off-peak months, 2 to 3 weeks is usually sufficient, though we do accommodate last-minute Detroit emergencies whenever a crew is open.' },
   { q: 'Do you move heavy specialty items?', a: 'Yes! We specialize in heavy and delicate cargo. We have dedicated lift kits, straps, and protective padding for baby grand/upright pianos, full-size slate pool tables, and residential hot tubs.' },
@@ -151,13 +151,14 @@ export default function Contact() {
     <>
       <SEO
         title="Contact Ancient Movers Detroit | Interactive Quote & Booking Hub"
-        description="Get a real-time moving quote for your Detroit move with our smart interactive quote estimator. Serving all Metro Detroit neighborhoods with a 1-hour response guarantee."
+        description="Get a real-time moving quote for your Detroit move with our smart interactive quote estimator. Serving all Metro Detroit neighborhoods with a 15-minute response guarantee."
         canonical="https://ancientmovers.com/contact"
       />
       <PageHero
         title="Interactive Booking Hub"
         subtitle="Calculate your move size, explore our Detroit service map, and lock in a fully transparent quote in minutes."
         crumbs={[{ label: 'Contact & Booking' }]}
+        videoSrc="/videos/reel-2.mp4"
       />
 
       <section ref={sectionReveal} className="reveal contact-section">
@@ -593,7 +594,7 @@ export default function Contact() {
 
                       <div className="summary-legal-note">
                         <FaInfoCircle />
-                        <p>Ballpark pricing displayed is a projection. Upon submission, an Oak Park logistics coordinator will reach out within 1 hour to finalize details and secure a firm binding quote.</p>
+                        <p>Ballpark pricing displayed is a projection. Upon submission, an Oak Park logistics coordinator will reach out within 15 minutes to finalize details and secure a firm binding quote.</p>
                       </div>
 
                       <div className="wizard-actions double-buttons">
@@ -645,7 +646,7 @@ export default function Contact() {
                     <h5>What Happens Next?</h5>
                     <ol>
                       <li><strong>Database Route Verification:</strong> {COORDINATORS[0].name} will check tollways and access rules for your route.</li>
-                      <li><strong>Call Confirmation:</strong> We will call you at <strong>{formData.phone}</strong> in under 1 hour to finalize.</li>
+                      <li><strong>Call Confirmation:</strong> We will call you at <strong>{formData.phone}</strong> in under 15 minutes to finalize.</li>
                       <li><strong>Firm Price Guarantee:</strong> You will receive a written, binding email quote with absolutely zero hidden fees.</li>
                     </ol>
                   </div>

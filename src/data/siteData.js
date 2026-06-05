@@ -65,42 +65,48 @@ export const SERVICES = [
     title: 'Residential Moving',
     desc: 'Stress-free home moves across Metro Detroit — from cozy apartments to large family homes. We protect your belongings like they\'re our own.',
     features: ['Free in-home estimate', 'Furniture disassembly & reassembly', 'Floor & wall protection'],
-    photo: { src: '/images/real-carrying-table.jpg', seed: 'residential' }
+    photo: { src: '/images/real-carrying-table.jpg', seed: 'residential' },
+    photoAlt: { src: '/images/residential.jpg', seed: 'residential-alt' }
   },
   {
     icon: 'building',
     title: 'Commercial & Office',
     desc: 'Minimize downtime with our efficient Detroit office relocations — IT equipment, files, workstations and everything in between.',
     features: ['After-hours & weekend moves', 'IT-safe handling', 'Office layout setup'],
-    photo: { src: '/images/real-team-lineup.jpg', seed: 'office' }
+    photo: { src: '/images/real-team-lineup.jpg', seed: 'office' },
+    photoAlt: { src: '/images/office.jpg', seed: 'office-alt' }
   },
   {
     icon: 'user-friends',
     title: 'Senior Moving',
     desc: 'Patient, compassionate moving services designed specifically for seniors. We take extra time, extra care, and handle every detail so the family can relax.',
     features: ['Extra care for fragile items', 'Furniture placement & setup', 'Coordination with family members'],
-    photo: { src: '/images/senior.webp', seed: 'senior' }
+    photo: { src: '/images/senior.png', seed: 'senior' },
+    photoAlt: { src: '/images/real-customer-spring.jpg', seed: 'senior-alt' }
   },
   {
     icon: 'music',
     title: 'Piano Moving',
     desc: 'Pianos require specialized equipment and trained hands. Our piano movers have moved hundreds of uprights, baby grands, and concert grands across Metro Detroit without a scratch.',
     features: ['Upright, baby grand & grand pianos', 'Staircase heavy-lift specialists', 'Climate-safe transport'],
-    photo: { src: '/images/piano.jpg', seed: 'piano' }
+    photo: { src: '/images/piano.jpg', seed: 'piano' },
+    photoAlt: { src: '/images/piano.webp', seed: 'piano-alt' }
   },
   {
     icon: 'box',
     title: 'Packing & Unpacking',
     desc: 'Professional packing using premium materials. We label, wrap and secure every item — fragile or not — so nothing arrives damaged.',
     features: ['Custom crating available', 'Fragile-item specialists', 'Eco-friendly supplies'],
-    photo: { src: '/images/real-wrapping.jpg', seed: 'packing' }
+    photo: { src: '/images/real-wrapping.jpg', seed: 'packing' },
+    photoAlt: { src: '/images/packing.webp', seed: 'packing-alt' }
   },
   {
     icon: 'truck',
     title: 'Long Distance Moving',
     desc: 'Moving out of Metro Detroit? We handle out-of-state and cross-country moves with transparent flat-rate pricing and guaranteed delivery windows.',
     features: ['Cross-border customs assistance', 'Real-time shipment tracking', 'Dedicated move coordinator'],
-    photo: { src: '/images/real-winter-move.jpg', seed: 'long-distance' }
+    photo: { src: '/images/real-winter-move.jpg', seed: 'long-distance' },
+    photoAlt: { src: '/images/longdistance.jpg', seed: 'long-distance-alt' }
   },
   {
     icon: 'hot-tub',
@@ -121,21 +127,24 @@ export const SERVICES = [
     title: 'Assembly & Disassembly',
     desc: 'From IKEA furniture to complex bed frames and wall units — we assemble and disassemble anything, saving you hours of frustration.',
     features: ['All furniture brands & styles', 'Tool kit on every truck', 'Included with most moves'],
-    photo: { src: '/images/real-wrapped-wardrobe.jpg', seed: 'assembly' }
+    photo: { src: '/images/real-wrapped-wardrobe.jpg', seed: 'assembly' },
+    photoAlt: { src: '/images/assembly.jpg', seed: 'assembly-alt' }
   },
   {
     icon: 'warehouse',
     title: 'Secure Storage',
     desc: 'Climate-controlled, 24/7 monitored short and long-term storage conveniently located in Metro Detroit.',
     features: ['Climate control', '24/7 surveillance & alarm', 'Flexible month-to-month terms'],
-    photo: { src: '/images/storage.jpg', seed: 'storage' }
+    photo: { src: '/images/storage.jpg', seed: 'storage' },
+    photoAlt: { src: '/images/furniture.jpg', seed: 'storage-alt' }
   },
   {
     icon: 'archive',
     title: 'Packing Supplies',
     desc: 'Pick up professional-grade boxes, tape, bubble wrap, wardrobe boxes, and mattress covers. Everything you need to pack like a pro.',
     features: ['Moving boxes (all sizes)', 'Wardrobe & dish boxes', '10% off when you book a move'],
-    photo: { src: '/images/real-expo-booth.jpg', seed: 'supplies' }
+    photo: { src: '/images/real-expo-booth.jpg', seed: 'supplies' },
+    photoAlt: { src: '/images/supplies.jpg', seed: 'supplies-alt' }
   },
 ];
 
@@ -176,7 +185,7 @@ export const MOVING_PACKAGES = [
 export const WHY_US = [
   { num: '10+',    label: 'Years of Experience' },
   { num: '2,100+', label: 'Five-Star Reviews'   },
-  { num: '4.9 / 5', label: 'Google Rating'      },
+  { num: '5 / 5', label: 'Google Rating'      },
   { num: '100%',   label: 'Licensed & Insured'  }
 ];
 
@@ -208,7 +217,7 @@ export const FEATURES = [
 ];
 
 export const STEPS = [
-  { n: '01', title: 'Request a Free Quote',  desc: 'Tell us about your Detroit move — fill the form or call us. We respond within 1 hour, guaranteed.' },
+  { n: '01', title: 'Request a Free Quote',  desc: 'Tell us about your Detroit move — fill the form or call us. We respond within 15 minutes, guaranteed.' },
   { n: '02', title: 'Get a Custom Plan',      desc: 'Your dedicated coordinator builds a moving plan with the right crew size, truck, and timing for your situation.' },
   { n: '03', title: 'Pack, Load & Move',      desc: 'Our professional team arrives on time, handles everything with care, and keeps you updated throughout.' },
   { n: '04', title: 'Unload & Settle In',     desc: 'We unload, reassemble furniture, and place items exactly where you want them — so you\'re home from day one.' }
@@ -313,7 +322,7 @@ export const BLOGS = [
       { type: 'p', text: 'If you\'re moving out of Michigan, or you need specialty equipment for a piano, pool table, or hot tub, plan for at least 4–6 weeks of lead time. Specialty moves require specific crew training and equipment that isn\'t available on every truck.' },
       { type: 'h2', text: 'Last-Minute Moves — We Can Still Help' },
       { type: 'p', text: 'Life happens. If you find yourself needing movers in 48–72 hours, call us directly. We keep a small reserve of crew availability for last-minute bookings and do our best to accommodate you — though availability isn\'t guaranteed during peak periods.' },
-      { type: 'cta', text: 'Ready to lock in your date? Get a free quote in under an hour.' },
+      { type: 'cta', text: 'Ready to lock in your date? Get a free quote in under 15 minutes.' },
     ],
   },
   {
@@ -371,7 +380,7 @@ export const BLOGS = [
     category: 'Senior Moving',
     date: 'March 22, 2025',
     readTime: '6 min read',
-    image: '/images/senior.webp',
+    image: '/images/senior.png',
     author: { name: 'Ancient Movers Team', initials: 'AM' },
     content: [
       { type: 'p', text: 'Helping a parent or grandparent move is one of the most emotionally complex experiences a family can go through. It\'s not just about furniture — it\'s about a lifetime of memories, cherished possessions, and a transition that requires patience, sensitivity, and experience.' },

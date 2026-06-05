@@ -84,8 +84,8 @@ export default function CinematicHero() {
 
           <motion.div variants={fadeUp} className="ch__trust-pills">
             <span className="ch__pill"><FaShieldAlt /> Licensed &amp; Insured</span>
-            <span className="ch__pill"><FaStar /> 4.9★ Google</span>
-            <span className="ch__pill"><FaClock /> 1-Hr Free Quote</span>
+            <span className="ch__pill"><FaStar /> 5★ Google</span>
+            <span className="ch__pill"><FaClock /> 15-Min Free Quote</span>
           </motion.div>
 
         </motion.div>
@@ -130,7 +130,7 @@ export default function CinematicHero() {
               >
                 <div className="ch__badge-icon ch__badge-icon--orange"><FaAward /></div>
                 <div>
-                  <strong>4.9★ Rating</strong>
+                  <strong>5★ Rating</strong>
                   <span>2,100+ Reviews</span>
                 </div>
               </motion.div>

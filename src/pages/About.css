@@ -570,13 +570,13 @@
     grid-template-columns: 1fr;
     gap: 48px;
   }
-  
+
   .about-community__grid {
     /* Reorder text to top, media below */
     display: flex;
     flex-direction: column;
   }
-  
+
   .about-community__media {
     width: 100%;
   }
@@ -586,12 +586,17 @@
     margin: 0 auto;
     width: 100%;
   }
-  
+
   .about-leaders__media {
     max-width: 480px;
     margin: 0 auto;
     width: 100%;
   }
+
+  /* Switch portrait-ish containers to friendlier landscape ratios on mobile */
+  .about-media__photo { aspect-ratio: 4 / 3; }
+  .about-leaders__photo-wrap { aspect-ratio: 4 / 3; }
+  .about-community__photo-wrap { aspect-ratio: 4 / 3; }
 }
 
 @media (max-width: 768px) {

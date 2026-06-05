@@ -52,7 +52,7 @@ export const PHOTOS = {
   officeMove:   { src: '/images/furniture.jpg',    id: '1497366216548-37526070297c', seed: 'office-move'     },
   pianoSpec:    { src: '/images/piano.webp',       id: '1520523839897-bd0b52f945a0', seed: 'specialty'       },
   teamSmile:    { src: '/images/cta-bg.jpg',       id: '1521737604893-d14cc237f11d', seed: 'team-smile'      },
-  senior:       { src: '/images/senior.webp',      id: '1581579438828-4b1b7d638b3e', seed: 'senior'          },
+  senior:       { src: '/images/senior.png',      id: '1581579438828-4b1b7d638b3e', seed: 'senior'          },
   hottub:       { src: '/images/hottub.jpg',       id: '1520523839897-bd0b52f945a0', seed: 'hottub'          },
   longdistance: { src: '/images/longdistance.jpg', id: '1601584115197-04ecc0da31d7', seed: 'long-distance'   },
   ctaBg:        { src: '/images/real-crew-truck.jpg', id: '1611078489935-0cb964de46d6', seed: 'cta-bg'       },

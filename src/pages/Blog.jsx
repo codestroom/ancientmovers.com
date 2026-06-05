@@ -63,6 +63,7 @@ export default function Blog() {
         title="Moving Tips & Resources"
         subtitle="Expert advice, Detroit neighborhood guides, and moving insights from our team."
         crumbs={[{ label: 'Blog' }]}
+        videoSrc="/videos/reel-3.mp4"
       />
 
       <section className="blog-page">

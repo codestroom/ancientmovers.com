@@ -57,12 +57,12 @@
   height: 100%;
   object-fit: cover;
   z-index: -2;
-  opacity: 0.22;
+  opacity: 0.7;
 }
 .srv-hero__bg-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(17, 8, 3, 0.75) 0%, rgba(17, 8, 3, 0.95) 100%);
+  background: linear-gradient(180deg, rgba(17, 8, 3, 0.35) 0%, rgba(17, 8, 3, 0.6) 100%);
   z-index: -1;
   pointer-events: none;
 }
@@ -268,13 +268,14 @@
 /* Card Visual Header */
 .srv-card__visual {
   position: relative;
-  height: 200px;
+  aspect-ratio: 16 / 10;
   overflow: hidden;
 }
 .srv-card__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   transition: transform 0.75s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .srv-card:hover .srv-card__img {
@@ -988,6 +989,9 @@
 @media (max-width: 680px) {
   .srv-grid {
     grid-template-columns: 1fr;
+  }
+  .srv-card__visual {
+    aspect-ratio: 4 / 3;
   }
   .srv-hero__stats {
     grid-template-columns: 1fr;

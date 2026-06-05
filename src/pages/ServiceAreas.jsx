@@ -364,7 +364,7 @@ export default function ServiceAreas() {
         <section ref={heroReveal} className="reveal sa-hero">
           <video
             className="sa-hero__bg-video"
-            src="/videos/ancient-movers-showcase.mp4"
+            src="/videos/reel-1.mp4"
             autoPlay
             muted
             loop
@@ -399,7 +399,7 @@ export default function ServiceAreas() {
                 <span>Licensed & Insured (USDOT)</span>
               </div>
               <div className="sa-hero__stat-card">
-                <strong>4.9 ★</strong>
+                <strong>5 ★</strong>
                 <span>Google Community Rating</span>
               </div>
             </div>
@@ -630,7 +630,7 @@ export default function ServiceAreas() {
         <Testimonials 
           eyebrow="Proven Experience" 
           title={<>What <span>Our Neighbors</span> Say</>} 
-          subtitle="Hear directly from satisfied partners and families across Southeast Michigan who rated Ancient Movers 4.9/5 stars." 
+          subtitle="Hear directly from satisfied partners and families across Southeast Michigan who rated Ancient Movers 5/5 stars." 
         />
 
         {/* ==========================================

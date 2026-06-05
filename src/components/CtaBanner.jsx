@@ -31,7 +31,7 @@ export default function CtaBanner() {
       <div ref={ref} className="container cta__inner reveal reveal-zoom">
         <div>
           <h2>Ready to Make Your Next Move <span className="cta__highlight">the Easiest One Yet?</span></h2>
-          <p>Get a free, no-obligation quote in under 60 seconds. Our team responds within 1 hour.</p>
+          <p>Get a free, no-obligation quote in under 60 seconds. Our team responds within 15 minutes.</p>
         </div>
         <div className="cta__actions">
           <Link to="/contact" className="btn btn-lg cta__btn-light">

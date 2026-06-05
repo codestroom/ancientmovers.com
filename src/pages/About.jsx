@@ -81,8 +81,8 @@ export default function About() {
   const milestones = [
     {
       year: '2015',
-      title: 'The First Truck & A Clear Vision',
-      desc: 'Brothers Marcus and Trevor Vance started with a single 16-foot box truck. Armed with experience in national logistics, they set out to build a Detroit moving service based on transparent pricing and extreme care.'
+      title: 'Founded in Canada — Now Expanding to the USA',
+      desc: 'Tarun started Ancient Movers in Canada in 2015 with a single 16-foot box truck and a clear vision: transparent pricing and extreme care on every move. After a decade of building trust across Canadian communities, we\'re now expanding with a second branch in the USA to bring the same standard of service to Metro Detroit families.'
     },
     {
       year: '2018',
@@ -119,13 +119,14 @@ export default function About() {
     <>
       <SEO
         title="About Ancient Movers -- Trusted Detroit Moving Company Since 2015"
-        description="Ancient Movers is a fully licensed, 4.9★-rated moving company serving Metro Detroit since 2015. Learn about our team, values, and commitment to honest, stress-free moves."
+        description="Ancient Movers is a fully licensed, 5★-rated moving company serving Metro Detroit since 2015. Learn about our team, values, and commitment to honest, stress-free moves."
         canonical="https://ancientmovers.com/about"
       />
       <PageHero
         title="About Ancient Movers"
         subtitle="Detroit's trusted moving team -- built on honesty, hard work, and genuine care for every customer."
         crumbs={[{ label: 'About' }]}
+        videoSrc="/videos/reel-6.mp4"
       />
 
       {/* ── Section 1: Our Origins ── */}
@@ -155,7 +156,7 @@ export default function About() {
           <div className="about-media">
             <div className="about-media__photo">
               <img
-                src="/images/real-team-christmas.jpg"
+                src="/images/our-story-team.png"
                 alt="The Ancient Movers team together, proud to serve Detroit"
               />
             </div>
@@ -222,7 +223,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* ── Section 4: Leadership / Co-founders ── */}
+      {/* ── Section 4: Leadership / Founder ── */}
       <section ref={leadersReveal} className="about-leaders reveal reveal-d3">
         <div className="container about-leaders__grid">
           <div className="about-leaders__media">
@@ -240,17 +241,17 @@ export default function About() {
           
           <div className="about-leaders__content">
             <span className="eyebrow">Our Leadership</span>
-            <h2>Meet the Co-Founders</h2>
+            <h2>Meet the Founder</h2>
             <p>
-              Marcus & Trevor Vance founded Ancient Movers out of a desire to create a logistics company that puts people first. Growing up in Detroit, they saw the stress relocations caused families and senior neighbors, and knew they could build a better model.
+              Tarun founded Ancient Movers out of a desire to create a logistics company that puts people first. Growing up in Detroit, he saw the stress relocations caused families and senior neighbors, and knew he could build a better model.
             </p>
             <p>
-              Today, Marcus oversees on-road crew training and quality assurance, regularly jumping on trucks to supervise complex piano or hot-tub maneuvers. Trevor directs client relations and digital routing, ensuring our quotes are fair and our schedules run like clockwork.
+              Today, Tarun oversees on-road crew training and quality assurance, regularly jumping on trucks to supervise complex piano or hot-tub maneuvers, while also directing client relations and digital routing to ensure our quotes are fair and our schedules run like clockwork.
             </p>
-            
+
             <div className="leaders-quote">
               <p>"We don't just load boxes. We carry families into the next chapter of their lives. That deserves our absolute respect, honesty, and hard work."</p>
-              <strong>- Marcus & Trevor Vance</strong>
+              <strong>- Tarun</strong>
             </div>
           </div>
         </div>

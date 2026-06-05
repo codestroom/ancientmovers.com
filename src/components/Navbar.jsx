@@ -41,7 +41,7 @@ export default function Navbar() {
         <div className="container nb__strip-inner">
           <span className="nb__strip-item"><FaCheckCircle /> Free Estimates</span>
           <span className="nb__strip-item nb__strip-item--mid"><FaShieldAlt /> Licensed & Insured</span>
-          <span className="nb__strip-item"><FaStar /> Rated 4.9/5 by 2,100+ Detroit families</span>
+          <span className="nb__strip-item"><FaStar /> Rated 5/5 by 2,100+ Detroit families</span>
         </div>
       </div>
 

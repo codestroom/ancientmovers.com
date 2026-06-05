@@ -29,11 +29,11 @@ export default function QuickQuote() {
         <div ref={headRef} className="reveal reveal-left qq__text">
           <span className="eyebrow"><FaBolt /> 60-Second Quote</span>
           <h2>Tell us about your move -- get a free quote in minutes.</h2>
-          <p>No phone tag, no spam. A real human reads every request and replies within 1 hour.</p>
+          <p>No phone tag, no spam. A real human reads every request and replies within 15 minutes.</p>
           <div className="qq__perks">
             <div className="qq__perk"><strong>10k+</strong><span>Moves done</span></div>
-            <div className="qq__perk"><strong>1 hr</strong><span>Reply time</span></div>
-            <div className="qq__perk"><strong>4.9★</strong><span>Avg rating</span></div>
+            <div className="qq__perk"><strong>15 min</strong><span>Reply time</span></div>
+            <div className="qq__perk"><strong>5★</strong><span>Avg rating</span></div>
           </div>
           <a href={SITE.phoneHref} className="qq__phone">
             <FaPhoneAlt /> Or call now: <strong>{SITE.phone}</strong>

@@ -62,7 +62,7 @@ export default function HeroVisual() {
       <div className="hv__badge hv__badge--rating">
         <div className="hv__badge-icon hv__badge-icon--orange"><FaStar /></div>
         <div>
-          <strong>4.9 / 5</strong>
+          <strong>5 / 5</strong>
           <span>2,100+ reviews</span>
         </div>
       </div>
@@ -86,7 +86,7 @@ export default function HeroVisual() {
       <div className="hv__badge hv__badge--fast">
         <div className="hv__badge-icon hv__badge-icon--green"><FaBolt /></div>
         <div>
-          <strong>1-hour</strong>
+          <strong>15-min</strong>
           <span>Response time</span>
         </div>
       </div>
