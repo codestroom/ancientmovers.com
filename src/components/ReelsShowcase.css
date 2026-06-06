@@ -50,12 +50,47 @@
   box-shadow: var(--shadow-md);
   cursor: pointer;
   background: var(--brand-dark);
-  transition: transform .35s ease, box-shadow .35s ease;
+  transition: transform .35s ease, box-shadow .35s ease, opacity .35s ease;
 }
 
 .reel-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-lg);
+}
+
+/* ============================================================
+   MOBILE: full-size swipeable carousel
+   Centered card plays full size; neighbours peek, dimmed & paused.
+   ============================================================ */
+@media (max-width: 700px) {
+  .reels__track {
+    grid-auto-columns: 84%;
+    gap: 14px;
+    /* leading/trailing room so first & last cards can sit centered */
+    padding: 6px 8% 1.25rem;
+    margin: 0;
+    scroll-padding-inline: 8%;
+    scrollbar-width: none;
+  }
+  .reels__track::-webkit-scrollbar { display: none; }
+
+  .reel-card {
+    scroll-snap-align: center;
+    opacity: .5;
+    transform: scale(.94);
+  }
+  .reel-card:hover { transform: scale(.94); }
+
+  .reel-card.is-active {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: var(--shadow-lg);
+  }
+  .reel-card.is-active:hover { transform: scale(1); }
+
+  /* Taller, more immersive aspect for the focused reel */
+  .reel-card__media { aspect-ratio: 9 / 16; }
+  .reel-card__content h3 { font-size: 1.15rem; }
 }
 
 .reel-card__media {

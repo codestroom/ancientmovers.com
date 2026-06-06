@@ -25,6 +25,12 @@
   justify-content: center;
 }
 
+/* Touch/coarse-pointer devices never drive the cursor, so keep the off-screen
+   compass out of the layout entirely (prevents leftward overflow on mobile). */
+@media (hover: none), (pointer: coarse) {
+  .cc-compass { display: none !important; }
+}
+
 /* Dial & Gauge Wrapper */
 .cc-ring-wrapper {
   position: relative;

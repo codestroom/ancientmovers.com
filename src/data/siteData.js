@@ -66,7 +66,7 @@ export const SERVICES = [
     desc: 'Stress-free home moves across Metro Detroit — from cozy apartments to large family homes. We protect your belongings like they\'re our own.',
     features: ['Free in-home estimate', 'Furniture disassembly & reassembly', 'Floor & wall protection'],
     photo: { src: '/images/real-carrying-table.jpg', seed: 'residential' },
-    photoAlt: { src: '/images/residential.jpg', seed: 'residential-alt' }
+    photoAlt: { src: '/images/real-residential-crew.jpg', seed: 'residential-alt' }
   },
   {
     icon: 'building',
@@ -74,7 +74,7 @@ export const SERVICES = [
     desc: 'Minimize downtime with our efficient Detroit office relocations — IT equipment, files, workstations and everything in between.',
     features: ['After-hours & weekend moves', 'IT-safe handling', 'Office layout setup'],
     photo: { src: '/images/real-team-lineup.jpg', seed: 'office' },
-    photoAlt: { src: '/images/office.jpg', seed: 'office-alt' }
+    photoAlt: { src: '/images/real-loaded-truck.jpg', seed: 'office-alt' }
   },
   {
     icon: 'user-friends',
@@ -82,7 +82,7 @@ export const SERVICES = [
     desc: 'Patient, compassionate moving services designed specifically for seniors. We take extra time, extra care, and handle every detail so the family can relax.',
     features: ['Extra care for fragile items', 'Furniture placement & setup', 'Coordination with family members'],
     photo: { src: '/images/senior.png', seed: 'senior' },
-    photoAlt: { src: '/images/real-customer-spring.jpg', seed: 'senior-alt' }
+    photoAlt: { src: '/images/real-customer-sign.jpg', seed: 'senior-alt' }
   },
   {
     icon: 'music',
@@ -106,21 +106,23 @@ export const SERVICES = [
     desc: 'Moving out of Metro Detroit? We handle out-of-state and cross-country moves with transparent flat-rate pricing and guaranteed delivery windows.',
     features: ['Cross-border customs assistance', 'Real-time shipment tracking', 'Dedicated move coordinator'],
     photo: { src: '/images/real-winter-move.jpg', seed: 'long-distance' },
-    photoAlt: { src: '/images/longdistance.jpg', seed: 'long-distance-alt' }
+    photoAlt: { src: '/images/real-truck-loading.jpg', seed: 'long-distance-alt' }
   },
   {
     icon: 'hot-tub',
     title: 'Hot Tub Moving',
     desc: 'Hot tubs and swim spas are among the heaviest items in any home. Our crew uses the right equipment to move them safely — in, out, or across Michigan.',
     features: ['Crane & skid equipment available', 'Deck & door-frame protection', 'Drain & reconnect assistance'],
-    photo: { src: '/images/hottub.jpg', seed: 'hot-tub' }
+    photo: { src: '/images/hottub.jpg', seed: 'hot-tub' },
+    photoAlt: { src: '/images/real-hottub-dolly.jpg', seed: 'hot-tub-alt' }
   },
   {
     icon: 'table',
     title: 'Pool Table Moving',
     desc: 'Pool tables must be properly disassembled, leveled, and re-felted after every move. Our specialists do it right the first time.',
     features: ['Full disassembly & reassembly', 'Re-leveling on arrival', 'Felt inspection included'],
-    photo: { src: '/images/pooltable.jpg', seed: 'pool-table' }
+    photo: { src: '/images/real-pooltable-assembly.jpg', seed: 'pool-table' },
+    photoAlt: { src: '/images/real-pooltable-crew.jpg', seed: 'pool-table-alt' }
   },
   {
     icon: 'tools',
@@ -128,7 +130,7 @@ export const SERVICES = [
     desc: 'From IKEA furniture to complex bed frames and wall units — we assemble and disassemble anything, saving you hours of frustration.',
     features: ['All furniture brands & styles', 'Tool kit on every truck', 'Included with most moves'],
     photo: { src: '/images/real-wrapped-wardrobe.jpg', seed: 'assembly' },
-    photoAlt: { src: '/images/assembly.jpg', seed: 'assembly-alt' }
+    photoAlt: { src: '/images/real-assembly-drill.jpg', seed: 'assembly-alt' }
   },
   {
     icon: 'warehouse',
@@ -144,7 +146,7 @@ export const SERVICES = [
     desc: 'Pick up professional-grade boxes, tape, bubble wrap, wardrobe boxes, and mattress covers. Everything you need to pack like a pro.',
     features: ['Moving boxes (all sizes)', 'Wardrobe & dish boxes', '10% off when you book a move'],
     photo: { src: '/images/real-expo-booth.jpg', seed: 'supplies' },
-    photoAlt: { src: '/images/supplies.jpg', seed: 'supplies-alt' }
+    photoAlt: { src: '/images/real-moving-equipment.jpg', seed: 'supplies-alt' }
   },
 ];
 

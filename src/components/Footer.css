@@ -12,6 +12,11 @@
   gap: 40px;
   padding-bottom: 52px;
 }
+/* Allow grid tracks to shrink below their content's min width (prevents long
+   emails/addresses from blowing the grid wider than the viewport). */
+.footer__col { min-width: 0; }
+.footer__contact a,
+.footer__contact li { overflow-wrap: anywhere; word-break: break-word; }
 
 .footer__col h4 {
   color: #FFF3DC;
@@ -76,9 +81,15 @@
 .footer__devby { font-size: .82rem; color: rgba(255,243,220,.25); }
 .footer__devby-brand { color: #F7921E; font-weight: 600; letter-spacing: .02em; }
 
-@media (max-width: 1024px) { .footer__grid { grid-template-columns: 1fr 1fr 1fr; } }
+@media (max-width: 1024px) { .footer__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (max-width: 640px) {
-  .footer__grid { grid-template-columns: 1fr 1fr; }
+  .footer__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 24px; }
   .footer__brand { grid-column: 1 / -1; }
   .footer__bottom-inner { flex-direction: column; text-align: center; }
+  .footer__bottom ul { justify-content: center; flex-wrap: wrap; }
+}
+@media (max-width: 420px) {
+  /* Keep two columns so link lists sit side-by-side and the footer stays short */
+  .footer__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 20px; }
+  .footer { padding-top: 56px; }
 }

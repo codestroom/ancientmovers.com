@@ -14,7 +14,10 @@ export default function useReveal(options = {}) {
           }
         });
       },
-      { threshold: 0.12, rootMargin: '0px 0px -60px 0px', ...options }
+      // threshold:0 → reveal as soon as any part enters view. A fixed ratio like
+      // 0.12 can never be reached by sections taller than ~8x the viewport (e.g.
+      // the single-column services grid on mobile), leaving them stuck at opacity:0.
+      { threshold: 0, rootMargin: '0px 0px -60px 0px', ...options }
     );
     io.observe(el);
     return () => io.disconnect();

@@ -625,6 +625,10 @@
     left: 0px !important;
     right: auto !important;
   }
+
+  /* Reveal vertically on mobile so the full-width cards don't slide off-screen */
+  .timeline-item--left,
+  .timeline-item--right { transform: translateY(30px); }
 }
 
 @media (max-width: 560px) {

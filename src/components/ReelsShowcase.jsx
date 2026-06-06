@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FaArrowRight } from 'react-icons/fa';
 import useReveal from '../hooks/useReveal.js';
@@ -12,19 +13,19 @@ const REELS = [
   { video: '/videos/reel-6.mp4', poster: '/images/reels/reel-6.jpg', tag: 'In Action',     title: 'Move day, start to finish' },
 ];
 
-function ReelCard({ reel }) {
+function ReelCard({ reel, registerVideo }) {
   return (
     <article className="reel-card">
       <div className="reel-card__media">
         <video
+          ref={registerVideo}
           className="reel-card__video"
           src={reel.video}
           poster={reel.poster}
-          autoPlay
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
         />
         <div className="reel-card__overlay" />
         <span className="reel-card__tag">{reel.tag}</span>
@@ -41,6 +42,42 @@ function ReelCard({ reel }) {
 
 export default function ReelsShowcase() {
   const headRef = useReveal();
+  const trackRef = useRef(null);
+  const videosRef = useRef([]);
+
+  // Play only the reel(s) currently centered in view; pause the rest.
+  // On wide screens every card is fully visible, so all play. On mobile the
+  // track is a snap carousel, so only the centered card crosses the threshold.
+  useEffect(() => {
+    const track = trackRef.current;
+    const videos = videosRef.current.filter(Boolean);
+    if (!track || !videos.length) return;
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const video = entry.target;
+          const card = video.closest('.reel-card');
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
+            card?.classList.add('is-active');
+            const p = video.play();
+            if (p && p.catch) p.catch(() => {});
+          } else {
+            card?.classList.remove('is-active');
+            video.pause();
+          }
+        });
+      },
+      { root: track, threshold: [0, 0.6, 0.9] }
+    );
+
+    videos.forEach((v) => io.observe(v));
+    return () => io.disconnect();
+  }, []);
+
+  const registerVideo = (index) => (el) => {
+    videosRef.current[index] = el;
+  };
 
   return (
     <section className="reels">
@@ -48,12 +85,12 @@ export default function ReelsShowcase() {
         <div ref={headRef} className="reveal section-head reels__head">
           <span className="eyebrow">Watch Us in Action</span>
           <h2>See Our Movers in Action</h2>
-          <p>Hover over any clip to watch our crews at work &mdash; real Detroit moves, real Ancient Movers care.</p>
+          <p>Swipe through real Detroit moves &mdash; the clip in view plays automatically, showing our crews at work with real Ancient Movers care.</p>
         </div>
 
-        <div className="reels__track">
-          {REELS.map((r) => (
-            <ReelCard key={r.video} reel={r} />
+        <div ref={trackRef} className="reels__track">
+          {REELS.map((r, i) => (
+            <ReelCard key={r.video} reel={r} registerVideo={registerVideo(i)} />
           ))}
         </div>
       </div>
