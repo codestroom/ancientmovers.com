@@ -49,7 +49,7 @@ const ITEMS = [
     size: 'md'
   },
   {
-    src: '/images/real-customer-spring.png',
+    src: '/images/real-customer-spring.jpg',
     id: '1601584115197-04ecc0da31d7',
     seed: 'new-home',
     tag: 'New Home',
