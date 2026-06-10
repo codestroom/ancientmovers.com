@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FaFacebookF, FaInstagram, FaYoutube, FaYelp, FaGoogle, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaYoutube, FaYelp, FaGoogle, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaClock, FaHome } from 'react-icons/fa';
 import { SiTiktok } from 'react-icons/si';
 import { SITE, SERVICE_AREAS, SERVICES } from '../data/siteData.js';
 import './Footer.css';
@@ -19,6 +19,7 @@ export default function Footer() {
             <a href={SITE.socials.tiktok} aria-label="TikTok" target="_blank" rel="noopener noreferrer"><SiTiktok /></a>
             <a href={SITE.socials.youtube} aria-label="YouTube" target="_blank" rel="noopener noreferrer"><FaYoutube /></a>
             <a href={SITE.socials.yelp} aria-label="Yelp" target="_blank" rel="noopener noreferrer"><FaYelp /></a>
+            <a href={SITE.socials.homestars} aria-label="HomeStars" target="_blank" rel="noopener noreferrer"><FaHome /></a>
             <a href={SITE.socials.google} aria-label="Google Business" target="_blank" rel="noopener noreferrer"><FaGoogle /></a>
           </div>
         </div>
@@ -66,7 +67,7 @@ export default function Footer() {
         <div className="container footer__bottom-inner">
           <p>© {new Date().getFullYear()} {SITE.name}. All rights reserved.</p>
           <p className="footer__devby">
-            Developed by <span className="footer__devby-brand">CodeStroom</span>
+            Developed by <a href="https://codestroom.com/" target="_blank" rel="noopener noreferrer" className="footer__devby-brand">CodeStroom</a>
           </p>
           <ul>
             <li><Link to="/">Privacy Policy</Link></li>

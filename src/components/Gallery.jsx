@@ -15,7 +15,8 @@ const ITEMS = [
     title: 'Another happy Detroit family, moved',
     location: 'Grosse Pointe, MI',
     rating: '5.0',
-    size: 'lg'
+    size: 'lg',
+    focus: 'center top'
   },
   {
     src: '/images/real-carrying-table.jpg',
@@ -48,14 +49,15 @@ const ITEMS = [
     size: 'md'
   },
   {
-    src: '/images/real-customer-spring.jpg',
+    src: '/images/real-customer-spring.png',
     id: '1601584115197-04ecc0da31d7',
     seed: 'new-home',
     tag: 'New Home',
     title: 'Welcomed into their new Detroit home',
     location: 'Birmingham, MI',
     rating: '5.0',
-    size: 'md'
+    size: 'md',
+    focus: 'center 70%'
   },
 ];
 
@@ -98,6 +100,7 @@ export default function Gallery() {
                 w={it.size === 'lg' ? 1100 : 760}
                 h={it.size === 'lg' ? 1100 : 580}
                 className="g-card__img"
+                style={it.focus ? { objectPosition: it.focus } : undefined}
               />
               <div className="g-card__overlay" />
               <div className="g-card__corner">

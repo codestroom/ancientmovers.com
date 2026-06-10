@@ -25,6 +25,7 @@ export default function ServiceCard({ service, index = 0 }) {
         w={900}
         h={600}
         className="service-card__img"
+        style={service.photo.focus ? { objectPosition: service.photo.focus } : undefined}
       />
       <div className="service-card__overlay" />
 

@@ -311,6 +311,7 @@ export default function Services() {
                           className="srv-card__img"
                           w={900}
                           h={600}
+                          style={cardPhoto.focus ? { objectPosition: cardPhoto.focus } : undefined}
                         />
                         <div className="srv-card__overlay" />
                         <span className="srv-card__badge">{category === 'full' ? 'Full Move' : category === 'specialty' ? 'Specialty' : 'Convenience'}</span>

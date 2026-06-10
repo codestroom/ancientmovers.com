@@ -8,12 +8,13 @@ export const SITE = {
   hours: 'Mon – Sun: 7:00 AM – 9:00 PM',
   promo: '10% Off Packing Supplies & Wardrobe Boxes When You Book a Move',
   socials: {
-    facebook:  'https://facebook.com/ancientmovers',
-    instagram: 'https://instagram.com/ancientmovers',
-    tiktok:    'https://tiktok.com/@ancientmovers',
-    youtube:   'https://youtube.com/@ancientmovers',
-    yelp:      'https://yelp.com/biz/ancient-movers-detroit',
-    google:    'https://g.page/ancient-movers-detroit',
+    facebook:  'https://www.facebook.com/ancientmoverswindsor/',
+    instagram: 'https://www.instagram.com/ancientmovers/',
+    tiktok:    'https://www.tiktok.com/@ancientmoverswindsor',
+    youtube:   'https://www.youtube.com/channel/UCBlSt_IzIHlz6xFRHAzJ-SA',
+    yelp:      'https://www.yelp.ca/biz/ancient-movers-windsor-3',
+    homestars: 'https://www.homestars.com/profile/2944061-ancient-movers',
+    google:    'https://www.google.com/maps/place/Ancient+Movers+LTD./@42.2438504,-82.9831283,616m/data=!3m2!1e3!4b1!4m6!3m5!1s0x883b2da2349b80ed:0xa1ca874d2ce68870!8m2!3d42.2438504!4d-82.9831283!16s%2Fg%2F11j0qyqn8v',
   }
 };
 
@@ -74,7 +75,7 @@ export const SERVICES = [
     desc: 'Minimize downtime with our efficient Detroit office relocations — IT equipment, files, workstations and everything in between.',
     features: ['After-hours & weekend moves', 'IT-safe handling', 'Office layout setup'],
     photo: { src: '/images/real-team-lineup.jpg', seed: 'office' },
-    photoAlt: { src: '/images/real-loaded-truck.jpg', seed: 'office-alt' }
+    photoAlt: { src: '/images/real-loaded-truck.jpg', seed: 'office-alt', focus: 'center top' }
   },
   {
     icon: 'user-friends',

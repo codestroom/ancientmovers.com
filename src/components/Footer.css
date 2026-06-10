@@ -79,7 +79,8 @@
 .footer__bottom a { color: rgba(255,243,220,.32); transition: color .15s; }
 .footer__bottom a:hover { color: #FFB347; }
 .footer__devby { font-size: .82rem; color: rgba(255,243,220,.25); }
-.footer__devby-brand { color: #F7921E; font-weight: 600; letter-spacing: .02em; }
+.footer__devby-brand { color: #F7921E; font-weight: 600; letter-spacing: .02em; text-decoration: none; }
+.footer__devby-brand:hover { text-decoration: underline; }
 
 @media (max-width: 1024px) { .footer__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (max-width: 640px) {
