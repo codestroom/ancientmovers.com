@@ -15,8 +15,7 @@ const ITEMS = [
     title: 'Another happy Detroit family, moved',
     location: 'Grosse Pointe, MI',
     rating: '5.0',
-    size: 'lg',
-    focus: 'center top'
+    size: 'lg'
   },
   {
     src: '/images/real-carrying-table.jpg',
