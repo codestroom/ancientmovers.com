@@ -26,5 +26,8 @@
     "@vitejs/plugin-react": "^4.3.1",
     "puppeteer": "^25.0.4",
     "vite": "^5.4.8"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-darwin-x64": "^4.61.1"
   }
 }
