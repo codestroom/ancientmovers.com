@@ -251,7 +251,11 @@ section { padding: 120px 0; }
   opacity: 0;
   transform: translateY(28px);
   transition: opacity .9s cubic-bezier(.2,.8,.2,1), transform .9s cubic-bezier(.2,.8,.2,1);
+  /* will-change is only safe on desktop; on iOS each GPU layer costs ~1MB RAM */
   will-change: transform, opacity;
+}
+@media (max-width: 768px) {
+  .reveal { will-change: auto; }
 }
 .reveal.is-revealed { opacity: 1; transform: none; }
 .reveal-left  { transform: translateX(-40px); }

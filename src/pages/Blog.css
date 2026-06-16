@@ -150,6 +150,7 @@
   top: 18px;
   left: 18px;
   background: rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   color: var(--cream);
   font-family: var(--font-display);

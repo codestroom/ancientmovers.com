@@ -126,6 +126,7 @@
   background: rgba(255,255,255,.95);
   color: #C4650A;
   border-radius: 999px;
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   box-shadow: 0 4px 14px rgba(0,0,0,.12);
 }
@@ -137,6 +138,7 @@
   color: #FFF3DC;
   border: 1px solid rgba(255,243,220,.15);
   border-radius: 999px;
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
 }
 .g-card__rating svg { color: #F7921E; font-size: .72rem; }

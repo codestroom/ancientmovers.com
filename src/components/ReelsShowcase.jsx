@@ -17,15 +17,20 @@ function ReelCard({ reel, registerVideo }) {
   return (
     <article className="reel-card">
       <div className="reel-card__media">
+        {/*
+          No src here — src is injected by the IntersectionObserver below only
+          when the card scrolls into view. This prevents iOS from allocating
+          decode memory for all 6 videos simultaneously on page load.
+        */}
         <video
           ref={registerVideo}
           className="reel-card__video"
-          src={reel.video}
+          data-src={reel.video}
           poster={reel.poster}
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="none"
         />
         <div className="reel-card__overlay" />
         <span className="reel-card__tag">{reel.tag}</span>
@@ -45,23 +50,40 @@ export default function ReelsShowcase() {
   const trackRef = useRef(null);
   const videosRef = useRef([]);
 
-  // Play only the reel(s) currently centered in view; pause the rest.
-  // On wide screens every card is fully visible, so all play. On mobile the
-  // track is a snap carousel, so only the centered card crosses the threshold.
   useEffect(() => {
     const track = trackRef.current;
     const videos = videosRef.current.filter(Boolean);
     if (!track || !videos.length) return;
 
-    const io = new IntersectionObserver(
+    // Two-level observer strategy:
+    // 1. Outer observer (viewport root): lazily inject src when card nears viewport.
+    // 2. Inner observer (track root): play/pause based on which card is centred.
+    const srcObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const video = entry.target;
+            if (!video.src && video.dataset.src) {
+              video.src = video.dataset.src;
+            }
+            srcObserver.unobserve(video);
+          }
+        });
+      },
+      { rootMargin: '200px' }
+    );
+
+    const playObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           const video = entry.target;
           const card = video.closest('.reel-card');
           if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
             card?.classList.add('is-active');
-            const p = video.play();
-            if (p && p.catch) p.catch(() => {});
+            if (video.src) {
+              const p = video.play();
+              if (p && p.catch) p.catch(() => {});
+            }
           } else {
             card?.classList.remove('is-active');
             video.pause();
@@ -71,8 +93,15 @@ export default function ReelsShowcase() {
       { root: track, threshold: [0, 0.6, 0.9] }
     );
 
-    videos.forEach((v) => io.observe(v));
-    return () => io.disconnect();
+    videos.forEach((v) => {
+      srcObserver.observe(v);
+      playObserver.observe(v);
+    });
+
+    return () => {
+      srcObserver.disconnect();
+      playObserver.disconnect();
+    };
   }, []);
 
   const registerVideo = (index) => (el) => {

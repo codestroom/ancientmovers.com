@@ -52,6 +52,7 @@
   position: absolute; inset: 0;
   background-image: radial-gradient(circle, rgba(247,146,30,.18) 1px, transparent 1px);
   background-size: 30px 30px;
+  -webkit-mask-image: radial-gradient(ellipse 55% 50% at 50% 50%, #000 15%, transparent 68%);
   mask-image: radial-gradient(ellipse 55% 50% at 50% 50%, #000 15%, transparent 68%);
   pointer-events: none;
 }

@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
@@ -23,21 +24,53 @@ const SPARKLES = Array.from({ length: 11 }, (_, i) => ({
   duration: `${3.4 + (i % 4)}s`,
 }));
 
+const VIDEO_SRC = '/videos/ancient-movers-showcase.mp4';
+const VIDEO_POSTER = '/images/reels/reel-1.jpg';
+
+function useIsMobile() {
+  const [mobile, setMobile] = useState(() =>
+    typeof window !== 'undefined' && window.innerWidth <= 960
+  );
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 960px)');
+    const handler = (e) => setMobile(e.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+  return mobile;
+}
+
 export default function CinematicHero() {
+  const isMobile = useIsMobile();
+  const bgVideoRef = useRef(null);
+
+  useEffect(() => {
+    const v = bgVideoRef.current;
+    if (!v || isMobile) return;
+    // Only attempt play on desktop; iOS autoplay is handled by the attributes
+    const p = v.play();
+    if (p && p.catch) p.catch(() => {});
+  }, [isMobile]);
+
   return (
     <section className="ch">
 
       {/* ── Decorative background ── */}
       <div className="ch__bg" aria-hidden="true">
-        <video
-          className="ch__bg-video"
-          src="/videos/ancient-movers-showcase.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-        />
+        {/* Background video: desktop only, lazy metadata, no autoplay on mobile */}
+        {!isMobile && (
+          <video
+            ref={bgVideoRef}
+            className="ch__bg-video"
+            src={VIDEO_SRC}
+            poster={VIDEO_POSTER}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="none"
+          />
+        )}
         <div className="ch__bg-overlay" />
         <div className="ch__blob ch__blob--1" />
         <div className="ch__blob ch__blob--2" />
@@ -103,19 +136,32 @@ export default function CinematicHero() {
 
             {/* CSS float wrapper — keeps transforms off the Framer element */}
             <div className="ch__truck-float-wrap">
-              <motion.video
-                src="/videos/ancient-movers-showcase.mp4"
-                aria-label="Ancient Movers crew in action"
-                className="ch__truck-img"
-                initial={{ opacity: 0, x: 64, scale: 0.88 }}
-                animate={{ opacity: 1, x: 0, scale: 1 }}
-                transition={{ duration: 0.9, ease: [0.2, 0.8, 0.2, 1], delay: 0.32 }}
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-              />
+              {/* On mobile show a static poster image — no video decode memory hit */}
+              {isMobile ? (
+                <motion.img
+                  src={VIDEO_POSTER}
+                  alt="Ancient Movers crew in action"
+                  className="ch__truck-img"
+                  initial={{ opacity: 0, x: 0, scale: 0.88 }}
+                  animate={{ opacity: 1, x: 0, scale: 1 }}
+                  transition={{ duration: 0.9, ease: [0.2, 0.8, 0.2, 1], delay: 0.32 }}
+                />
+              ) : (
+                <motion.video
+                  src={VIDEO_SRC}
+                  poster={VIDEO_POSTER}
+                  aria-label="Ancient Movers crew in action"
+                  className="ch__truck-img"
+                  initial={{ opacity: 0, x: 64, scale: 0.88 }}
+                  animate={{ opacity: 1, x: 0, scale: 1 }}
+                  transition={{ duration: 0.9, ease: [0.2, 0.8, 0.2, 1], delay: 0.32 }}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="none"
+                />
+              )}
             </div>
 
             <div className="ch__truck-shadow" />
