@@ -136,32 +136,26 @@ export default function CinematicHero() {
 
             {/* CSS float wrapper — keeps transforms off the Framer element */}
             <div className="ch__truck-float-wrap">
-              {/* On mobile show a static poster image — no video decode memory hit */}
-              {isMobile ? (
-                <motion.img
-                  src={VIDEO_POSTER}
-                  alt="Ancient Movers crew in action"
-                  className="ch__truck-img"
-                  initial={{ opacity: 0, x: 0, scale: 0.88 }}
-                  animate={{ opacity: 1, x: 0, scale: 1 }}
-                  transition={{ duration: 0.9, ease: [0.2, 0.8, 0.2, 1], delay: 0.32 }}
-                />
-              ) : (
-                <motion.video
-                  src={VIDEO_SRC}
-                  poster={VIDEO_POSTER}
-                  aria-label="Ancient Movers crew in action"
-                  className="ch__truck-img"
-                  initial={{ opacity: 0, x: 64, scale: 0.88 }}
-                  animate={{ opacity: 1, x: 0, scale: 1 }}
-                  transition={{ duration: 0.9, ease: [0.2, 0.8, 0.2, 1], delay: 0.32 }}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="none"
-                />
-              )}
+              {/*
+                Single video on all screen sizes.
+                preload="none" means no bytes are fetched until play() fires —
+                safe on mobile. The background video is still hidden on mobile
+                (see above), so only ONE video ever plays at a time.
+              */}
+              <motion.video
+                src={VIDEO_SRC}
+                poster={VIDEO_POSTER}
+                aria-label="Ancient Movers crew in action"
+                className="ch__truck-img"
+                initial={{ opacity: 0, x: isMobile ? 0 : 64, scale: 0.88 }}
+                animate={{ opacity: 1, x: 0, scale: 1 }}
+                transition={{ duration: 0.9, ease: [0.2, 0.8, 0.2, 1], delay: 0.32 }}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="none"
+              />
             </div>
 
             <div className="ch__truck-shadow" />
