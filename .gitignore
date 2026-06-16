@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Secrets — never commit live DB / admin credentials
+backend/config.php
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
