@@ -139,10 +139,12 @@ document.getElementById('postForm').addEventListener('submit', (e) => {
   document.getElementById('contentField').value = JSON.stringify(out);
 });
 
-// Image upload
+// Image upload — runs automatically when a file is chosen (button also works).
 const uploadBtn = document.getElementById('uploadBtn');
-uploadBtn.onclick = async () => {
-  const file = document.getElementById('imageFile').files[0];
+const imageFile = document.getElementById('imageFile');
+
+async function doUpload() {
+  const file = imageFile.files[0];
   if (!file) { alert('Choose an image file first.'); return; }
   const fd = new FormData();
   fd.append('csrf', '<?= h(csrf_token()) ?>');
@@ -150,7 +152,13 @@ uploadBtn.onclick = async () => {
   uploadBtn.textContent = 'Uploading…'; uploadBtn.disabled = true;
   try {
     const res = await fetch('upload.php', { method: 'POST', body: fd });
-    const data = await res.json();
+    const text = await res.text();
+    let data;
+    try { data = JSON.parse(text); }
+    catch (e) {
+      alert('Upload error — the server did not return JSON. Response was:\n\n' + text.slice(0, 400));
+      return;
+    }
     if (data.path) {
       document.getElementById('imageField').value = data.path;
       const prev = document.getElementById('imagePreview');
@@ -158,9 +166,15 @@ uploadBtn.onclick = async () => {
     } else {
       alert(data.error || 'Upload failed.');
     }
-  } catch (err) { alert('Upload failed.'); }
-  uploadBtn.textContent = 'Upload'; uploadBtn.disabled = false;
-};
+  } catch (err) {
+    alert('Upload failed: ' + err.message);
+  } finally {
+    uploadBtn.textContent = 'Upload'; uploadBtn.disabled = false;
+  }
+}
+
+uploadBtn.onclick = doUpload;
+imageFile.addEventListener('change', doUpload);
 </script>
 </body>
 </html>
