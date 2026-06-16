@@ -43,13 +43,20 @@ function useIsMobile() {
 export default function CinematicHero() {
   const isMobile = useIsMobile();
   const bgVideoRef = useRef(null);
+  const visualVideoRef = useRef(null);
 
+  // Programmatic play() is the most reliable autoplay trigger on iOS Safari.
+  // The autoPlay attribute alone can be ignored when preload="none" because
+  // the browser hasn't buffered enough data yet. Calling play() after mount
+  // forces it to start fetching + playing immediately.
   useEffect(() => {
-    const v = bgVideoRef.current;
-    if (!v || isMobile) return;
-    // Only attempt play on desktop; iOS autoplay is handled by the attributes
-    const p = v.play();
-    if (p && p.catch) p.catch(() => {});
+    const tryPlay = (v) => {
+      if (!v) return;
+      const p = v.play();
+      if (p && p.catch) p.catch(() => {});
+    };
+    if (!isMobile) tryPlay(bgVideoRef.current);
+    tryPlay(visualVideoRef.current);
   }, [isMobile]);
 
   return (
@@ -143,6 +150,7 @@ export default function CinematicHero() {
                 (see above), so only ONE video ever plays at a time.
               */}
               <motion.video
+                ref={visualVideoRef}
                 src={VIDEO_SRC}
                 poster={VIDEO_POSTER}
                 aria-label="Ancient Movers crew in action"
@@ -154,7 +162,7 @@ export default function CinematicHero() {
                 muted
                 loop
                 playsInline
-                preload="none"
+                preload="metadata"
               />
             </div>
 
