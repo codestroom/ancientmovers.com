@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FaArrowRight, FaPhoneAlt, FaBolt } from 'react-icons/fa';
 import { SITE } from '../data/siteData.js';
+import { submitEnquiry } from '../data/enquiryApi.js';
 import useReveal from '../hooks/useReveal.js';
 import useTilt from '../hooks/useTilt.js';
 import './QuickQuote.css';
@@ -14,6 +15,17 @@ export default function QuickQuote() {
 
   const submit = (e) => {
     e.preventDefault();
+    const form = e.currentTarget;
+    const get = (id) => form.querySelector(`#${id}`)?.value || '';
+    submitEnquiry({
+      name: get('qq-name'),
+      phone: get('qq-phone'),
+      date: get('qq-date'),
+      from: get('qq-from'),
+      to: get('qq-to'),
+      size: get('qq-size'),
+      source: 'quick-quote',
+    });
     alert('Thanks! Your quote request is on its way to our team.');
     formRef.current?.reset();
   };

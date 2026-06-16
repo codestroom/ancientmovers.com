@@ -28,3 +28,32 @@ function check_csrf(): void {
 }
 
 function h(?string $s): string { return htmlspecialchars((string)$s, ENT_QUOTES, 'UTF-8'); }
+
+/**
+ * Returns [page, perPage, offset] from the ?page query param.
+ */
+function pager_args(int $perPage = 10): array {
+  $page = max(1, (int)($_GET['page'] ?? 1));
+  return [$page, $perPage, ($page - 1) * $perPage];
+}
+
+/**
+ * Renders Prev / 1 2 3 / Next pagination. $base is the page URL (e.g. "index.php").
+ */
+function render_pager(int $page, int $totalPages, string $base): string {
+  if ($totalPages <= 1) return '';
+  $link = fn($p, $label, $cls = '') =>
+    ($p < 1 || $p > $totalPages || $p === $page)
+      ? "<span class=\"page $cls disabled\">$label</span>"
+      : "<a class=\"page $cls\" href=\"$base?page=$p\">$label</a>";
+  $out = '<nav class="pager">';
+  $out .= $link($page - 1, '‹ Prev');
+  for ($p = 1; $p <= $totalPages; $p++) {
+    $out .= ($p === $page)
+      ? "<span class=\"page current\">$p</span>"
+      : "<a class=\"page\" href=\"$base?page=$p\">$p</a>";
+  }
+  $out .= $link($page + 1, 'Next ›');
+  $out .= '</nav>';
+  return $out;
+}

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaSearch, FaTimes } from 'react-icons/fa';
 import PageHero from './PageHero.jsx';
@@ -13,7 +13,12 @@ export default function Blog() {
   const { blogs: BLOGS, loading } = useBlogs();
   const [activeCategory, setActiveCategory] = useState(ALL);
   const [searchQuery, setSearchQuery] = useState('');
-  
+  const [page, setPage] = useState(1);
+  const PER_PAGE = 6;
+
+  // Back to page 1 whenever the filter/search changes.
+  useEffect(() => { setPage(1); }, [activeCategory, searchQuery]);
+
   const headerReveal = useReveal();
   const contentReveal = useReveal();
 
@@ -43,6 +48,11 @@ export default function Blog() {
   } else {
     gridPosts = filtered;
   }
+
+  // Paginate the grid section.
+  const totalPages = Math.max(1, Math.ceil(gridPosts.length / PER_PAGE));
+  const safePage = Math.min(page, totalPages);
+  const pagedGridPosts = gridPosts.slice((safePage - 1) * PER_PAGE, safePage * PER_PAGE);
 
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
@@ -186,7 +196,7 @@ export default function Blog() {
                 {/* Bottom Grid: 2-Column Equal Width (or all posts if < 3 matching) */}
                 {gridPosts.length > 0 && (
                   <div className={`blog-page__grid ${!showFeaturedSection ? 'blog-page__grid--full' : ''}`}>
-                    {gridPosts.map(post => (
+                    {pagedGridPosts.map(post => (
                       <article key={post.slug} className="blog-card-grid">
                         <Link to={`/blog/${post.slug}`} className="blog-card-grid__img-link">
                           <div className="blog-card-grid__img-wrap">
@@ -208,6 +218,29 @@ export default function Blog() {
                       </article>
                     ))}
                   </div>
+                )}
+
+                {/* Pagination */}
+                {totalPages > 1 && (
+                  <nav className="blog-page__pager" aria-label="Blog pagination">
+                    <button
+                      className="blog-page__page-btn"
+                      onClick={() => setPage(p => Math.max(1, p - 1))}
+                      disabled={safePage === 1}
+                    >‹ Prev</button>
+                    {Array.from({ length: totalPages }, (_, i) => i + 1).map(n => (
+                      <button
+                        key={n}
+                        className={`blog-page__page-btn ${n === safePage ? 'is-active' : ''}`}
+                        onClick={() => setPage(n)}
+                      >{n}</button>
+                    ))}
+                    <button
+                      className="blog-page__page-btn"
+                      onClick={() => setPage(p => Math.min(totalPages, p + 1))}
+                      disabled={safePage === totalPages}
+                    >Next ›</button>
+                  </nav>
                 )}
               </>
             )}

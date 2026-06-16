@@ -22,7 +22,8 @@ hPanel → **Databases → MySQL Databases**. Create a database + user, and note
 
 ### 2. Create the tables
 hPanel → **phpMyAdmin** → select your database → **SQL** tab.
-Paste & run `schema.sql`, then paste & run `seed.sql` (loads your 6 existing posts).
+- Paste & run `install.sql` (creates the `blogs` table + loads your 6 posts).
+- Paste & run `enquiries.sql` (creates the `enquiries` table for website form submissions).
 
 ### 3. Upload the backend files
 Using **File Manager** or FTP, copy into `public_html/`:

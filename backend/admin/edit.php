@@ -22,10 +22,15 @@ $content = $post ? (json_decode($post['content'], true) ?: []) : [];
 </head>
 <body>
 <header class="topbar">
-  <strong>Ancient Movers · Blog</strong>
-  <nav><a href="index.php" class="btn ghost">← All posts</a></nav>
+  <div class="brand"><span class="brand-mark">AM</span> Ancient Movers</div>
+  <nav class="topnav">
+    <a href="index.php">Posts</a>
+    <a href="enquiries.php">Enquiries</a>
+    <a href="logout.php" class="btn ghost">Log out</a>
+  </nav>
 </header>
 <main class="wrap narrow">
+  <a href="index.php" class="back-link">← All posts</a>
   <h1><?= $post ? 'Edit post' : 'New post' ?></h1>
   <form method="post" action="save.php" id="postForm">
     <input type="hidden" name="csrf" value="<?= h(csrf_token()) ?>">

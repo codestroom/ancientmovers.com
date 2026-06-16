@@ -8,6 +8,7 @@ import SEO from '../components/SEO.jsx';
 import PageHero from './PageHero.jsx';
 import Photo from '../components/Photo.jsx';
 import { SITE } from '../data/siteData.js';
+import { submitEnquiry } from '../data/enquiryApi.js';
 import useReveal from '../hooks/useReveal.js';
 import './Contact.css';
 
@@ -129,6 +130,8 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (formData.name && formData.phone && formData.email) {
+      // Save the enquiry to the admin panel (fire-and-forget; UI proceeds either way).
+      submitEnquiry({ ...formData, source: 'contact' });
       setFormSubmitted(true);
     }
   };

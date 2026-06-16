@@ -25,13 +25,21 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
 <link rel="stylesheet" href="admin.css">
 </head>
 <body class="login-body">
+  <div class="login-aside" aria-hidden="true">
+    <div class="login-aside__inner">
+      <span class="brand-mark brand-mark--lg">AM</span>
+      <h2>Ancient Movers</h2>
+      <p>Metro Detroit&rsquo;s most trusted movers. Manage your blog &amp; enquiries here.</p>
+    </div>
+  </div>
   <form class="login-card" method="post" autocomplete="off">
-    <h1>Ancient Movers</h1>
-    <p class="muted">Blog admin</p>
+    <span class="brand-mark">AM</span>
+    <h1>Welcome back</h1>
+    <p class="muted">Sign in to the admin panel</p>
     <?php if ($error): ?><div class="alert"><?= htmlspecialchars($error) ?></div><?php endif; ?>
-    <label>Username<input name="user" required autofocus></label>
-    <label>Password<input name="pass" type="password" required></label>
-    <button type="submit">Log in</button>
+    <label>Username<input name="user" required autofocus placeholder="admin"></label>
+    <label>Password<input name="pass" type="password" required placeholder="••••••••"></label>
+    <button type="submit" class="btn primary btn-block">Log in</button>
   </form>
 </body>
 </html>
