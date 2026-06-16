@@ -3,7 +3,10 @@
 import { BLOGS } from '../src/data/siteData.js';
 import { writeFileSync } from 'node:fs';
 
-const esc = (v) => (v === null || v === undefined ? null : String(v).replace(/'/g, "''"));
+// Escape for a MySQL/MariaDB single-quoted string literal. Backslash MUST be
+// doubled first (MySQL treats \ as an escape char), otherwise JSON escape
+// sequences like \" get mangled and fail the JSON validity check (error 4025).
+const esc = (v) => (v === null || v === undefined ? null : String(v).replace(/\\/g, '\\\\').replace(/'/g, "''"));
 const sql = (v) => (v === null || v === undefined ? 'NULL' : `'${esc(v)}'`);
 
 const rows = BLOGS.map((b, i) => {
