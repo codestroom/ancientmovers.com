@@ -1,15 +1,16 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaSearch, FaTimes } from 'react-icons/fa';
-import { BLOGS } from '../data/siteData.js';
 import PageHero from './PageHero.jsx';
 import SEO from '../components/SEO.jsx';
 import useReveal from '../hooks/useReveal.js';
+import useBlogs from '../hooks/useBlogs.js';
 import './Blog.css';
 
 const ALL = 'All';
 
 export default function Blog() {
+  const { blogs: BLOGS, loading } = useBlogs();
   const [activeCategory, setActiveCategory] = useState(ALL);
   const [searchQuery, setSearchQuery] = useState('');
   
@@ -110,7 +111,11 @@ export default function Blog() {
 
           {/* Main Content Layout */}
           <div ref={contentReveal} className="blog-page__content-wrap reveal reveal-d2">
-            {filtered.length === 0 ? (
+            {loading ? (
+              <div className="blog-page__empty-state">
+                <h3>Loading stories…</h3>
+              </div>
+            ) : filtered.length === 0 ? (
               <div className="blog-page__empty-state">
                 <h3>No stories found</h3>
                 <p>We couldn't find any articles matching your search. Try adjusting your keywords or category.</p>

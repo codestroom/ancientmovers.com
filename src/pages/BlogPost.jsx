@@ -1,8 +1,9 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { FaArrowRight, FaArrowLeft, FaClock, FaTag, FaPhoneAlt } from 'react-icons/fa';
-import { BLOGS, SITE } from '../data/siteData.js';
+import { SITE } from '../data/siteData.js';
 import PageHero from './PageHero.jsx';
 import SEO from '../components/SEO.jsx';
+import useBlogs from '../hooks/useBlogs.js';
 import './BlogPost.css';
 
 function ContentBlock({ block }) {
@@ -33,7 +34,18 @@ function ContentBlock({ block }) {
 
 export default function BlogPost() {
   const { slug } = useParams();
+  const { blogs: BLOGS, loading } = useBlogs();
   const post = BLOGS.find(b => b.slug === slug);
+
+  // Wait for the posts to load before deciding the slug is invalid.
+  if (loading) {
+    return (
+      <PageHero
+        title="Loading…"
+        crumbs={[{ label: 'Blog', to: '/blog' }]}
+      />
+    );
+  }
 
   if (!post) return <Navigate to="/blog" replace />;
 
