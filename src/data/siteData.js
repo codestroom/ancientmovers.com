@@ -1,8 +1,8 @@
 export const SITE = {
   name: 'Ancient Movers',
   tagline: '#1 Moving Experts in Detroit, Michigan',
-  phone: '(313) 555-0190',
-  phoneHref: 'tel:+13135550190',
+  phone: '(313) 797-2565',
+  phoneHref: 'tel:+13137972565',
   email: 'ancientmoversUsa@gmail.com',
   address: '21700 Greenfield Rd Ste 121, Oak Park, MI 48237',
   hours: 'Mon – Sun: 7:00 AM – 9:00 PM',

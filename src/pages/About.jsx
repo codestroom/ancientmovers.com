@@ -14,8 +14,6 @@ export default function About() {
   const leadersReveal = useReveal();
   const communityReveal = useReveal();
   
-
-  
   const timelineContainerRef = useRef(null);
 
   useEffect(() => {

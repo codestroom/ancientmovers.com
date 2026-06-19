@@ -80,10 +80,13 @@ export default function ReelsShowcase() {
           const card = video.closest('.reel-card');
           if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
             card?.classList.add('is-active');
-            if (video.src) {
-              const p = video.play();
-              if (p && p.catch) p.catch(() => {});
+            // Ensure the src is loaded even if the lazy srcObserver hasn't run
+            // yet — otherwise an already-visible card never starts playing.
+            if (!video.src && video.dataset.src) {
+              video.src = video.dataset.src;
             }
+            const p = video.play();
+            if (p && p.catch) p.catch(() => {});
           } else {
             card?.classList.remove('is-active');
             video.pause();
