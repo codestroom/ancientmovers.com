@@ -26,6 +26,7 @@ $content = $post ? (json_decode($post['content'], true) ?: []) : [];
   <nav class="topnav">
     <a href="index.php">Posts</a>
     <a href="enquiries.php">Enquiries</a>
+    <a href="password.php">Password</a>
     <a href="logout.php" class="btn ghost">Log out</a>
   </nav>
 </header>

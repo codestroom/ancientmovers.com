@@ -40,6 +40,7 @@ $rows = $stmt->fetchAll();
   <nav class="topnav">
     <a href="index.php">Posts</a>
     <a href="enquiries.php" class="active">Enquiries<?php if ($unread): ?> <span class="badge"><?= $unread ?></span><?php endif; ?></a>
+    <a href="password.php">Password</a>
     <a href="logout.php" class="btn ghost">Log out</a>
   </nav>
 </header>
